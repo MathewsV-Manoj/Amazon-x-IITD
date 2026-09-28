@@ -1,0 +1,30 @@
+{
+  "llr": {
+    "call_unknown_active": 1.134,
+    "call_long": 1.52,
+    "video_call": 0.554,
+    "sms_scam_flag": 1.495,
+    "bait_credit_7d": 2.995,
+    "remote_access": 1.465,
+    "sideload_24h": 2.317,
+    "accessibility_overlay": 1.343,
+    "otp_read_in_call": 1.313,
+    "first_time_payee": 2.732,
+    "amount_high": 1.714,
+    "amount_very_high": 0.514,
+    "balance_drain": 2.413,
+    "staircase": 1.192,
+    "fd_broken_24h": 1.934,
+    "vpa_typed": 2.081,
+    "collect_from_p2p": 4.659,
+    "payee_mule_high": 5.739,
+    "payee_new_account": 1.003,
+    "payee_registry_hit": 3.428
+  },
+  "prior": -14.072,
+  "thresholds": {
+    "1": -9.112,
+    "2": -8.345,
+    "3": -7.625
+  }
+}

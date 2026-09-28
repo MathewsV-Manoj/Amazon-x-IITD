@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+eval/out/*.png
+eval/out/*.svg
+!eval/out/results.json
+!eval/out/model.json
+/tmp/
+.pytest_cache/

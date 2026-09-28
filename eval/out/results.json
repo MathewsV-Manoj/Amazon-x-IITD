@@ -1,0 +1,142 @@
+{
+  "n_test_legit": 60000,
+  "n_test_scam": 2400,
+  "thresholds": {
+    "1": -9.112,
+    "2": -8.345,
+    "3": -7.625
+  },
+  "latency_us_per_session": 25.2,
+  "budget": {
+    "tier1": 20.0,
+    "tier2": 3.0,
+    "tier3": 0.5
+  },
+  "real_prevalence_assumed": 0.0002,
+  "systems": [
+    {
+      "name": "Chakravyuh (tier>=1 silent watch)",
+      "recall": 0.986,
+      "value_recall": 0.997,
+      "legit_alerts_per_1000": 22.08,
+      "precision_at_real_prevalence": 0.009,
+      "recall_standard": 0.988,
+      "recall_adapted": 0.978,
+      "by_scenario": {
+        "digital_arrest": 0.995,
+        "remote_access_kyc": 0.996,
+        "investment_task": 0.97,
+        "collect_request": 0.975
+      }
+    },
+    {
+      "name": "Chakravyuh (tier>=2 interrupt)",
+      "recall": 0.925,
+      "value_recall": 0.963,
+      "legit_alerts_per_1000": 3.57,
+      "precision_at_real_prevalence": 0.049,
+      "recall_standard": 0.941,
+      "recall_adapted": 0.877,
+      "by_scenario": {
+        "digital_arrest": 0.943,
+        "remote_access_kyc": 0.962,
+        "investment_task": 0.909,
+        "collect_request": 0.845
+      }
+    },
+    {
+      "name": "Chakravyuh (tier 3 cooling-off hold)",
+      "recall": 0.574,
+      "value_recall": 0.709,
+      "legit_alerts_per_1000": 0.05,
+      "precision_at_real_prevalence": 0.697,
+      "recall_standard": 0.636,
+      "recall_adapted": 0.381,
+      "by_scenario": {
+        "digital_arrest": 0.571,
+        "remote_access_kyc": 0.766,
+        "investment_task": 0.588,
+        "collect_request": 0.188
+      }
+    },
+    {
+      "name": "Rule: new payee + high amount",
+      "recall": 0.492,
+      "value_recall": 0.869,
+      "legit_alerts_per_1000": 9.23,
+      "precision_at_real_prevalence": 0.011,
+      "recall_standard": 0.623,
+      "recall_adapted": 0.08,
+      "by_scenario": {
+        "digital_arrest": 0.727,
+        "remote_access_kyc": 0.541,
+        "investment_task": 0.359,
+        "collect_request": 0.141
+      }
+    },
+    {
+      "name": "Rule: any single strong signal",
+      "recall": 0.894,
+      "value_recall": 0.941,
+      "legit_alerts_per_1000": 35.13,
+      "precision_at_real_prevalence": 0.005,
+      "recall_standard": 0.916,
+      "recall_adapted": 0.825,
+      "by_scenario": {
+        "digital_arrest": 0.92,
+        "remote_access_kyc": 0.932,
+        "investment_task": 0.771,
+        "collect_request": 0.975
+      }
+    },
+    {
+      "name": "Gradient boosting (black box, same budget)",
+      "recall": 0.966,
+      "value_recall": 0.991,
+      "legit_alerts_per_1000": 3.33,
+      "precision_at_real_prevalence": 0.055,
+      "recall_standard": 0.972,
+      "recall_adapted": 0.946,
+      "by_scenario": {
+        "digital_arrest": 0.986,
+        "remote_access_kyc": 0.983,
+        "investment_task": 0.919,
+        "collect_request": 0.97
+      }
+    }
+  ],
+  "tier_distribution_legit_per_1000": {
+    "0": 977.92,
+    "1": 18.52,
+    "2": 3.52,
+    "3": 0.05
+  },
+  "tier_distribution_scam": {
+    "0": 0.014,
+    "1": 0.06,
+    "2": 0.351,
+    "3": 0.574
+  },
+  "llr": {
+    "call_unknown_active": 1.134,
+    "call_long": 1.52,
+    "video_call": 0.554,
+    "sms_scam_flag": 1.495,
+    "bait_credit_7d": 2.995,
+    "remote_access": 1.465,
+    "sideload_24h": 2.317,
+    "accessibility_overlay": 1.343,
+    "otp_read_in_call": 1.313,
+    "first_time_payee": 2.732,
+    "amount_high": 1.714,
+    "amount_very_high": 0.514,
+    "balance_drain": 2.413,
+    "staircase": 1.192,
+    "fd_broken_24h": 1.934,
+    "vpa_typed": 2.081,
+    "collect_from_p2p": 4.659,
+    "payee_mule_high": 5.739,
+    "payee_new_account": 1.003,
+    "payee_registry_hit": 3.428
+  }
+}

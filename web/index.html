@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chakravyuh — scam kill-chain interceptor</title>
+<style>
+:root{color-scheme:light dark;
+ --ink:#0d1420; --muted:#5b6675; --bg:#f6f7f9; --card:#ffffff; --line:#e4e7ec;
+ --acc:#d9480f; --ok:#12805c; --warn:#a05a00; --tier3:#8a1c1c; --chip:#eef1f5;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+ --ink:#e7ecf2; --muted:#9aa5b3; --bg:#0d1218; --card:#151b23; --line:#242c37;
+ --acc:#ff7a2b; --ok:#4dd6a4; --warn:#ffb54d; --tier3:#ff7676; --chip:#1e2732;}}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+ color:var(--ink);background:var(--bg);padding:0 16px}
+header{max-width:1100px;margin:24px auto 8px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+header h1{font-size:22px;margin:0}
+header .sub{color:var(--muted);font-size:13px}
+main{max-width:1100px;margin:16px auto 40px;display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:900px){main{grid-template-columns:1.05fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card h2{font-size:14px;margin:0 0 12px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.scen{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.scen button{border:1px solid var(--line);background:var(--chip);color:var(--ink);
+ border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer}
+.scen button.active{background:var(--ink);color:var(--card);border-color:var(--ink)}
+.stage{margin-bottom:10px}
+.stage h3{margin:0 0 6px;font-size:12px;letter-spacing:.05em;color:var(--muted);text-transform:uppercase}
+.sig{display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--line);cursor:pointer;user-select:none}
+.sig:first-child{border-top:0}
+.sig input{margin:0}
+.sig .why{font-size:12.5px;color:var(--muted)}
+.sig strong{font-weight:600;font-size:13.5px}
+.row{display:flex;align-items:center;gap:10px;margin:8px 0 14px}
+.row label{color:var(--muted);font-size:13px}
+.row input[type=number]{background:var(--chip);border:1px solid var(--line);color:var(--ink);
+ border-radius:8px;padding:6px 10px;width:120px;font:inherit}
+.verdict{border-left:5px solid var(--ok);padding:14px 16px;border-radius:10px;background:var(--chip)}
+.verdict.t1{border-left-color:var(--warn)} .verdict.t2{border-left-color:var(--acc)} .verdict.t3{border-left-color:var(--tier3)}
+.verdict h3{margin:0 0 4px;font-size:16px}
+.verdict p{margin:0;color:var(--muted)}
+.tier-badge{display:inline-block;padding:2px 10px;border-radius:999px;font-size:11px;letter-spacing:.06em;
+ text-transform:uppercase;background:var(--ok);color:#fff;margin-bottom:6px}
+.tier-badge.t1{background:var(--warn)} .tier-badge.t2{background:var(--acc)} .tier-badge.t3{background:var(--tier3)}
+.chain{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px}
+.chain .step{background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:12px;position:relative}
+.chain .step.active{border-color:var(--acc);background:color-mix(in oklab,var(--acc) 12%,var(--card))}
+.chain .step .lab{color:var(--muted);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase}
+.chain .step .val{font-weight:600;font-size:14px;margin-top:2px}
+.reasons{margin:12px 0 0;padding:0;list-style:none}
+.reasons li{padding:6px 0;border-top:1px dashed var(--line);font-size:13px;color:var(--ink)}
+.reasons li:first-child{border-top:0}
+.reasons .w{color:var(--muted);font-variant-numeric:tabular-nums}
+.foot{color:var(--muted);font-size:12px;margin-top:12px;text-align:center}
+.priv{font-size:12px;color:var(--muted);margin-top:8px}
+.priv b{color:var(--ink)}
+kbd{background:var(--chip);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:11px}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Chakravyuh <span class="sub">— scam kill-chain interceptor</span></h1>
+    <div class="sub">Live decision-engine demo. All data is synthetic. Toggle signals or pick a scenario.</div>
+  </div>
+  <div class="sub" id="tag">model: —</div>
+</header>
+<main>
+  <section class="card">
+    <h2>Session evidence</h2>
+    <div class="scen" id="scen"></div>
+    <div class="row">
+      <label>Amount ₹</label>
+      <input id="amt" type="number" value="45000" min="1"/>
+      <label style="margin-left:auto"><a href="#" id="reset" style="color:var(--muted)">clear all</a></label>
+    </div>
+    <div id="stages"></div>
+    <div class="priv"><b>What leaves the phone:</b> only the ticked booleans above and the amount.
+      Call audio, screen contents, message text and your contact list stay on the device.</div>
+  </section>
+
+  <section class="card">
+    <h2>Decision</h2>
+    <div id="verdict" class="verdict">
+      <span class="tier-badge" id="badge">tier 0</span>
+      <h3 id="action">Pay normally</h3>
+      <p id="message">Nothing looks unusual about this payment.</p>
+    </div>
+    <div class="chain" id="chain"></div>
+    <h2 style="margin-top:20px">Why (top contributing signals)</h2>
+    <ul class="reasons" id="reasons"><li class="w">Toggle signals on the left to see the fused decision.</li></ul>
+    <div class="foot">POST /decide latency: <span id="lat">—</span> ms · engine build <span id="ver">dev</span></div>
+  </section>
+</main>
+<script>
+const STAGES = [["contact","Contact & pretext"],["control","Control & isolation"],
+                ["extraction","Money extraction"],["cashout","Mule / cash-out"]];
+const SCENARIOS = {
+  "legit":{amt:2400, sig:{}},
+  "legit_new_plumber":{amt:1800, sig:{"first_time_payee":true,"call_unknown_active":true,"vpa_typed":true}},
+  "digital_arrest":{amt:250000, sig:{"call_unknown_active":true,"call_long":true,"video_call":true,
+     "first_time_payee":true,"amount_very_high":true,"balance_drain":true,"fd_broken_24h":true,
+     "vpa_typed":true,"payee_mule_high":true,"payee_new_account":true}},
+  "remote_access_kyc":{amt:15000, sig:{"sms_scam_flag":true,"call_unknown_active":true,"sideload_24h":true,
+     "remote_access":true,"accessibility_overlay":true,"otp_read_in_call":true,"first_time_payee":true,
+     "amount_high":true,"vpa_typed":true,"payee_mule_high":true}},
+  "investment_task":{amt:60000, sig:{"bait_credit_7d":true,"sms_scam_flag":true,"first_time_payee":true,
+     "amount_high":true,"vpa_typed":true,"payee_mule_high":true,"payee_new_account":true}},
+  "collect_scam":{amt:5000, sig:{"collect_from_p2p":true,"first_time_payee":true,"payee_mule_high":true,
+     "payee_new_account":true}}
+};
+const SCEN_LABELS = {legit:"Legit payment", legit_new_plumber:"New plumber (confounder)",
+  digital_arrest:"Digital arrest", remote_access_kyc:"Remote-access KYC",
+  investment_task:"Investment / task scam", collect_scam:"Collect-request scam"};
+
+let signals=[], groups={};
+
+async function boot(){
+  const r=await fetch("signals.json"); const j=await r.json();
+  signals=j.signals; groups={};
+  signals.forEach(s=>{ (groups[s.stage]=groups[s.stage]||[]).push(s); });
+  const root=document.getElementById("stages");
+  STAGES.forEach(([k,label])=>{
+    const d=document.createElement("div"); d.className="stage";
+    d.innerHTML=`<h3>${label}</h3>`+
+      (groups[k]||[]).map(s=>`<label class="sig">
+        <input type="checkbox" data-k="${s.key}"/>
+        <div><strong>${s.why}</strong><div class="why">source: ${s.source} · never collected: ${s.not_collected||"—"}</div></div>
+      </label>`).join("");
+    root.appendChild(d);
+  });
+  const sc=document.getElementById("scen");
+  Object.keys(SCENARIOS).forEach(k=>{
+    const b=document.createElement("button"); b.textContent=SCEN_LABELS[k];
+    b.onclick=()=>{applyScenario(k); [...sc.children].forEach(x=>x.classList.remove("active")); b.classList.add("active");};
+    sc.appendChild(b);
+  });
+  document.getElementById("reset").onclick=e=>{e.preventDefault(); applyScenario("legit"); score();};
+  root.addEventListener("change", score);
+  document.getElementById("amt").addEventListener("input", score);
+  applyScenario("digital_arrest");
+  sc.children[2].classList.add("active");
+  score();
+}
+
+function applyScenario(k){
+  const sc=SCENARIOS[k]; document.getElementById("amt").value=sc.amt;
+  document.querySelectorAll("#stages input").forEach(cb=>cb.checked=!!sc.sig[cb.dataset.k]);
+}
+
+async function score(){
+  const ev={}; document.querySelectorAll("#stages input").forEach(cb=>{if(cb.checked)ev[cb.dataset.k]=true;});
+  const body={session_id:"demo-"+Date.now(), amount:Number(document.getElementById("amt").value||0), evidence:ev};
+  const t=performance.now();
+  const r=await fetch("/decide",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(body)});
+  const j=await r.json(); const dt=(performance.now()-t).toFixed(1);
+  render(j, dt);
+}
+
+function render(j, dt){
+  const v=document.getElementById("verdict"); v.className="verdict t"+j.tier;
+  document.getElementById("badge").className="tier-badge t"+j.tier;
+  document.getElementById("badge").textContent="tier "+j.tier+" · "+j.action;
+  const h=({0:"Pay normally",1:"Read this before you pay",2:"Wait — this looks like a scam workflow",
+            3:"On hold — please review with your bank"})[j.tier];
+  document.getElementById("action").textContent=h;
+  document.getElementById("message").textContent=j.message;
+  const chain=document.getElementById("chain"); chain.innerHTML="";
+  STAGES.forEach(([k,label])=>{
+    const w=j.stage_scores[k]||0; const on=j.active_stages.includes(k);
+    const d=document.createElement("div"); d.className="step"+(on?" active":"");
+    d.innerHTML=`<div class="lab">${label.split(" ")[0]}</div><div class="val">${w.toFixed(1)}</div>`;
+    chain.appendChild(d);
+  });
+  const rs=document.getElementById("reasons");
+  if(!j.reasons.length){ rs.innerHTML='<li class="w">No suspicious signals in this session.</li>'; }
+  else rs.innerHTML=j.reasons.map(r=>`<li>${r.text} <span class="w">(+${r.weight.toFixed(1)}, ${r.stage})</span></li>`).join("");
+  document.getElementById("lat").textContent=dt;
+  document.getElementById("tag").textContent="score log-odds "+j.score.toFixed(2)+"  ·  log "+j.log_id;
+}
+boot();
+</script>
+</body>
+</html>
