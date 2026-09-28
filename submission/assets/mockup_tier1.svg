@@ -1,0 +1,45 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 620" font-family="Inter, DejaVuSans, sans-serif">
+  <defs>
+    <linearGradient id="bezel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a1f28"/>
+      <stop offset="1" stop-color="#0b0f16"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="300" height="620" rx="34" ry="34" fill="url(#bezel)"/>
+  <rect x="8" y="8" width="284" height="604" rx="28" ry="28" fill="#ffffff"/>
+  <rect x="105.0" y="10" width="90" height="18" rx="9" fill="#0b0f16"/>
+<text x="24" y="40" font-size="11" fill="#3b4453" font-weight="600">9:41</text><text x="276" y="40" text-anchor="end" font-size="11" fill="#3b4453">●●●○ · UPI</text>
+  <!-- top banner -->
+  <rect x="16" y="70" width="268" height="60" rx="10" fill="#fff6ef" stroke="#f28c4f" stroke-width="1"/>
+  <circle cx="42" cy="100" r="12" fill="#d9480f"/>
+  <text x="42" y="104" text-anchor="middle" font-size="14" font-weight="800" fill="#ffffff">!</text>
+  <text x="62" y="94" font-size="12" font-weight="700" fill="#0d1420">Task-scam pattern nearby</text>
+  <text x="62" y="110" font-size="10.5" fill="#5a6473">Small profits, big ask — check before</text>
+  <text x="62" y="123" font-size="10.5" fill="#5a6473">investing. Tap for a 30-sec guide.</text>
+
+  <text x="24" y="160" font-size="11" fill="#5a6473" letter-spacing="1">SEND MONEY</text>
+
+  <rect x="20" y="176" width="260" height="70" rx="12" fill="#f6f7f9" stroke="#e4e7ec"/>
+  <text x="34" y="200" font-size="14" font-weight="700" fill="#0d1420">crypto-earn@ptsbi</text>
+  <text x="34" y="218" font-size="11" fill="#5a6473">First-time payee · seen in group chat</text>
+  <text x="266" y="220" text-anchor="end" font-size="20" font-weight="800" fill="#0d1420">₹60,000</text>
+
+  <text x="24" y="272" font-size="11" fill="#5a6473" letter-spacing="1">RECENT SMALL CREDITS FROM UNKNOWN SENDERS</text>
+  <rect x="20" y="288" width="260" height="24" rx="6" fill="#eef1f5"/>
+  <text x="34" y="304" font-size="10.5" fill="#5a6473">+ ₹150  · Sep 24 · unknown UPI</text>
+  <rect x="20" y="316" width="260" height="24" rx="6" fill="#eef1f5"/>
+  <text x="34" y="332" font-size="10.5" fill="#5a6473">+ ₹410  · Sep 25 · unknown UPI</text>
+  <rect x="20" y="344" width="260" height="24" rx="6" fill="#eef1f5"/>
+  <text x="34" y="360" font-size="10.5" fill="#5a6473">+ ₹280  · Sep 26 · unknown UPI</text>
+
+  <rect x="20" y="390" width="260" height="42" rx="10" fill="#d9480f"/>
+  <text x="150" y="416" text-anchor="middle" font-size="13" font-weight="700"
+        fill="#ffffff">Show me the scam pattern</text>
+  <rect x="20" y="442" width="260" height="42" rx="10" fill="#ffffff" stroke="#e4e7ec"/>
+  <text x="150" y="468" text-anchor="middle" font-size="12.5" font-weight="600"
+        fill="#0d1420">Proceed with ₹60,000 payment</text>
+
+  <text x="24" y="518" font-size="9.5" fill="#8a94a3">Silent watch entry · shared with your bank</text>
+  <rect x="100.0" y="598" width="100" height="4" rx="2" fill="#0b0f16"/>
+</svg>

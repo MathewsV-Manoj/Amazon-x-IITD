@@ -1,0 +1,211 @@
+{
+  "baselines": [
+    {
+      "threshold": -7.528999,
+      "recall": 0.9495833333333333,
+      "legit_alerts_per_1000": 3.0833333333333335,
+      "auprc": 0.9809643378518924,
+      "auroc": 0.9981127118055555,
+      "name": "Chakravyuh (kill-chain fusion)"
+    },
+    {
+      "name": "Rule: new payee + high amount",
+      "threshold": 0.5,
+      "recall": 0.4920833333333333,
+      "legit_alerts_per_1000": 9.233333333333333,
+      "auprc": 0.3544922688982487,
+      "auroc": 0.7414250000000001
+    },
+    {
+      "threshold": -1.6793729267979398,
+      "recall": 0.96875,
+      "legit_alerts_per_1000": 3.3333333333333335,
+      "auprc": 0.9845836713979649,
+      "auroc": 0.9982858611111111,
+      "name": "Logistic regression (no stage gate)"
+    },
+    {
+      "threshold": 0.14044922036399432,
+      "recall": 0.9658333333333333,
+      "legit_alerts_per_1000": 3.3333333333333335,
+      "auprc": 0.9857302929834262,
+      "auroc": 0.9983231805555555,
+      "name": "Gradient boosting (sklearn)"
+    },
+    {
+      "threshold": 0.14175196154212952,
+      "recall": 0.96875,
+      "legit_alerts_per_1000": 3.4,
+      "auprc": 0.9858128589999051,
+      "auroc": 0.9984293194444445,
+      "name": "XGBoost (tuned)"
+    },
+    {
+      "threshold": 0.08681181489550352,
+      "recall": 0.97,
+      "legit_alerts_per_1000": 3.533333333333333,
+      "auprc": 0.985920469871806,
+      "auroc": 0.9984569166666666,
+      "name": "MLP (2 hidden layers)"
+    }
+  ],
+  "ablation": [
+    {
+      "stage": "all four stages",
+      "threshold": -7.528999,
+      "recall": 0.9495833333333333,
+      "legit_alerts_per_1000": 3.0833333333333335
+    },
+    {
+      "threshold": -7.544999,
+      "recall": 0.8725,
+      "legit_alerts_per_1000": 2.8333333333333335,
+      "stage": "without contact"
+    },
+    {
+      "threshold": -7.095999,
+      "recall": 0.9325,
+      "legit_alerts_per_1000": 3.6333333333333333,
+      "stage": "without control"
+    },
+    {
+      "threshold": -7.041999,
+      "recall": 0.8941666666666667,
+      "legit_alerts_per_1000": 3.4833333333333334,
+      "stage": "without extraction"
+    },
+    {
+      "threshold": -6.204999,
+      "recall": 0.6570833333333334,
+      "legit_alerts_per_1000": 2.15,
+      "stage": "without cashout"
+    }
+  ],
+  "adversarial": [
+    {
+      "suppressed": 0,
+      "recall": 0.9495833333333333,
+      "legit_alerts_per_1000": 3.0833333333333335
+    },
+    {
+      "suppressed": 1,
+      "recall": 0.7695833333333333,
+      "legit_alerts_per_1000": 0.03333333333333333
+    },
+    {
+      "suppressed": 2,
+      "recall": 0.5383333333333333,
+      "legit_alerts_per_1000": 0.0
+    },
+    {
+      "suppressed": 3,
+      "recall": 0.33375,
+      "legit_alerts_per_1000": 0.0
+    },
+    {
+      "suppressed": 4,
+      "recall": 0.15916666666666668,
+      "legit_alerts_per_1000": 0.0
+    },
+    {
+      "suppressed": 5,
+      "recall": 0.06958333333333333,
+      "legit_alerts_per_1000": 0.0
+    },
+    {
+      "suppressed": 6,
+      "recall": 0.019583333333333335,
+      "legit_alerts_per_1000": 0.0
+    },
+    {
+      "suppressed": 7,
+      "recall": 0.00625,
+      "legit_alerts_per_1000": 0.0
+    }
+  ],
+  "calibration": [
+    {
+      "bin_mid": 9.183102410829117e-07,
+      "empirical": 0.0,
+      "n": 36697
+    },
+    {
+      "bin_mid": 3.7814658136887616e-06,
+      "empirical": 0.00044004400440044003,
+      "n": 4545
+    },
+    {
+      "bin_mid": 6.847597136609115e-06,
+      "empirical": 0.0002973535533749628,
+      "n": 6726
+    },
+    {
+      "bin_mid": 1.6070235360966157e-05,
+      "empirical": 0.001589825119236884,
+      "n": 8177
+    },
+    {
+      "bin_mid": 0.15823943458672649,
+      "empirical": 0.3809752198241407,
+      "n": 6255
+    }
+  ],
+  "loo_scenario": [
+    {
+      "held_out_scenario": "digital_arrest",
+      "recall_on_unseen_scenario": 0.9445945945945946
+    },
+    {
+      "held_out_scenario": "remote_access_kyc",
+      "recall_on_unseen_scenario": 0.963855421686747
+    },
+    {
+      "held_out_scenario": "investment_task",
+      "recall_on_unseen_scenario": 0.8541666666666666
+    },
+    {
+      "held_out_scenario": "collect_request",
+      "recall_on_unseen_scenario": 0.8039492242595204
+    }
+  ],
+  "per_persona": [
+    {
+      "persona": "professional",
+      "recall": 0.9566473988439307,
+      "legit_alerts_per_1000": 2.8022417934347477
+    },
+    {
+      "persona": "senior",
+      "recall": 0.9468164794007491,
+      "legit_alerts_per_1000": 2.853161701280605
+    },
+    {
+      "persona": "shopkeeper",
+      "recall": 0.9433962264150944,
+      "legit_alerts_per_1000": 3.4530845341656153
+    },
+    {
+      "persona": "student",
+      "recall": 0.9597701149425287,
+      "legit_alerts_per_1000": 3.2253729337454646
+    }
+  ],
+  "impact": {
+    "adopters_m": 100,
+    "sessions_year_m": 25000.0,
+    "scams_year_k": 5000.0,
+    "caught_k": 4747.916666666667,
+    "saved_cr_per_year": 19941.25,
+    "legit_interruptions_year_m": 77.08333333333334
+  },
+  "impact_conservative": {
+    "adopters_m": 30,
+    "sessions_year_m": 7500.0,
+    "scams_year_k": 1500.0,
+    "caught_k": 1424.375,
+    "saved_cr_per_year": 5982.375,
+    "legit_interruptions_year_m": 23.125
+  },
+  "n_test_legit": 60000,
+  "n_test_scam": 2400
+}
