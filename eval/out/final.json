@@ -406,5 +406,147 @@
     "extraction": 6.0,
     "cashout": 6.0
   },
-  "stage_active": 1.5
+  "stage_active": 1.5,
+  "judge": {
+    "calib_interrupt_rate": 2.4666666666666663,
+    "matched_fp": {
+      "Logistic regression": {
+        "recall": {
+          "mean": 0.9610937500000001,
+          "lo": 0.9572916666666668,
+          "hi": 0.9653125
+        },
+        "fp": {
+          "mean": 2.9458333333333333,
+          "lo": 2.8083333333333336,
+          "hi": 3.062552083333334
+        }
+      },
+      "Gradient boosting": {
+        "recall": {
+          "mean": 0.96546875,
+          "lo": 0.9623437499999999,
+          "hi": 0.9688541666666666
+        },
+        "fp": {
+          "mean": 2.683333333333333,
+          "lo": 2.502083333333333,
+          "hi": 2.8875
+        }
+      },
+      "XGBoost": {
+        "recall": {
+          "mean": 0.9621875,
+          "lo": 0.9583333333333333,
+          "hi": 0.9663541666666667
+        },
+        "fp": {
+          "mean": 2.5083333333333333,
+          "lo": 2.377083333333333,
+          "hi": 2.6416666666666666
+        }
+      },
+      "MLP": {
+        "recall": {
+          "mean": 0.9682291666666667,
+          "lo": 0.96515625,
+          "hi": 0.9717708333333333
+        },
+        "fp": {
+          "mean": 2.95,
+          "lo": 2.7708333333333335,
+          "hi": 3.1208854166666673
+        }
+      }
+    },
+    "single_stage": {
+      "lr_genuine_alerts_per_1000": 3.4291666666666667,
+      "lr_single_stage_genuine_per_1000": 1.6916666666666667,
+      "lr_single_stage_share_of_genuine_alerts": 0.4933171324422843,
+      "chakravyuh_single_stage_genuine_per_1000": 0.0,
+      "scams_single_stage_caught_by_lr_share": 0.047239583333333335,
+      "top_patterns": [
+        {
+          "signals": [
+            "collect_from_p2p",
+            "first_time_payee"
+          ],
+          "per_1000_genuine": 0.32916666666666666,
+          "count": 158
+        },
+        {
+          "signals": [
+            "balance_drain",
+            "first_time_payee",
+            "vpa_typed"
+          ],
+          "per_1000_genuine": 0.25416666666666665,
+          "count": 122
+        },
+        {
+          "signals": [
+            "first_time_payee",
+            "payee_new_account",
+            "sms_scam_flag",
+            "vpa_typed"
+          ],
+          "per_1000_genuine": 0.06666666666666667,
+          "count": 32
+        },
+        {
+          "signals": [
+            "amount_high",
+            "amount_very_high",
+            "balance_drain",
+            "first_time_payee"
+          ],
+          "per_1000_genuine": 0.052083333333333336,
+          "count": 25
+        }
+      ],
+      "example": {
+        "signals": [
+          "collect_from_p2p",
+          "first_time_payee"
+        ],
+        "amount": 6750.0,
+        "persona": "shopkeeper",
+        "active_stages": [
+          "extraction"
+        ],
+        "tier": 1
+      }
+    },
+    "gap_by_scenario": {
+      "digital_arrest": 0.3175303197353914,
+      "collect_request": 0.46747519294377066,
+      "remote_access_kyc": 0.12348401323042998,
+      "investment_task": 0.09151047409040794
+    },
+    "feasible_only": {
+      "removed": [
+        "call_unknown_active",
+        "sms_scam_flag",
+        "sideload_24h",
+        "otp_read_in_call"
+      ],
+      "device_signals_kept": [
+        "call_long",
+        "video_call",
+        "remote_access",
+        "accessibility_overlay",
+        "vpa_typed"
+      ],
+      "recall": {
+        "mean": 0.9154687499999999,
+        "lo": 0.9076041666666667,
+        "hi": 0.9239583333333332
+      },
+      "fp": {
+        "mean": 2.8687500000000004,
+        "lo": 2.7082812499999998,
+        "hi": 3.035416666666667
+      }
+    }
+  }
 }

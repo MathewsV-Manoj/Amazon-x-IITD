@@ -17,7 +17,7 @@ from chakravyuh.signals import SIGNALS, STAGE_LABELS  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 F = json.loads((ROOT / "eval" / "out" / "final.json").read_text())
-C = F["chakravyuh"]; B = F["baselines"]
+C = F["chakravyuh"]; B = F["baselines"]; J = F["judge"]
 TOTAL = 16
 
 TEAM = [("Mathews V Manoj", "B.Tech Electronics & Communication, Muthoot Institute of Technology and Science (KTU)")]
@@ -206,7 +206,8 @@ def s05():
         and a bank agent calls her before anything is released.</p></div>
     </div>
   </div>
-  <div class="phone">{svg_inline('mockup_tier3.svg')}<div class="cap">Level 3 screen (mock-up)</div></div>
+  <div class="phones"><div class="phone">{svg_inline('mockup_tier2.svg')}<div class="cap">Level 2: warn and ask</div></div>
+  <div class="phone">{svg_inline('mockup_tier3.svg')}<div class="cap">Level 3: hold (her case)</div></div></div>
 </div>"""
     return frame(5, "4. Example", body)
 
@@ -225,15 +226,15 @@ def s06():
     <div class="lbl">Score</div>
     <div class="formula">s(x) = b + <span class="big-s">Σ</span><sub>g</sub> min( C<sub>g</sub> , <span class="big-s">Σ</span><sub>k in g</sub> w<sub>k</sub> x<sub>k</sub> )</div>
     <div class="lbl" style="margin-top:14px">Decision</div>
-    <div class="formula sm"><b>Tier 2</b> &nbsp;if&nbsp; s ≥ τ<sub>2</sub> &nbsp;and&nbsp; active stages ≥ 2<br>
-    <b>Tier 3</b> &nbsp;if&nbsp; s ≥ τ<sub>3</sub> &nbsp;and&nbsp; ( active stages ≥ 3 &nbsp;or&nbsp; ≥ 2 plus a registry hit )</div>
+    <div class="formula sm"><b>Level 2</b> &nbsp;if&nbsp; s ≥ τ<sub>2</sub> &nbsp;and&nbsp; active stages ≥ 2<br>
+    <b>Level 3</b> &nbsp;if&nbsp; s ≥ τ<sub>3</sub> &nbsp;and&nbsp; ( active stages ≥ 3 &nbsp;or&nbsp; ≥ 2 plus a registry hit )</div>
     <p class="small">g is one of the four stages and x<sub>k</sub> is 1 if signal k is present. The weights w<sub>k</sub> come from a
     logistic regression (L2) on labelled sessions and are kept at zero or above. A stage counts as active when its capped score
     is at least 1.5. All values are in Appendix A.</p>
   </div>
   <div class="principles">
     <div><b>Non-negative weights</b><span>A missing signal does not change the score, because a fraudster can always hide one.</span></div>
-    <div><b>Stage caps</b><span>One stage cannot push the score up on its own (C = 5, 5, 6, 6).</span></div>
+    <div><b>Stage caps</b><span>A safety limit so one stage cannot dominate (C = 5, 5, 6, 6). It made no measurable difference on our data.</span></div>
     <div><b>Two-stage rule</b><span>We only interrupt when at least two stages are active.</span></div>
     <div><b>Prevalence adjustment</b><span>Training data is 3.8% scams; we adjust the model to an assumed 1 in 5,000 in real use.</span></div>
     <div><b>Thresholds</b><span>τ is set on a separate dataset to meet the bank's alert limit, then fixed.</span></div>
@@ -247,6 +248,7 @@ def s07():
     lo_r = min(b["recall"]["mean"] for b in gb); hi_r = max(b["recall"]["mean"] for b in gb)
     lo_f = min(b["fp"]["mean"] for b in gb); hi_f = max(b["fp"]["mean"] for b in gb)
     red = 1 - C["fp"]["mean"] / C["fp_nogate"]["mean"]
+    mm = J["matched_fp"]; mlo = min(v["recall"]["mean"] for v in mm.values()); mhi = max(v["recall"]["mean"] for v in mm.values())
     body = f"""
 <h2>Results on synthetic data</h2>
 <p class="banner">These numbers come from 8 synthetic test sets the model never saw. They are not results from a real bank.</p>
@@ -263,11 +265,9 @@ def s07():
     <div class="cap">All models use the same training, threshold and test data. Bars show 95% confidence intervals.</div></div>
 </div>
 <div class="res-note">
-  <p><b>What we give up.</b> Standard classifiers catch {lo_r * 100:.1f}–{hi_r * 100:.1f}% of scams but interrupt
-  {lo_f:.1f}–{hi_f:.1f} genuine payments per 1,000. Without the two-stage rule our own score catches
-  {pct(C['recall_nogate']['mean'])} at {C['fp_nogate']['mean']:.2f}. The rule costs us
-  {(C['recall_nogate']['mean'] - C['recall']['mean']) * 100:.1f} points of recall. In return there are {red * 100:.0f}% fewer
-  interruptions, no single signal can stop a payment, and every alert lists the signals behind it.</p>
+  <p><b>What we give up.</b> Even when set to the same alert rate as ours, standard classifiers catch {mlo * 100:.1f}–{mhi * 100:.1f}%
+  of scams, about 4 points more. {J['gap_by_scenario']['collect_request'] * 100:.0f}% of that gap is collect-request scams, which only
+  ever show one stage. Without the two-stage rule our own score catches {pct(C['recall_nogate']['mean'])}. Slide 10 shows what the rule buys.</p>
   <p class="small">Trained on dataset 7, thresholds set on dataset 21, tested on datasets 101 to 108. Each has 60,000 genuine and
   2,400 scam sessions. Scoring takes about {C['latency_us']:.0f} µs per session on our machine.</p>
 </div>"""
@@ -329,7 +329,14 @@ def s09():
   <div class="pcol leaves">
     <div class="lbl acc">Sent to the bank</div>
     <div class="eqn"><b>9</b> yes/no values, the amount and a hashed payee ID</div>
-    <ol>{''.join(f'<li>{s.why}</li>' for s in dev)}</ol>
+    <div class="feas"><b>A banking app can read 5 of them</b> under Android and Play rules: call active and its length
+    (phone-state permission), video/VoIP call (audio mode), a known screen-sharing app or accessibility service, an app drawing
+    over our screen, and whether the payee was typed.</div>
+    <div class="feas r"><b>4 need restricted access</b>, so we plan fallbacks: caller not in contacts (call-log access),
+    scam SMS (SMS access), any app sideloaded (all-apps visibility), OTP opened in a call (other apps' notifications). Fallbacks:
+    call length only, the bank's own OTP timing, and a fixed list of known remote-access apps.</div>
+    <div class="feas-num">Retrained with only the 5 readable signals: <b>{pct(J['feasible_only']['recall']['mean'])}</b> recall at
+    {J['feasible_only']['fp']['mean']:.2f} per 1,000 (synthetic), against {pct(C['recall']['mean'])} with all 9.</div>
   </div>
   <div class="pcol bank">
     <div class="lbl">Already at the bank</div>
@@ -352,29 +359,31 @@ choice, not a legal certification. The phone SDK is not built yet; the server si
 
 
 def s10():
-    Y = '<svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>'
-    N = '<span class="no">—</span>'
-    rows = [("Transaction rules", Y, N, Y, N),
-            ("Standard ML classifier", Y, "partly", "after the fact", N),
-            ("Chakravyuh", Y, Y, Y, Y)]
-    tr = "".join(f"<tr class='{'me' if r[0] == 'Chakravyuh' else ''}'><td>{r[0]}</td>" +
-                 "".join(f"<td>{c}</td>" for c in r[1:]) + "</tr>" for r in rows)
+    ss = J["single_stage"]; mm = J["matched_fp"]; lrm = mm["Logistic regression"]
+    ex = ss["example"]
     plan = [("H+0–8", "Replay harness", "Run saved test sessions through the server and check the records."),
-            ("H+8–20", "Android signal validation", "Read the 9 phone signals on a real Android phone and check them."),
-            ("H+20–32", "Attacker adaptation", "Try to beat our own model with three changed scams, then retrain."),
+            ("H+8–20", "Android signals", "Read the 5 allowed phone signals on one test phone and compare with the synthetic values."),
+            ("H+20–32", "Collect-request rule", "Add a warning for collect requests from individuals and re-test; then attack our own model."),
             ("H+32–44", "End-to-end replay", "Run 100 sessions through to agent review and release or report."),
             ("H+44–48", "Security review", "Walk through the records, replay checks, two-person release and known limits.")]
     pl = "".join(f"<div class='ph'><div class='t'>{a}</div><b>{b}</b><span>{c}</span></div>" for a, b, c in plan)
     body = f"""
-<h2>How it compares, and our plan for the finale</h2>
+<h2>Why the two-stage rule, and our plan for the finale</h2>
 <div class="diff">
-  <table class="mx"><thead><tr><th></th><th>Uses payment<br>details</th><th>Uses steps<br>before payment</th><th>Gives a<br>reason</th><th>Scaled<br>response</th></tr></thead>
-  <tbody>{tr}</tbody></table>
   <div>
-    <p class="claim">The main difference: we use what happened before the payment, not only the payment.</p>
-    <div class="why"><span class="lbl">Why not just use a standard classifier?</span>
-    <p>On our synthetic data it catches about 4 points more scams (slide 7). But it cannot say why, and one strong signal
-    can stop a genuine payment. Customers, bank agents and the ombudsman all need to know why a payment was held.</p></div>
+    <p class="claim">A plain logistic regression is also explainable and catches more scams. So what does the rule add?</p>
+    <table class="tbl sm why-t"><thead><tr><th>Same alert rate, synthetic test data</th><th class="r">Logistic regression</th><th class="r">Chakravyuh</th></tr></thead><tbody>
+    <tr><td>Scams caught</td><td class="r">{pct(lrm['recall']['mean'])}</td><td class="r">{pct(C['recall']['mean'])}</td></tr>
+    <tr><td>Genuine payments interrupted per 1,000</td><td class="r">{lrm['fp']['mean']:.2f}</td><td class="r">{C['fp']['mean']:.2f}</td></tr>
+    <tr><td>…of which showed only one stage</td><td class="r">{ss['lr_single_stage_share_of_genuine_alerts'] * 100:.0f}%</td><td class="r"><b>0%</b></td></tr>
+    </tbody></table>
+  </div>
+  <div class="why">
+    <span class="lbl">A genuine payment the rule spares (from our test data)</span>
+    <p>A shopkeeper pays ₹{ex['amount']:,.0f} on a collect request from a new payee. Nothing else is unusual: no call,
+    no screen-sharing, a normal receiving account. Logistic regression interrupts it. Chakravyuh sees one stage, so it only logs it.</p>
+    <p class="small">The cost: scams that only ever show one stage, mostly collect-request scams. We plan a specific collect-request
+    warning for those (finale step 3).</p>
   </div>
 </div>
 <div class="plan">
@@ -399,7 +408,7 @@ def a1():
 <p class="lede">Solid boxes are built. Dashed boxes are simulated with synthetic data. Dotted boxes are planned but not built.</p>
 <div class="arch">
   <div class="plane"><div class="pt">Phone (inside the bank's app)</div><div class="pr">
-    {box('Signal readers', 'Call state, accessibility, app installs, SMS check on the phone. Synthetic for now.', 'SIMULATED')}
+    {box('Signal readers', 'Call state, audio mode, accessibility, known remote apps. 5 of 9 allowed; synthetic for now.', 'SIMULATED')}
     {box('Request builder', '9 yes/no values, amount, payee hash, one-time nonce, timestamp, Play Integrity token.', 'PROPOSED')}
     {box('Warning screens', 'Scam message, two questions, hold screen. Mock-ups and a web demo.', 'SIMULATED')}
   </div></div>
@@ -589,21 +598,20 @@ def x2():
 
 def x3():
     kt = """class ChakravyuhProbes(ctx: Context, integrity: StandardIntegrityTokenProvider) {
+  // Readable by a banking app (5 signals)
   fun evidence(nonce: String): Evidence {
     val ev = mapOf(
-      "call_unknown_active"   to isUnknownCallActive(),
-      "call_long"             to callDurationSec() >= 20 * 60,
-      "video_call"            to voipAudioModeActive(),
-      "sms_scam_flag"         to onDeviceLureClassifier.hitWithin(24.hours),
-      "remote_access"         to screenShareOrRemoteAppRunning(),
-      "sideload_24h"          to installedOutsideStore(within = 24.hours),
-      "accessibility_overlay" to thirdPartyOverlayAndA11yEnabled(),
-      "otp_read_in_call"      to (isUnknownCallActive() && otpNotificationOpened()),
-      "vpa_typed"             to payeeEnteredManually())       // 9 device signals
-      .filterValues { it }                                    // send only true ones
+      "call_long"   to (callActive() && callSeconds() >= 20 * 60),  // TelephonyCallback, READ_PHONE_STATE
+      "video_call"  to (audio.mode == AudioManager.MODE_IN_COMMUNICATION),
+      "remote_access" to (knownRemoteAppInstalled()              // <queries> list of package names
+                          || a11yServicesEnabledByOthers()),       // AccessibilityManager
+      "accessibility_overlay" to lastTouchWasObscured(),           // FLAG_WINDOW_IS_OBSCURED
+      "vpa_typed"   to payeeEnteredManually())                     // our own payment screen
+      .filterValues { it }
+    // Restricted, not read: caller number (call log), SMS text, all installed apps,
+    // other apps' notifications. Fallback: bank checks if its own OTP was sent during a call.
     val body = canonicalJson(ev, amount, payeeHash, nonce, now())
-    val token = integrity.request(requestHash = sha256(body)) // server verifies
-    return Evidence(body, token)
+    return Evidence(body, integrity.request(requestHash = sha256(body)))
   }
 }"""
     assum = [("Real scam rate", "1 in 5,000 sessions", "intercept adjustment"),

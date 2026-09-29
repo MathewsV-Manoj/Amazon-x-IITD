@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 
 const F = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../../eval/out/final.json"), "utf8"));
-const C = F.chakravyuh, B = F.baselines;
+const C = F.chakravyuh, B = F.baselines, J = F.judge;
 const pct = (x, d = 1) => (x * 100).toFixed(d) + "%";
 const ci = (m, d = 1) => `[${(m.lo * 100).toFixed(d)}%, ${(m.hi * 100).toFixed(d)}%]`;
 const adv = Object.fromEntries(F.adversarial.map(a => [a.suppressed, a.recall]));
@@ -68,7 +68,8 @@ function tag(s, word, x, y) {
     valign: "middle", margin: 0, line: { color: style[0], width: 0.75, dashType: style[1] }, isTextBox: true });
 }
 
-// ============ 1. Cover ============
+
+// ------------ slide ------------
 {
   const s = base(1, null, true);
   s.addText("RAKSHAM  ·  Amazon × IIT Delhi  ·  Round 1  ·  Track 2: AI-driven scam pattern recognition",
@@ -100,7 +101,8 @@ function tag(s, word, x, y) {
     "which is how these scams work: the victim is walked through several steps before paying. We look at those steps, not just the payment.");
 }
 
-// ============ 2. Problem ============
+
+// ------------ slide ------------
 {
   const s = base(2, "1  ·  Problem");
   title(s, "In these scams, the victim makes the payment");
@@ -139,7 +141,8 @@ function tag(s, word, x, y) {
     "so the bank sees a valid PIN on her own phone. Rules that only look at the payment either miss it or fire on genuine payments.");
 }
 
-// ============ 3. Idea (dark) ============
+
+// ------------ slide ------------
 {
   const s = base(3, "2  ·  Idea", true);
   title(s, "A scam has four stages. We look for all of them.", true);
@@ -169,7 +172,8 @@ function tag(s, word, x, y) {
     "and 4 about the receiving account. We only interrupt when at least two stages are active.");
 }
 
-// ============ 4. Levels ============
+
+// ------------ slide ------------
 {
   const s = base(4, "3  ·  Response");
   title(s, "Three levels of response");
@@ -199,13 +203,14 @@ function tag(s, word, x, y) {
     s.addText(rate, { x, y: y + 3.35, w: 1.2, h: 0.55, fontFace: HEAD, fontSize: 28, bold: true, color: INK, margin: 0, isTextBox: true });
     text(s, `genuine sessions per 1,000\nmeasured on synthetic data (target ${tgt})`, { x: x + 1.25, y: y + 3.42, w: cw - 1.25, h: 0.55, fontSize: 12, color: MUTED });
   });
-  s.addText("Nothing is blocked permanently. A person decides every hold.", { x: MX, y: 6.65, w: 9, h: 0.35,
+  s.addText("Nothing is blocked permanently. A person decides every hold.", { x: MX, y: 6.8, w: 9, h: 0.35,
     fontFace: HEAD, italic: true, fontSize: 16, color: INK, margin: 0, isTextBox: true });
   s.addNotes("The response grows with the evidence. Level 1 is silent. Level 2 warns and asks two questions but never blocks. " +
     "Level 3 holds the payment for up to 30 minutes and a bank agent reviews it. The rates shown are measured on our synthetic test data.");
 }
 
-// ============ 5. Example ============
+
+// ------------ slide ------------
 {
   const s = base(5, "4  ·  Example");
   title(s, "Example: Mrs R., 68");
@@ -223,7 +228,7 @@ function tag(s, word, x, y) {
     s.addText(st, { x: x - 0.1, y: y0 + 0.85, w: ew - 0.1, h: 0.3, fontFace: BODY, fontSize: 12, color: MUTED, margin: 0, isTextBox: true });
   });
   // two outcomes
-  const oy = 3.75, ow = 4.1;
+  const oy = 3.75, ow = 3.9;
   s.addText("Today", { x: MX, y: oy, w: ow, h: 0.3, fontFace: BODY, fontSize: 13, bold: true, color: MUTED, margin: 0, isTextBox: true });
   s.addText("The money is gone.", { x: MX, y: oy + 0.3, w: ow, h: 0.55, fontFace: HEAD, fontSize: 24, bold: true, color: INK, margin: 0, isTextBox: true });
   text(s, "A “new payee and high amount” rule shows a general warning. The caller tells her to ignore it and she pays. " +
@@ -234,16 +239,18 @@ function tag(s, word, x, y) {
   s.addText("The payment is held.", { x: x2, y: oy + 0.3, w: ow, h: 0.55, fontFace: HEAD, fontSize: 24, bold: true, color: ORANGE, margin: 0, isTextBox: true });
   text(s, "All four stages show up, so it goes to level 3. The screen tells her real officials never ask for money on a call, " +
     "and a bank agent calls her before anything is released.", { x: x2, y: oy + 0.95, w: ow - 0.2, h: 1.4, fontSize: 15 });
-  // phone
-  s.addImage({ path: path.resolve(__dirname, "mockup_tier3.png"), x: 10.25, y: 1.2, w: 2.45, h: 2.45 * 2790 / 1350,
-    altText: "Mock-up of the level 3 hold screen on a phone" });
-  s.addText("Level 3 screen (mock-up)", { x: 10.25, y: 6.4, w: 2.45, h: 0.3, fontFace: BODY, fontSize: 11, color: MUTED,
-    align: "center", margin: 0, isTextBox: true });
+  // level 2 and level 3 screens
+  [["mockup_tier2.png", "Level 2: warn and ask"], ["mockup_tier3.png", "Level 3: hold (her case)"]].forEach(([f, cap], i) => {
+    const x = 9.0 + i * 1.95;
+    s.addImage({ path: path.resolve(__dirname, f), x, y: 1.3, w: 1.8, h: 1.8 * 2790 / 1350, altText: cap + " screen mock-up" });
+    s.addText(cap, { x: x - 0.1, y: 5.12, w: 2.0, h: 0.3, fontFace: BODY, fontSize: 11, color: MUTED, align: "center", margin: 0, isTextBox: true });
+  });
   s.addNotes("Five warning signs appear before the payment. Today a generic rule shows a warning the caller talks her past. " +
     "With Chakravyuh all four stages are active, so the payment is held and she sees a specific message.");
 }
 
-// ============ 6. How the score works ============
+
+// ------------ slide ------------
 {
   const s = base(6, "5  ·  Model");
   title(s, "How the score works");
@@ -273,7 +280,7 @@ function tag(s, word, x, y) {
     "regression (L2) on labelled sessions and are kept at zero or above.", { x: MX, y: 5.9, w: 5.9, h: 0.7, fontSize: 12, color: MUTED });
   // principles
   const rows = [["Non-negative weights", "A missing signal does not change the score, because a fraudster can always hide one."],
-    ["Stage caps", "One stage cannot push the score up on its own (C = 5, 5, 6, 6)."],
+    ["Stage caps", "A safety limit (C = 5, 5, 6, 6). It made no measurable difference on our data."],
     ["Two-stage rule", "We only interrupt when at least two stages are active."],
     ["Real-world scam rate", "Training data is 3.8% scams; we adjust to an assumed 1 in 5,000."],
     ["Fixed thresholds", "Set on a separate dataset to meet the bank’s alert limit, then fixed."]];
@@ -284,7 +291,8 @@ function tag(s, word, x, y) {
     "The two-stage rule is what stops one odd signal, like a new payee, from interrupting a genuine payment.");
 }
 
-// ============ 7. Results ============
+
+// ------------ slide ------------
 {
   const s = base(7, "6  ·  Results");
   title(s, "Results on synthetic data");
@@ -299,36 +307,75 @@ function tag(s, word, x, y) {
     text(s, lab, { x: MX, y: y + 0.72, w: 3.8, h: 0.3, fontSize: 14, color: INK });
     text(s, sub, { x: MX, y: y + 1.0, w: 3.8, h: 0.3, fontSize: 12, color: MUTED });
   });
-  const names = ["Chakravyuh", "Without two-stage rule", "Logistic regression", "Gradient boosting", "XGBoost", "MLP", "“New payee + high amount” rule"];
-  const rec = [C.recall.mean, C.recall_nogate.mean, B["Logistic regression"].recall.mean, B["Gradient boosting"].recall.mean,
-    B["XGBoost"].recall.mean, B["MLP"].recall.mean, B["Rule: new payee + high amount"].recall.mean].map(v => +(v * 100).toFixed(1));
-  const fp = [C.fp.mean, C.fp_nogate.mean, B["Logistic regression"].fp.mean, B["Gradient boosting"].fp.mean,
-    B["XGBoost"].fp.mean, B["MLP"].fp.mean, B["Rule: new payee + high amount"].fp.mean].map(v => +v.toFixed(2));
-  const common = { x: 0, y: 0, w: 0, h: 0, barDir: "bar", catAxisLabelColor: INK2, valAxisLabelColor: MUTED, catAxisLabelFontSize: 11,
-    valAxisLabelFontSize: 10, catAxisLabelFontFace: BODY, valAxisLabelFontFace: BODY, valGridLine: { color: "E8EAED", size: 0.5 },
-    catGridLine: { style: "none" }, showValue: true, dataLabelPosition: "outEnd", dataLabelFontSize: 11, dataLabelFontFace: BODY,
-    dataLabelColor: INK, showLegend: false, showTitle: true, titleFontFace: BODY, titleFontSize: 13, titleColor: INK,
-    catAxisOrientation: "maxMin", barGapWidthPct: 45 };
-  s.addChart(pres.charts.BAR, [{ name: "Recall (%)", labels: names, values: rec }], Object.assign({}, common,
-    { x: 4.6, y: 1.9, w: 4.5, h: 4.1, title: "Scams caught (%)", valAxisMinVal: 0, valAxisMaxVal: 100,
-      chartColors: [ORANGE, "B7BCC4", "4A5568", "4A5568", "4A5568", "4A5568", "B7BCC4"], dataLabelFormatCode: "0.0" }));
-  s.addChart(pres.charts.BAR, [{ name: "Interruptions per 1,000", labels: names, values: fp }], Object.assign({}, common,
-    { x: 9.15, y: 1.9, w: 3.6, h: 4.1, title: "Genuine payments interrupted per 1,000", valAxisMinVal: 0, valAxisMaxVal: 11,
-      catAxisHidden: true, chartColors: [ORANGE, "B7BCC4", "4A5568", "4A5568", "4A5568", "4A5568", "B7BCC4"], dataLabelFormatCode: "0.00" }));
-  const red = Math.round((1 - C.fp.mean / C.fp_nogate.mean) * 100);
+  // hand-drawn chart: scams caught vs genuine payments interrupted (baselines at a matched alert rate)
+  const gx0 = 5.6, gx1 = 12.5, gy0 = 5.45, gy1 = 2.15, X0 = 2.4, X1 = 3.1, Y0 = 91, Y1 = 98;
+  const px = (v) => gx0 + (v - X0) / (X1 - X0) * (gx1 - gx0), py = (v) => gy0 - (v - Y0) / (Y1 - Y0) * (gy0 - gy1);
+  s.addText("Scams caught vs genuine payments interrupted", { x: gx0, y: 1.72, w: 6.9, h: 0.3, fontFace: BODY, bold: true, fontSize: 13, color: INK, margin: 0, isTextBox: true });
+  for (let v = 92; v <= 98; v += 2) {
+    s.addShape(pres.shapes.LINE, { x: gx0, y: py(v), w: gx1 - gx0, h: 0, line: { color: "E8EAED", width: 0.75 } });
+    s.addText(v + "%", { x: gx0 - 0.6, y: py(v) - 0.12, w: 0.5, h: 0.24, fontFace: BODY, fontSize: 10.5, color: MUTED, align: "right", margin: 0, isTextBox: true });
+  }
+  s.addShape(pres.shapes.LINE, { x: gx0, y: gy0, w: gx1 - gx0, h: 0, line: { color: "9AA3AE", width: 0.75 } });
+  for (const v of [2.4, 2.6, 2.8, 3.0]) s.addText(v.toFixed(1), { x: px(v) - 0.3, y: gy0 + 0.05, w: 0.6, h: 0.24, fontFace: BODY, fontSize: 10.5, color: MUTED, align: "center", margin: 0, isTextBox: true });
+  s.addText("genuine payments interrupted per 1,000  →  fewer is better", { x: gx0, y: gy0 + 0.3, w: gx1 - gx0, h: 0.25, fontFace: BODY, fontSize: 11, color: INK2, align: "center", margin: 0, isTextBox: true });
+  const mp = J.matched_fp;
+  const dots = [["Chakravyuh", C.fp.mean, C.recall.mean, ORANGE, "r"],
+    ["Logistic regression", mp["Logistic regression"].fp.mean, mp["Logistic regression"].recall.mean, "4A5568", "r"],
+    ["Gradient boosting", mp["Gradient boosting"].fp.mean, mp["Gradient boosting"].recall.mean, "4A5568", "a"],
+    ["XGBoost", mp["XGBoost"].fp.mean, mp["XGBoost"].recall.mean, "4A5568", "b"],
+    ["MLP", mp["MLP"].fp.mean, mp["MLP"].recall.mean, "4A5568", "r"]];
+  dots.forEach(([n, fx, ry, col, pos]) => {
+    const cx = px(fx), cy = py(ry * 100), r = 0.09;
+    s.addShape(pres.shapes.OVAL, { x: cx - r, y: cy - r, w: 2 * r, h: 2 * r, fill: { color: col }, line: { color: col } });
+    const lab = `${n}  ${pct(ry)}`;
+    const o = { fontFace: BODY, fontSize: 11, color: col === ORANGE ? ORANGE : INK2, bold: col === ORANGE, margin: 0, isTextBox: true, h: 0.24, w: 2.4 };
+    if (pos === "r") s.addText(lab, { ...o, x: cx + 0.15, y: cy - 0.12 });
+    else if (pos === "a") s.addText(lab, { ...o, x: cx - 1.2, y: cy - 0.38, align: "center" });
+    else s.addText(lab, { ...o, x: cx - 1.2, y: cy + 0.13, align: "center" });
+  });
+  const mm = J.matched_fp, mlo = Math.min(...Object.values(mm).map(v => v.recall.mean)), mhi = Math.max(...Object.values(mm).map(v => v.recall.mean));
   text(s, [{ text: "What we give up. ", options: { bold: true, color: INK } },
-    { text: `Standard classifiers catch ${(B["Logistic regression"].recall.mean * 100).toFixed(1)}–${(B["MLP"].recall.mean * 100).toFixed(1)}% of scams ` +
-      `but interrupt more genuine payments. The two-stage rule costs us ${((C.recall_nogate.mean - C.recall.mean) * 100).toFixed(1)} points ` +
-      `of recall; in return there are ${red}% fewer interruptions and every alert lists the signals behind it.` }],
-    { x: 4.6, y: 6.15, w: 8.1, h: 0.75, fontSize: 13 });
+    { text: `At a similar alert rate (each tuned to ours), standard classifiers catch ${pct(mlo)}–${pct(mhi)} of scams, about 4 points more. ` +
+      `${Math.round(J.gap_by_scenario.collect_request * 100)}% of that gap is collect-request scams, which only show one stage. ` +
+      `The rule-based check (“new payee + high amount”, not shown) catches ${pct(B["Rule: new payee + high amount"].recall.mean)} at ${B["Rule: new payee + high amount"].fp.mean.toFixed(1)} per 1,000.` }],
+    { x: 4.6, y: 6.2, w: 8.1, h: 0.75, fontSize: 12.5 });
   s.addNotes(`Recall ${pct(C.recall.mean)} with a 95% interval of ${ci(C.recall)}, at ${C.fp.mean.toFixed(2)} interruptions per 1,000. ` +
-    "Trained on one synthetic dataset, thresholds set on another, tested on 8 more. Standard classifiers catch slightly more scams, " +
-    "but they interrupt more genuine payments and cannot explain why.");
+    "Every model is trained, tuned and tested on the same synthetic data. The standard classifiers catch slightly more scams; the next slide shows what our two-stage rule buys in exchange.");
 }
 
-// ============ 8. Tactics ============
+// ------------ slide ------------
 {
-  const s = base(8, "7  ·  Robustness");
+  const s = base(8, "7  ·  Why the two-stage rule");
+  title(s, "Why not just use logistic regression?");
+  text(s, "Logistic regression is also explainable and catches more scams. So we measured what our two-stage rule adds, at the same alert rate.",
+    { x: MX, y: 1.45, w: 11, h: 0.5, fontSize: 16 });
+  const ss = J.single_stage, lrm = J.matched_fp["Logistic regression"], ex = ss.example;
+  const rows = [["", "Logistic regression", "Chakravyuh"],
+    ["Scams caught", pct(lrm.recall.mean), pct(C.recall.mean)],
+    ["Genuine payments interrupted per 1,000", lrm.fp.mean.toFixed(2), C.fp.mean.toFixed(2)],
+    ["…of which showed only one stage", Math.round(ss.lr_single_stage_share_of_genuine_alerts * 100) + "%", "0%"]];
+  s.addTable(rows.map((r, i) => r.map((c, j) => ({ text: c, options: { bold: i === 0 || (i === 3 && j === 2), align: j ? "right" : "left",
+    color: i === 0 ? INK2 : (j === 2 && i === 3 ? ORANGE : INK), fontSize: i === 0 ? 13 : 16 } }))),
+    { x: MX, y: 2.3, w: 6.6, colW: [3.8, 1.5, 1.3], fontFace: BODY, border: HB(), rowH: [0.45, 0.6, 0.6, 0.6], valign: "middle", margin: [0.04, 0.08, 0.04, 0.0] });
+  // example
+  const ex_x = 7.7;
+  s.addShape(pres.shapes.RECTANGLE, { x: ex_x, y: 2.2, w: 5.03, h: 2.75, fill: { color: TINT }, line: { color: TINT } });
+  s.addText("A genuine payment the rule spares", { x: ex_x + 0.3, y: 2.38, w: 4.5, h: 0.3, fontFace: BODY, bold: true, fontSize: 14, color: INK, margin: 0, isTextBox: true });
+  s.addText(`₹${ex.amount.toLocaleString("en-IN")}`, { x: ex_x + 0.3, y: 2.75, w: 4.5, h: 0.6, fontFace: HEAD, bold: true, fontSize: 30, color: INK, margin: 0, isTextBox: true });
+  text(s, "A shopkeeper pays on a collect request from a new payee. No call, no screen-sharing, a normal receiving account. " +
+    "Logistic regression interrupts it. Chakravyuh sees one stage, so it only logs it.", { x: ex_x + 0.3, y: 3.45, w: 4.45, h: 1.3, fontSize: 14 });
+  s.addText("From our synthetic test data.", { x: ex_x + 0.3, y: 4.62, w: 4.45, h: 0.25, fontFace: BODY, italic: true, fontSize: 11, color: MUTED, margin: 0, isTextBox: true });
+  // cost
+  s.addText("The cost", { x: MX, y: 5.35, w: 4, h: 0.35, fontFace: BODY, bold: true, fontSize: 15, color: INK, margin: 0, isTextBox: true });
+  text(s, "Scams that only ever show one stage get through, mostly collect-request scams. We will add a specific warning for " +
+    "collect requests from individuals and test it in the finale.", { x: MX, y: 5.7, w: 11.5, h: 0.8, fontSize: 15 });
+  s.addNotes("This answers the obvious question from an ML judge. At the same alert rate, logistic regression catches about 4 points more scams, " +
+    "but half of the genuine payments it interrupts show only one stage of a scam. Our rule never does that. The price is collect-request scams, which we will handle with a targeted warning.");
+}
+
+// ------------ slide ------------
+{
+  const s = base(9, "8  ·  Robustness");
   title(s, "What if the fraudster changes tactics?");
   const rows = [
     ["Hide their tracks?\nHang up before paying, skip screen-sharing, send less.",
@@ -367,9 +414,35 @@ function tag(s, word, x, y) {
     "Two of these defences are designs we have not tested yet, and they are marked that way.");
 }
 
-// ============ 9. Data ============
+
+// ------------ slide ------------
 {
-  const s = base(9, "8  ·  Privacy");
+  const s = base(10, "9  ·  Feasibility");
+  title(s, "Which phone signals a banking app can actually read");
+  text(s, "Android and Google Play restrict some of what an app can see. We checked each of our 9 phone signals.",
+    { x: MX, y: 1.45, w: 11, h: 0.4, fontSize: 16 });
+  const ok = [["Call active and how long", "phone-state permission"], ["Video or VoIP call", "audio mode, no permission"],
+    ["Screen-sharing or remote-control app", "known app list + accessibility services"], ["App drawing over our screen", "obscured-touch flag"],
+    ["Payee typed in by hand", "our own payment screen"]];
+  const no = [["Caller not in contacts", "call log is restricted", "use call length only"], ["Scam SMS received", "SMS access is restricted", "drop on the phone"],
+    ["Any app sideloaded", "all-apps visibility is restricted", "check a fixed list of apps"], ["OTP opened during a call", "other apps’ notifications", "bank checks its own OTP timing"]];
+  s.addText("Readable (5)", { x: MX, y: 2.1, w: 5, h: 0.35, fontFace: BODY, bold: true, fontSize: 16, color: INK, margin: 0, isTextBox: true });
+  s.addTable(ok.map(([a, b]) => [{ text: "✓", options: { color: INK, bold: true } }, { text: a, options: { color: INK } }, { text: b, options: { color: MUTED, fontSize: 12 } }]),
+    { x: MX, y: 2.5, w: 5.8, colW: [0.35, 2.85, 2.6], fontFace: BODY, fontSize: 14, border: HB(), rowH: 0.5, valign: "middle", margin: [0.03, 0.06, 0.03, 0.0] });
+  s.addText("Restricted (4), with fallbacks", { x: 6.85, y: 2.1, w: 5.5, h: 0.35, fontFace: BODY, bold: true, fontSize: 16, color: ORANGE, margin: 0, isTextBox: true });
+  s.addTable(no.map(([a, b, c]) => [{ text: a, options: { color: INK } }, { text: b, options: { color: MUTED, fontSize: 12 } }, { text: c, options: { color: INK2, fontSize: 12 } }]),
+    { x: 6.85, y: 2.5, w: 5.88, colW: [2.3, 1.9, 1.68], fontFace: BODY, fontSize: 14, border: HB(), rowH: 0.62, valign: "middle", margin: [0.03, 0.06, 0.03, 0.0] });
+  s.addShape(pres.shapes.RECTANGLE, { x: MX, y: 5.45, w: W - 2 * MX, h: 1.25, fill: { color: "FDF1EA" }, line: { color: "FDF1EA" } });
+  s.addText(pct(J.feasible_only.recall.mean), { x: MX + 0.3, y: 5.6, w: 2.4, h: 0.9, fontFace: HEAD, bold: true, fontSize: 40, color: ORANGE, margin: 0, isTextBox: true });
+  text(s, `Recall when we retrain with only the 5 readable phone signals, at ${J.feasible_only.fp.mean.toFixed(2)} interruptions per 1,000 ` +
+    `(synthetic data). With all 9 it is ${pct(C.recall.mean)}. Most of the evidence comes from the bank side, so losing the restricted signals costs little.`,
+    { x: MX + 2.8, y: 5.65, w: 8.9, h: 0.95, fontSize: 15 });
+  s.addNotes("Four of the phone signals need access that Google Play restricts, such as the call log and SMS. We removed them and retrained: recall only drops from 92.3 to 91.5 percent.");
+}
+
+// ------------ slide ------------
+{
+  const s = base(11, "10  ·  Privacy");
   title(s, "What data we use");
   const colY = 1.65;
   s.addText("Stays on the phone", { x: MX, y: colY, w: 3, h: 0.35, fontFace: BODY, bold: true, fontSize: 15, color: INK, margin: 0, isTextBox: true });
@@ -384,13 +457,14 @@ function tag(s, word, x, y) {
   s.addText("Sent to the bank", { x: x2, y: colY, w: 4.5, h: 0.35, fontFace: BODY, bold: true, fontSize: 15, color: ORANGE, margin: 0, isTextBox: true });
   s.addText([{ text: "9", options: { fontFace: HEAD, fontSize: 30, bold: true, color: ORANGE } },
     { text: "  yes/no values, plus the amount", options: { fontSize: 16, color: INK, breakLine: true } },
-    { text: "and a hashed payee ID", options: { fontSize: 16, color: INK } }],
-    { x: x2, y: colY + 0.4, w: 4.6, h: 0.85, fontFace: BODY, margin: 0, valign: "top", isTextBox: true });
+    { text: "and a hashed payee ID", options: { fontSize: 16, color: INK, breakLine: true } },
+    { text: "Items 1, 4, 6 and 8 are restricted on Android; see slide 10.", options: { fontSize: 11, color: MUTED } }],
+    { x: x2, y: colY + 0.4, w: 4.6, h: 0.95, fontFace: BODY, margin: 0, valign: "top", isTextBox: true });
   const dev = ["on a call with an unknown number", "call longer than 20 minutes", "video call active", "scam-lure SMS in last 24 h",
     "screen-sharing app running", "app sideloaded in last 24 h", "app drawing over the payment screen", "OTP opened during the call",
     "payee typed in by hand"];
   s.addText(dev.map((t, i) => ({ text: t, options: { bullet: { type: "number" }, breakLine: i < dev.length - 1 } })),
-    { x: x2, y: colY + 1.35, w: 4.4, h: 2.55, fontFace: BODY, fontSize: 13, color: INK2, margin: 0, paraSpaceAfter: 3, valign: "top", isTextBox: true });
+    { x: x2, y: colY + 1.45, w: 4.4, h: 2.45, fontFace: BODY, fontSize: 13, color: INK2, margin: 0, paraSpaceAfter: 2, valign: "top", isTextBox: true });
   const x3 = 9.1;
   s.addText("Already at the bank", { x: x3, y: colY, w: 3.6, h: 0.35, fontFace: BODY, bold: true, fontSize: 15, color: INK, margin: 0, isTextBox: true });
   s.addText([{ text: "7", options: { fontFace: HEAD, fontSize: 26, bold: true, color: INK } },
@@ -414,157 +488,58 @@ function tag(s, word, x, y) {
     "Every decision is signed so it can be checked later in a complaint.");
 }
 
-// ============ 10. Comparison ============
-{
-  const s = base(10, "9  ·  Comparison");
-  title(s, "How it compares");
-  const Y = "✓", N = "—";
-  const hdr = ["", "Uses payment\ndetails", "Uses steps\nbefore payment", "Gives a\nreason", "Scaled\nresponse"]
-    .map(t => ({ text: t, options: { bold: true, color: INK2, fontSize: 13, align: t ? "center" : "left" } }));
-  const rows = [["Transaction rules", Y, N, Y, N], ["Standard ML classifier", Y, "partly", "after the fact", N], ["Chakravyuh", Y, Y, Y, Y]]
-    .map(r => r.map((c, i) => ({ text: c, options: { align: i ? "center" : "left", color: r[0] === "Chakravyuh" ? ORANGE : (i ? INK2 : INK),
-      bold: r[0] === "Chakravyuh", fontSize: i && c.length === 1 ? 18 : 15 } })));
-  s.addTable([hdr, ...rows], { x: MX, y: 1.55, w: 7.4, colW: [2.6, 1.2, 1.3, 1.15, 1.15], fontFace: BODY, valign: "middle",
-    border: HB(), rowH: [0.7, 0.52, 0.52, 0.52], margin: [0.05, 0.08, 0.05, 0.0] });
-  s.addText("The main difference: we use what happened before the payment, not only the payment.",
-    { x: 8.5, y: 1.75, w: 4.2, h: 1.4, fontFace: HEAD, fontSize: 22, color: INK, margin: 0, valign: "top", isTextBox: true });
-  s.addText("Why not just use a standard classifier?", { x: 8.5, y: 3.35, w: 4.2, h: 0.35, fontFace: BODY, bold: true, fontSize: 14, color: INK, margin: 0, isTextBox: true });
-  text(s, "On our synthetic data it catches about 4 points more scams. But it cannot say why, and one strong signal can stop a genuine " +
-    "payment. Customers, bank agents and the ombudsman all need to know why a payment was held.", { x: 8.5, y: 3.7, w: 4.2, h: 1.5, fontSize: 14 });
-  s.addImage({ path: path.resolve(__dirname, "mockup_agent.png"), x: MX, y: 4.2, w: 4.4, h: 4.4 * 1710 / 2880,
-    altText: "Mock-up of the bank agent screen showing a held payment and its reasons" });
-  text(s, "What a bank agent would see for a held payment (mock-up): the stages that fired and the signals behind them.",
-    { x: MX + 4.65, y: 5.2, w: 2.6, h: 1.2, fontSize: 12, color: MUTED });
-  s.addNotes("The table shows the gap we fill. Rules explain but ignore context; classifiers use features but cannot explain. " +
-    "We use the whole scam sequence and always give a reason.");
-}
 
-// ============ 11. Architecture ============
+// ------------ slide ------------
 {
-  const s = base(11, "10  ·  Architecture");
-  title(s, "System architecture");
-  [["built", "solid", INK, 1.5], ["simulated with synthetic data", "dash", MUTED, 1], ["planned, not built", "sysDot", MUTED, 1]].forEach(([l, d, c, wd], i) => {
-    const lx = MX + [0, 1.4, 4.55][i];
+  const s = base(12, "11  ·  Deployment");
+  title(s, "How it would run in a bank");
+  [["built", "solid", INK, 1.5], ["synthetic data", "dash", MUTED, 1], ["planned", "sysDot", MUTED, 1]].forEach(([l, d, c, wd], i) => {
+    const lx = MX + [0, 1.3, 3.4][i];
     s.addShape(pres.shapes.RECTANGLE, { x: lx, y: 1.45, w: 0.45, h: 0.25, fill: { color: WHITE }, line: { color: c, width: wd, dashType: d } });
-    s.addText(l, { x: lx + 0.55, y: 1.43, w: 2.3, h: 0.3, fontFace: BODY, fontSize: 13, color: INK2, margin: 0, isTextBox: true });
+    s.addText(l, { x: lx + 0.55, y: 1.43, w: 1.8, h: 0.3, fontFace: BODY, fontSize: 13, color: INK2, margin: 0, isTextBox: true });
   });
   const box = (x, y, w, h, t, sub, st) => {
-    const style = { built: [INK, "solid", 1.5, WHITE], simulated: [MUTED, "dash", 1, WHITE], planned: [MUTED, "sysDot", 1, WHITE] }[st];
-    s.addShape(pres.shapes.RECTANGLE, { x, y, w, h, fill: { color: style[3] }, line: { color: style[0], width: style[2], dashType: style[1] } });
-    s.addText(t, { x: x + 0.12, y: y + 0.08, w: w - 0.24, h: 0.32, fontFace: BODY, fontSize: 14, bold: true, color: st === "planned" ? INK2 : INK, margin: 0, isTextBox: true });
-    text(s, sub, { x: x + 0.12, y: y + 0.44, w: w - 0.24, h: h - 0.5, fontSize: 11.5, color: st === "planned" ? MUTED : INK2 });
+    const style = { built: [INK, "solid", 1.5], simulated: [MUTED, "dash", 1], planned: [MUTED, "sysDot", 1] }[st];
+    s.addShape(pres.shapes.RECTANGLE, { x, y, w, h, fill: { color: WHITE }, line: { color: style[0], width: style[2], dashType: style[1] } });
+    s.addText(t, { x: x + 0.12, y: y + 0.08, w: w - 0.24, h: 0.3, fontFace: BODY, fontSize: 13, bold: true, color: st === "planned" ? INK2 : INK, margin: 0, isTextBox: true });
+    text(s, sub, { x: x + 0.12, y: y + 0.4, w: w - 0.24, h: h - 0.45, fontSize: 11, color: st === "planned" ? MUTED : INK2 });
   };
-  const plane = (y, label) => { hline(s, MX, y, W - 2 * MX, INK, 1); s.addText(label, { x: MX, y: y + 0.06, w: 6, h: 0.28, fontFace: BODY, fontSize: 13, bold: true, color: INK, margin: 0, isTextBox: true }); };
-  const bw = (W - 2 * MX - 0.4) / 3, bh = 0.95;
-  plane(1.9, "Phone (inside the bank’s app)");
-  box(MX, 2.3, bw, bh, "Signal readers", "Call state, accessibility, app installs, SMS check on the phone.", "simulated");
-  box(MX + bw + 0.2, 2.3, bw, bh, "Request builder", "9 yes/no values, amount, payee hash, nonce, timestamp, Play Integrity token.", "planned");
-  box(MX + 2 * (bw + 0.2), 2.3, bw, bh, "Warning screens", "Scam message, two questions, hold screen. Mock-ups and a web demo.", "simulated");
-  text(s, "1. signals sent ↓        5. level, message and record ID sent back ↑", { x: MX, y: 3.3, w: 10, h: 0.3, fontSize: 11, color: MUTED });
-  plane(3.65, "Bank fraud team servers");
-  const bw4 = (W - 2 * MX - 0.6) / 4;
-  box(MX, 4.05, bw4, bh, "Scoring server", "FastAPI endpoint: stage scores, two-stage rule, level, reasons.", "built");
-  box(MX + (bw4 + 0.2), 4.05, bw4, bh, "Input checks", "Rejects repeated nonces, old requests and unknown signals.", "built");
-  box(MX + 2 * (bw4 + 0.2), 4.05, bw4, bh, "Signed records", "HMAC-SHA256 on every decision.", "built");
-  box(MX + 3 * (bw4 + 0.2), 4.05, bw4, bh, "Agent screen", "Queue of held payments; two staff to release.", "planned");
-  text(s, "2. payee data looked up ↑        3. scored        4. level-3 hold sent to payments →        6. confirmed outcomes saved ↓",
-    { x: MX, y: 5.05, w: 11, h: 0.3, fontSize: 11, color: MUTED });
-  plane(5.4, "Bank data, payments and reporting");
-  const bw5 = (W - 2 * MX - 0.8) / 5, bh2 = 1.05;
-  box(MX, 5.8, bw5, bh2, "Mule score", "New senders, speed of outflow, account age.", "simulated");
-  box(MX + (bw5 + 0.2), 5.8, bw5, bh2, "Suspect list", "A yes/no flag, never shown to customers.", "simulated");
-  box(MX + 2 * (bw5 + 0.2), 5.8, bw5, bh2, "Retraining", "Weekly, bank-confirmed cases only.", "planned");
-  box(MX + 3 * (bw5 + 0.2), 5.8, bw5, bh2, "Payment hold", "Time-limited, through the bank’s payment system.", "planned");
-  box(MX + 4 * (bw5 + 0.2), 5.8, bw5, bh2, "Reporting", "Confirmed scams to I4C (CFCFRMS / 1930).", "planned");
-  s.addText("We have no integration with Amazon, NPCI, I4C or any bank yet.", { x: MX, y: 6.95, w: 9, h: 0.25, fontFace: BODY, fontSize: 11, italic: true, color: MUTED, margin: 0, isTextBox: true });
-  s.addNotes("This separates what is built from what is simulated and what is planned. The scoring server, input checks and signed records " +
-    "are built and tested. The phone SDK, payment hold and agent screen are planned.");
-}
-
-// ============ 12. Security ============
-{
-  const s = base(12, "11  ·  Security");
-  title(s, "Following one payment through the system");
-  const steps = [["Customer taps Pay", "The app sends the signals that are true, the amount, a payee hash, a nonce and a timestamp."],
-    ["Check the request", "The server rejects unknown signals, repeated nonces and anything older than 15 seconds."],
-    ["Score", "Payee data is added, then stage scores, the two-stage rule, the level and the top five reasons."],
-    ["Respond", "Level 0 allows, 1 logs, 2 warns and asks two questions, 3 holds the payment."],
-    ["Review", "Held payments go to a bank agent with the record and reasons. Two staff approve a release."],
-    ["Close", "Released, or confirmed and reported. The result is saved for retraining."]];
-  steps.forEach(([h, b], i) => {
-    const y = 1.6 + i * 0.85;
-    s.addShape(pres.shapes.OVAL, { x: MX, y, w: 0.42, h: 0.42, fill: { color: i === 3 ? ORANGE : NAVY }, line: { color: i === 3 ? ORANGE : NAVY } });
-    s.addText(String(i + 1), { x: MX, y, w: 0.42, h: 0.42, fontFace: HEAD, fontSize: 15, bold: true, color: WHITE, align: "center", valign: "middle", margin: 0, isTextBox: true });
-    s.addText(h, { x: MX + 0.6, y: y - 0.02, w: 4.6, h: 0.3, fontFace: BODY, fontSize: 15, bold: true, color: INK, margin: 0, isTextBox: true });
-    text(s, b, { x: MX + 0.6, y: y + 0.28, w: 4.6, h: 0.5, fontSize: 12 });
-  });
-  const ctl = [["Old or repeated requests", "One-time nonce and a 15-second limit", "built"],
-    ["Extra or fake fields", "Only the 20 known signals are accepted", "built"],
-    ["Edited decision records", "Each record signed with HMAC-SHA256", "built"],
-    ["Fake or modified app", "Play Integrity token tied to a hash of the request", "planned"],
-    ["Staff misuse", "Two approvers, both written into the record", "planned"],
-    ["Record store leak", "No raw content in records; identity stored apart", "design only"],
-    ["Poisoned labels", "Retrain only on bank-confirmed cases", "design only"]];
-  s.addText("Security checks", { x: 6.2, y: 1.55, w: 4, h: 0.3, fontFace: BODY, bold: true, fontSize: 15, color: INK, margin: 0, isTextBox: true });
-  s.addTable([[{ text: "Risk", options: { bold: true, color: INK2 } }, { text: "What we do", options: { bold: true, color: INK2 } }, { text: "", options: {} }],
-    ...ctl.map(([a, b]) => [{ text: a, options: { color: INK } }, { text: b, options: { color: INK2 } }, { text: "" }])],
-    { x: 6.2, y: 1.95, w: 6.53, colW: [2.2, 3.13, 1.2], fontFace: BODY, fontSize: 12.5, valign: "middle",
-      border: HB(), rowH: 0.52, margin: [0.04, 0.08, 0.04, 0.0] });
-  ctl.forEach((c, i) => tag(s, c[2], 6.2 + 5.33 + 0.1, 1.95 + 0.52 * (i + 1) + 0.13));
-  text(s, "If a customer complains about a hold, they quote the record ID on their screen and the bank can see exactly which signals caused it.",
-    { x: 6.2, y: 6.25, w: 6.5, h: 0.6, fontSize: 12, color: MUTED });
-  s.addNotes("The three built controls are covered by automated tests, including one that replays a request and checks it is rejected. " +
-    "The others are planned or design-only and labelled that way.");
-}
-
-// ============ 13. Rollout & cost ============
-{
-  const s = base(13, "12  ·  Rollout and cost");
-  title(s, "Rollout plan and cost estimates");
-  const R = [["Weeks 0–6", "Shadow mode", "Score real payments but show nothing. Measure the alert rate and reset thresholds."],
-    ["Weeks 6–10", "Levels 1 and 2", "Customers who opt in, and large payments to individuals. Move on only if alerts stay within the limit."],
-    ["From week 10", "Level 3", "Payment holds with agent review and two-person release."]];
-  R.forEach(([w, h, b], i) => {
-    const y = 1.7 + i * 1.2;
-    s.addText(w, { x: MX, y, w: 1.5, h: 0.3, fontFace: BODY, fontSize: 13, bold: true, color: ORANGE, margin: 0, isTextBox: true });
-    s.addText(h, { x: MX + 1.6, y, w: 3.8, h: 0.3, fontFace: BODY, fontSize: 16, bold: true, color: INK, margin: 0, isTextBox: true });
-    text(s, b, { x: MX + 1.6, y: y + 0.35, w: 3.9, h: 0.75, fontSize: 13 });
-  });
-  s.addText("Speed", { x: MX, y: 5.35, w: 3, h: 0.3, fontFace: BODY, fontSize: 14, bold: true, color: INK, margin: 0, isTextBox: true });
-  text(s, `Scoring takes about ${C.latency_us.toFixed(0)} µs per session on our machine. We aim for under 40 ms for the full round trip from the phone, but have not measured it.`,
-    { x: MX, y: 5.65, w: 5.4, h: 0.9, fontSize: 13 });
-  // estimates panel
-  const px = 6.6;
-  s.addShape(pres.shapes.RECTANGLE, { x: px, y: 1.55, w: 6.13, h: 5.35, fill: { color: TINT }, line: { color: TINT } });
-  s.addText("Estimates based on assumptions, not measured results", { x: px + 0.3, y: 1.72, w: 5.6, h: 0.3, fontFace: BODY, italic: true, fontSize: 13, color: ORANGE, margin: 0, isTextBox: true });
-  const tbl = (y, head, rows, totalIdx) => {
-    s.addText(head, { x: px + 0.3, y, w: 5.6, h: 0.3, fontFace: BODY, bold: true, fontSize: 14, color: INK, margin: 0, isTextBox: true });
-    s.addTable(rows.map((r, i) => [{ text: r[0], options: { color: i === totalIdx ? INK : INK2, bold: i === totalIdx } },
-      { text: r[1], options: { align: "right", color: i === totalIdx ? ORANGE : INK, bold: i === totalIdx } }]),
-      { x: px + 0.3, y: y + 0.35, w: 5.55, colW: [4.0, 1.55], fontFace: BODY, fontSize: 12.5, rowH: 0.36,
-        border: HB(RULE, 0.5), margin: [0.03, 0.02, 0.03, 0.0] });
+  const L = MX, bw = 2.35, g = 0.15, bh = 0.95;
+  const row = (y, label, items) => {
+    s.addText(label, { x: L, y, w: 7.5, h: 0.28, fontFace: BODY, fontSize: 12, bold: true, color: INK2, margin: 0, isTextBox: true });
+    items.forEach((it, i) => box(L + i * (bw + g), y + 0.32, bw, bh, ...it));
   };
-  tbl(2.2, "Most that could be saved per year", [["National reported loss, 2024 (MHA)", "₹22,845 cr"],
-    ["× share for one pilot bank (our assumption)", "2%"], ["× recall on synthetic data", pct(C.recall.mean)],
-    ["= upper limit on savings", `₹${UPPER_CR} cr`]], 3);
-  text(s, "Assumes every level-2 or level-3 alert stops the whole loss. Some customers pay anyway, so the real figure would be lower.",
-    { x: px + 0.3, y: 3.95, w: 5.55, h: 0.5, fontSize: 11, color: MUTED });
-  tbl(4.5, "Cost for 30 million users, 250 payments each per year", [["Servers (6 instances)", "₹4.2 lakh / yr"],
-    ["Storing signed records (2.6 TB / yr)", "₹0.6 lakh / yr"], ["Genuine payments held at level 3", `≈ ${HOLDS_DAY.toLocaleString("en-IN")} / day`],
-    ["Agent time at 5 minutes each", `≈ ${AGENT_H} h / day`]], 3);
-  text(s, "Servers are cheap; staff time for reviews is the main cost. Development cost not included.",
-    { x: px + 0.3, y: 6.35, w: 5.55, h: 0.45, fontSize: 11, color: MUTED });
-  s.addNotes("The savings number is an upper limit based on an assumed share of the national loss, not a result. " +
-    "The main running cost is people reviewing held payments, so the bank should set the level-3 limit carefully.");
+  row(1.95, "Phone (inside the bank’s app)", [["Signal readers", "5 readable phone signals.", "simulated"],
+    ["Request builder", "Nonce, timestamp, Play Integrity.", "planned"], ["Warning screens", "Level 2 and 3 screens.", "simulated"]]);
+  row(3.35, "Bank fraud servers", [["Scoring server", "Stages, rule, level, reasons.", "built"],
+    ["Input checks + records", "Replay checks, HMAC signing.", "built"], ["Agent screen", "Held payments, 2-person release.", "planned"]]);
+  row(4.75, "Bank data and payments", [["Mule score, suspect list", "From the bank’s own data.", "simulated"],
+    ["Payment hold", "Time-limited, before the PIN.", "planned"], ["Reporting", "Confirmed scams to I4C / 1930.", "planned"]]);
+  s.addText("No integration with Amazon, NPCI, I4C or any bank exists yet.", { x: MX, y: 6.2, w: 7.4, h: 0.3, fontFace: BODY, italic: true, fontSize: 11, color: MUTED, margin: 0, isTextBox: true });
+  // right column: rollout + cost
+  const rx = 8.55;
+  s.addText("Rollout", { x: rx, y: 1.95, w: 4, h: 0.3, fontFace: BODY, bold: true, fontSize: 15, color: INK, margin: 0, isTextBox: true });
+  [["Weeks 0–6", "Shadow mode: score, show nothing, tune thresholds."], ["Weeks 6–10", "Levels 1 and 2 for customers who opt in."],
+    ["From week 10", "Level 3 holds with agent review."]].forEach(([a, b], i) => {
+    const y = 2.35 + i * 0.62;
+    s.addText(a, { x: rx, y, w: 1.3, h: 0.3, fontFace: BODY, bold: true, fontSize: 12, color: ORANGE, margin: 0, isTextBox: true });
+    text(s, b, { x: rx + 1.35, y, w: 2.85, h: 0.55, fontSize: 12 });
+  });
+  s.addText("Running cost (estimate)", { x: rx, y: 4.4, w: 4.2, h: 0.3, fontFace: BODY, bold: true, fontSize: 15, color: INK, margin: 0, isTextBox: true });
+  text(s, [{ text: "Servers and storage: ", options: { bold: true, color: INK } }, { text: "about ₹5 lakh a year for 30 million users.", options: { breakLine: true } },
+    { text: "Staff: ", options: { bold: true, color: INK } }, { text: `about ${HOLDS_DAY.toLocaleString("en-IN")} genuine payments held a day, roughly ${AGENT_H} agent-hours. This is the real cost.` }],
+    { x: rx, y: 4.75, w: 4.2, h: 1.4, fontSize: 12.5 });
+  s.addNotes("The scoring server, input checks and signed records are built and tested. The phone SDK, payment hold and agent screen are planned. " +
+    "Running cost is small for servers; the main cost is staff reviewing held payments.");
 }
 
-// ============ 14. Finale plan ============
+// ------------ slide ------------
 {
-  const s = base(14, "13  ·  Next steps");
+  const s = base(13, "12  ·  Next steps");
   title(s, "What we will build and show in the 48-hour finale");
   const plan = [["H+0–8", "Replay harness", "Run saved test sessions through the server and check the records."],
-    ["H+8–20", "Android signals", "Read the 9 phone signals on a real Android phone and check them."],
-    ["H+20–32", "Attack our model", "Try to beat it with three changed scams, then retrain."],
+    ["H+8–20", "Android signals", "Read the 5 allowed phone signals on one test phone."],
+    ["H+20–32", "Collect-request rule", "Add the targeted warning, re-test, then attack our own model."],
     ["H+32–44", "End-to-end run", "100 sessions through to agent review and release or report."],
     ["H+44–48", "Security review", "Walk through records, replay checks, two-person release, known limits."]];
   const cw = (W - 2 * MX) / 5, y = 2.25;
@@ -583,33 +558,28 @@ function tag(s, word, x, y) {
     { x: MX + 0.3, y: by + 0.6, w: bw - 0.6, h: 1.0, fontSize: 14 });
   s.addShape(pres.shapes.RECTANGLE, { x: MX + bw + 0.4, y: by, w: bw, h: 1.75, fill: { color: WHITE }, line: { color: MUTED, width: 1, dashType: "sysDot" } });
   s.addText("Not built yet", { x: MX + bw + 0.7, y: by + 0.2, w: bw - 0.6, h: 0.3, fontFace: BODY, bold: true, fontSize: 15, color: INK, margin: 0, isTextBox: true });
-  text(s, "Android SDK · payment hold · agent screen · testing on real bank data",
+  text(s, "Android SDK · collect-request rule · payment hold · agent screen · testing on real bank data",
     { x: MX + bw + 0.7, y: by + 0.6, w: bw - 0.6, h: 1.0, fontSize: 14 });
-  s.addNotes("In the finale we will move the phone signals from synthetic to real, attack our own model, and run 100 sessions end to end.");
+  s.addNotes("The finale plan is scoped to what we can show: the five allowed phone signals on one phone, the collect-request warning, and a 100-session end-to-end run.");
 }
 
-// ============ 15. Closing (dark) ============
+// ------------ slide ------------
 {
-  const s = base(15, null, true);
-  s.addText("Chakravyuh", { x: MX + 0.1, y: 0.9, w: 8, h: 0.9, fontFace: HEAD, fontSize: 44, bold: true, color: ONNAVY, margin: 0, isTextBox: true });
-  s.addText("Intercept the scam workflow, not the transaction.", { x: MX + 0.1, y: 1.8, w: 10, h: 0.5, fontFace: HEAD, italic: true, fontSize: 22, color: NAVYMUTED, margin: 0, isTextBox: true });
-  const K = [[pct(C.recall.mean), "of synthetic scam sessions reach level 2 or 3"], [`${C.fp.mean.toFixed(2)} / 1,000`, "genuine payments interrupted"],
-    ["20", "signals, none of them raw audio, text or screen content"]];
-  K.forEach(([a, b], i) => {
-    const x = MX + 0.1 + i * 4.0;
-    s.addText(a, { x, y: 3.1, w: 3.7, h: 0.9, fontFace: HEAD, fontSize: 40, bold: true, color: i === 0 ? ORANGE : ONNAVY, margin: 0, isTextBox: true });
-    text(s, b, { x, y: 4.0, w: 3.5, h: 0.7, fontSize: 15, color: NAVYMUTED });
-  });
+  const s = base(14, null, true);
+  s.addText("Chakravyuh", { x: MX + 0.1, y: 0.9, w: 8, h: 0.9, fontFace: HEAD, fontSize: 40, bold: true, color: NAVYMUTED, margin: 0, isTextBox: true });
+  s.addText("A scam is a sequence.\nWe wait for the sequence before we stop a payment.", { x: MX + 0.1, y: 2.3, w: 11.5, h: 1.9,
+    fontFace: HEAD, fontSize: 40, bold: true, color: ONNAVY, margin: 0, valign: "top", isTextBox: true });
+  text(s, `On synthetic data: ${pct(C.recall.mean)} of scams caught, ${C.fp.mean.toFixed(2)} genuine payments interrupted per 1,000, ` +
+    "and, by design, no payment stopped on the evidence of one stage alone.", { x: MX + 0.1, y: 4.45, w: 10.5, h: 0.8, fontSize: 17, color: NAVYMUTED });
   hline(s, MX + 0.1, 5.5, W - 2 * MX - 0.2, NAVYRULE, 0.75);
   s.addText("Thank you. Questions welcome.", { x: MX + 0.1, y: 5.75, w: 7, h: 0.5, fontFace: HEAD, fontSize: 24, color: ONNAVY, margin: 0, isTextBox: true });
   s.addText("Mathews V Manoj  ·  24ec357@mgits.ac.in", { x: MX + 0.1, y: 6.35, w: 7, h: 0.35, fontFace: BODY, fontSize: 14, color: NAVYMUTED, margin: 0, isTextBox: true });
-  s.addText("All results are on synthetic data.", { x: W - MX - 4.1, y: 6.35, w: 4, h: 0.35, fontFace: BODY, fontSize: 12, italic: true, color: NAVYMUTED, align: "right", margin: 0, isTextBox: true });
-  s.addNotes("To sum up: we look at the steps before a scam payment, only interrupt when several appear together, and always give a reason.");
+  s.addNotes("One line to remember: a scam is a sequence, and we wait for the sequence.");
 }
 
-// ============ 16. Appendix: signals ============
+// ------------ slide ------------
 {
-  const s = base(16, "Appendix");
+  const s = base(15, "Appendix");
   title(s, "All 20 signals and their weights", false, 0.7, 28);
   const SIG = [["call_unknown_active", "contact", "phone", "On a call with a number not in contacts"], ["call_long", "contact", "phone", "Call longer than 20 minutes"],
     ["video_call", "contact", "phone", "Video/VoIP call active"], ["sms_scam_flag", "contact", "phone", "Scam-lure SMS in the last 24 h"],
@@ -632,6 +602,27 @@ function tag(s, word, x, y) {
   text(s, "Weights from logistic regression (L2, C = 0.3) on synthetic dataset 7, kept at zero or above. Stage caps 5 / 5 / 6 / 6; a stage is active at 1.5 or more. " +
     "Full methods, confidence intervals and assumptions are in the written submission PDF.", { x: MX, y: 6.35, w: 12, h: 0.55, fontSize: 11, color: MUTED });
   s.addNotes("Reference slide with every signal and its learned weight.");
+}
+
+
+// ------------ slide ------------
+{
+  const s = base(16, "Appendix");
+  title(s, "Security checks", false, 0.7, 28);
+  const ctl = [["Old or repeated requests", "One-time nonce and a 15-second limit", "built"],
+    ["Extra or fake fields", "Only the 20 known signals are accepted", "built"],
+    ["Edited decision records", "Each record signed with HMAC-SHA256", "built"],
+    ["Fake or modified app", "Play Integrity token tied to a hash of the request", "planned"],
+    ["Staff misuse", "Two approvers, both written into the record", "planned"],
+    ["Record store leak", "No raw content in records; identity stored apart", "design only"],
+    ["Poisoned labels", "Retrain only on bank-confirmed cases", "design only"]];
+  s.addTable([["Risk", "What we do", "Status"].map(t => ({ text: t, options: { bold: true, color: INK2 } })),
+    ...ctl.map(([a, b, c]) => [{ text: a, options: { color: INK } }, { text: b, options: { color: INK2 } },
+      { text: c, options: { color: c === "built" ? INK : MUTED, italic: c !== "built" } }])],
+    { x: MX, y: 1.5, w: 9.5, colW: [3.0, 5.0, 1.5], fontFace: BODY, fontSize: 15, valign: "middle", border: HB(), rowH: 0.55, margin: [0.04, 0.08, 0.04, 0.0] });
+  text(s, "The three built checks are covered by automated tests, including one that replays a request and checks it is rejected.",
+    { x: MX, y: 6.05, w: 11, h: 0.5, fontSize: 13, color: MUTED });
+  s.addNotes("Reference slide for security questions.");
 }
 
 pres.writeFile({ fileName: path.resolve(__dirname, "Chakravyuh_RAKSHAM_Round1.pptx") }).then(f => console.log("wrote", f));

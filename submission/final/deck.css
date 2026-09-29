@@ -314,3 +314,19 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .xc { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 8px; }
 .xc pre { font-family: "IBM Plex Mono"; font-size: 8.4px; line-height: 1.45; color: var(--ink); background: #EDEAE3; padding: 10px 12px; white-space: pre; }
 .xc .small { font-size: 9.5px; }
+.phones { display: flex; gap: 12px; }
+.phones .phone svg { width: 150px; }
+.story { grid-template-columns: 1fr 312px !important; }
+.feas { font-size: 11px; color: var(--ink2); margin: 6px 0; line-height: 1.45; }
+.feas b { color: var(--ink); }
+.feas.r b { color: var(--orange); }
+.feas-num { font-size: 11.5px; margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--rule); color: var(--ink2); }
+.feas-num b { color: var(--orange); font-size: 13px; }
+.why-t td, .why-t th { font-size: 11px; }
+.why-t { margin-top: 10px; }
+.evrow { display: grid !important; grid-template-columns: repeat(6, 1fr); position: relative; column-gap: 10px; }
+.evrow::before { content: ""; position: absolute; left: 5px; right: calc(100% / 6 - 5px); top: 4px; height: 1.5px; background: var(--ink); }
+.evrow .evl { display: none; }
+.evrow .ev { width: auto; position: relative; }
+.evrow .ev b { font-size: 11.5px; }
+.why p { margin-bottom: 8px; }

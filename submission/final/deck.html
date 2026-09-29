@@ -315,6 +315,22 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .xc { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 8px; }
 .xc pre { font-family: "IBM Plex Mono"; font-size: 8.4px; line-height: 1.45; color: var(--ink); background: #EDEAE3; padding: 10px 12px; white-space: pre; }
 .xc .small { font-size: 9.5px; }
+.phones { display: flex; gap: 12px; }
+.phones .phone svg { width: 150px; }
+.story { grid-template-columns: 1fr 312px !important; }
+.feas { font-size: 11px; color: var(--ink2); margin: 6px 0; line-height: 1.45; }
+.feas b { color: var(--ink); }
+.feas.r b { color: var(--orange); }
+.feas-num { font-size: 11.5px; margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--rule); color: var(--ink2); }
+.feas-num b { color: var(--orange); font-size: 13px; }
+.why-t td, .why-t th { font-size: 11px; }
+.why-t { margin-top: 10px; }
+.evrow { display: grid !important; grid-template-columns: repeat(6, 1fr); position: relative; column-gap: 10px; }
+.evrow::before { content: ""; position: absolute; left: 5px; right: calc(100% / 6 - 5px); top: 4px; height: 1.5px; background: var(--ink); }
+.evrow .evl { display: none; }
+.evrow .ev { width: auto; position: relative; }
+.evrow .ev b { font-size: 11.5px; }
+.why p { margin-bottom: 8px; }
 </style></head><body>
 <section class="slide dark cover">
   <div class="cv-top">RAKSHAM, Amazon × IIT Delhi · Round 1 · Track 2: AI-driven scam pattern recognition</div>
@@ -428,6 +444,49 @@ will accept at each level, and we set the thresholds to match that on separate t
         and a bank agent calls her before anything is released.</p></div>
     </div>
   </div>
+  <div class="phones"><div class="phone"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 620" font-family="IBM Plex Sans, sans-serif">
+  <defs>
+    <linearGradient id="bezel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a1f28"/>
+      <stop offset="1" stop-color="#0b0f16"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="300" height="620" rx="34" ry="34" fill="url(#bezel)"/>
+  <rect x="8" y="8" width="284" height="604" rx="28" ry="28" fill="#ffffff"/>
+  <rect x="105.0" y="10" width="90" height="18" rx="9" fill="#0b0f16"/>
+<text x="24" y="40" font-size="11" fill="#3b4453" font-weight="600">9:41</text><text x="276" y="40" text-anchor="end" font-size="11" fill="#3b4453">UPI</text><rect x="24" y="54" width="120" height="20" rx="10" fill="#a05a00"/><text x="84" y="68" text-anchor="middle" font-size="10.5" fill="#ffffff" font-weight="700">PLEASE CHECK</text>
+  <text x="24" y="112" font-size="20" font-weight="800" fill="#0d1420">A remote-access app</text>
+  <text x="24" y="136" font-size="20" font-weight="800" fill="#0d1420">is on your phone.</text>
+  <text x="24" y="170" font-size="12" fill="#5a6473">If you were told to install it for</text>
+  <text x="24" y="187" font-size="12" fill="#5a6473">KYC or a refund, the caller can see</text>
+  <text x="24" y="204" font-size="12" fill="#5a6473">everything you type.</text>
+
+  <!-- payment card -->
+  <rect x="20" y="228" width="260" height="66" rx="12" fill="#f6f7f9" stroke="#e4e7ec"/>
+  <text x="34" y="252" font-size="14" font-weight="700" fill="#0d1420">Pay ₹15,000</text>
+  <text x="34" y="272" font-size="11" fill="#5a6473">to jyoti-kyc@axl (first-time payee)</text>
+
+  <!-- safety questions -->
+  <text x="24" y="322" font-size="10" fill="#5a6473" letter-spacing="1">TWO QUICK QUESTIONS</text>
+  <rect x="20" y="336" width="260" height="60" rx="10" fill="#ffffff" stroke="#e4e7ec"/>
+  <text x="34" y="357" font-size="12" font-weight="700" fill="#0d1420">Did anyone ask you to install</text>
+  <text x="34" y="374" font-size="12" font-weight="700" fill="#0d1420">this app just now?</text>
+  <circle cx="240" cy="370" r="8" fill="#eef1f5"/>
+  <text x="248" y="373" font-size="11" fill="#5a6473">Yes / No</text>
+
+  <rect x="20" y="406" width="260" height="60" rx="10" fill="#ffffff" stroke="#e4e7ec"/>
+  <text x="34" y="427" font-size="12" font-weight="700" fill="#0d1420">Do you know jyoti-kyc@axl</text>
+  <text x="34" y="444" font-size="12" font-weight="700" fill="#0d1420">personally?</text>
+  <circle cx="240" cy="440" r="8" fill="#eef1f5"/>
+  <text x="248" y="443" font-size="11" fill="#5a6473">Yes / No</text>
+
+  <rect x="20" y="486" width="260" height="42" rx="10" fill="#0d1420"/>
+  <text x="150" y="512" text-anchor="middle" font-size="12.5" font-weight="700"
+        fill="#ffffff">Continue only if you're sure</text>
+
+  <text x="24" y="552" font-size="9.5" fill="#8a94a3">Receipt · c48a10bf62d18a11</text>
+  <rect x="100.0" y="598" width="100" height="4" rx="2" fill="#0b0f16"/>
+</svg><div class="cap">Level 2: warn and ask</div></div>
   <div class="phone"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 620" font-family="IBM Plex Sans, sans-serif">
   <defs>
     <linearGradient id="bezel" x1="0" y1="0" x2="0" y2="1">
@@ -473,7 +532,7 @@ will accept at each level, and we set the thresholds to match that on separate t
 
   <!-- home indicator -->
   <rect x="100.0" y="598" width="100" height="4" rx="2" fill="#0b0f16"/>
-</svg><div class="cap">Level 3 screen (mock-up)</div></div>
+</svg><div class="cap">Level 3: hold (her case)</div></div></div>
 </div></div>
   <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">05 / 16</span></footer>
@@ -493,15 +552,15 @@ will accept at each level, and we set the thresholds to match that on separate t
     <div class="lbl">Score</div>
     <div class="formula">s(x) = b + <span class="big-s">Σ</span><sub>g</sub> min( C<sub>g</sub> , <span class="big-s">Σ</span><sub>k in g</sub> w<sub>k</sub> x<sub>k</sub> )</div>
     <div class="lbl" style="margin-top:14px">Decision</div>
-    <div class="formula sm"><b>Tier 2</b> &nbsp;if&nbsp; s ≥ τ<sub>2</sub> &nbsp;and&nbsp; active stages ≥ 2<br>
-    <b>Tier 3</b> &nbsp;if&nbsp; s ≥ τ<sub>3</sub> &nbsp;and&nbsp; ( active stages ≥ 3 &nbsp;or&nbsp; ≥ 2 plus a registry hit )</div>
+    <div class="formula sm"><b>Level 2</b> &nbsp;if&nbsp; s ≥ τ<sub>2</sub> &nbsp;and&nbsp; active stages ≥ 2<br>
+    <b>Level 3</b> &nbsp;if&nbsp; s ≥ τ<sub>3</sub> &nbsp;and&nbsp; ( active stages ≥ 3 &nbsp;or&nbsp; ≥ 2 plus a registry hit )</div>
     <p class="small">g is one of the four stages and x<sub>k</sub> is 1 if signal k is present. The weights w<sub>k</sub> come from a
     logistic regression (L2) on labelled sessions and are kept at zero or above. A stage counts as active when its capped score
     is at least 1.5. All values are in Appendix A.</p>
   </div>
   <div class="principles">
     <div><b>Non-negative weights</b><span>A missing signal does not change the score, because a fraudster can always hide one.</span></div>
-    <div><b>Stage caps</b><span>One stage cannot push the score up on its own (C = 5, 5, 6, 6).</span></div>
+    <div><b>Stage caps</b><span>A safety limit so one stage cannot dominate (C = 5, 5, 6, 6). It made no measurable difference on our data.</span></div>
     <div><b>Two-stage rule</b><span>We only interrupt when at least two stages are active.</span></div>
     <div><b>Prevalence adjustment</b><span>Training data is 3.8% scams; we adjust the model to an assumed 1 in 5,000 in real use.</span></div>
     <div><b>Thresholds</b><span>τ is set on a separate dataset to meet the bank's alert limit, then fixed.</span></div>
@@ -529,7 +588,7 @@ will accept at each level, and we set the thresholds to match that on separate t
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-29T07:57:44.431132</dc:date>
+    <dc:date>2026-09-29T13:38:48.116004</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -565,18 +624,18 @@ z
    <g id="line2d_1">
     <path d="M 159.26665 187.512 
 L 159.26665 4.56 
-" clip-path="url(#p5db76a5b34)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #cfcac0"/>
+" clip-path="url(#pdd8288407e)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #cfcac0"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_2">
       <defs>
-       <path id="md8e8e4ed89" d="M 0 0 
+       <path id="m3afcfca457" d="M 0 0 
 L 0 3.5 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#md8e8e4ed89" x="55.70185" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m3afcfca457" x="55.70185" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_1">
@@ -676,7 +735,7 @@ z
     <g id="xtick_2">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#md8e8e4ed89" x="107.48425" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m3afcfca457" x="107.48425" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_2">
@@ -742,7 +801,7 @@ z
     <g id="xtick_3">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#md8e8e4ed89" x="159.26665" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m3afcfca457" x="159.26665" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_3">
@@ -839,7 +898,7 @@ z
     <g id="xtick_4">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#md8e8e4ed89" x="211.04905" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m3afcfca457" x="211.04905" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_4">
@@ -854,7 +913,7 @@ z
     <g id="xtick_5">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#md8e8e4ed89" x="262.83145" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m3afcfca457" x="262.83145" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_5">
@@ -891,7 +950,7 @@ z
     <g id="xtick_6">
      <g id="line2d_7">
       <g>
-       <use xlink:href="#md8e8e4ed89" x="314.61385" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m3afcfca457" x="314.61385" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_6">
@@ -906,7 +965,7 @@ z
     <g id="xtick_7">
      <g id="line2d_8">
       <g>
-       <use xlink:href="#md8e8e4ed89" x="366.39625" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m3afcfca457" x="366.39625" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_7">
@@ -1433,12 +1492,12 @@ z
     <g id="ytick_1">
      <g id="line2d_9">
       <defs>
-       <path id="m7d5eeaafc4" d="M 0 0 
+       <path id="m4c870e6eff" d="M 0 0 
 L -3.5 0 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m7d5eeaafc4" x="42.75625" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m4c870e6eff" x="42.75625" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_9">
@@ -1537,7 +1596,7 @@ z
     <g id="ytick_2">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m7d5eeaafc4" x="42.75625" y="150.9216" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m4c870e6eff" x="42.75625" y="150.9216" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_10">
@@ -1552,7 +1611,7 @@ z
     <g id="ytick_3">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m7d5eeaafc4" x="42.75625" y="114.3312" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m4c870e6eff" x="42.75625" y="114.3312" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_11">
@@ -1567,7 +1626,7 @@ z
     <g id="ytick_4">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m7d5eeaafc4" x="42.75625" y="77.7408" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m4c870e6eff" x="42.75625" y="77.7408" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_12">
@@ -1582,7 +1641,7 @@ z
     <g id="ytick_5">
      <g id="line2d_13">
       <g>
-       <use xlink:href="#m7d5eeaafc4" x="42.75625" y="41.1504" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m4c870e6eff" x="42.75625" y="41.1504" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_13">
@@ -1597,7 +1656,7 @@ z
     <g id="ytick_6">
      <g id="line2d_14">
       <g>
-       <use xlink:href="#m7d5eeaafc4" x="42.75625" y="4.56" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m4c870e6eff" x="42.75625" y="4.56" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_14">
@@ -1833,12 +1892,12 @@ z
    <g id="LineCollection_1">
     <path d="M 64.87165 145.96665 
 L 138.23005 145.96665 
-" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #d9480f; stroke-width: 0.9"/>
+" clip-path="url(#pdd8288407e)" style="fill: none; stroke: #d9480f; stroke-width: 0.9"/>
    </g>
    <g id="LineCollection_2">
     <path d="M 100.47205 157.308245 
 L 100.47205 133.29103 
-" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #d9480f; stroke-width: 0.9"/>
+" clip-path="url(#pdd8288407e)" style="fill: none; stroke: #d9480f; stroke-width: 0.9"/>
    </g>
    <g id="patch_5">
     <path d="M 90.380494 154.069763 
@@ -2042,12 +2101,12 @@ z
    <g id="LineCollection_3">
     <path d="M 235.32205 106.32705 
 L 298.445335 106.32705 
-" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #7a808a; stroke-width: 0.9"/>
+" clip-path="url(#pdd8288407e)" style="fill: none; stroke: #7a808a; stroke-width: 0.9"/>
    </g>
    <g id="LineCollection_4">
     <path d="M 264.44965 115.0935 
 L 264.44965 96.41715 
-" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #7a808a; stroke-width: 0.9"/>
+" clip-path="url(#pdd8288407e)" style="fill: none; stroke: #7a808a; stroke-width: 0.9"/>
    </g>
    <g id="patch_6">
     <path d="M 326.86254 117.478723 
@@ -2118,42 +2177,42 @@ z
    <g id="LineCollection_5">
     <path d="M 232.62505 66.020438 
 L 308.14105 66.020438 
-" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+" clip-path="url(#pdd8288407e)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
    </g>
    <g id="LineCollection_6">
     <path d="M 270.38305 71.26125 
 L 270.38305 60.303187 
-" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+" clip-path="url(#pdd8288407e)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
    </g>
    <g id="LineCollection_7">
     <path d="M 155.49085 65.734575 
 L 255.81925 65.734575 
-" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+" clip-path="url(#pdd8288407e)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
    </g>
    <g id="LineCollection_8">
     <path d="M 203.49745 71.356538 
 L 203.49745 59.82675 
-" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+" clip-path="url(#pdd8288407e)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
    </g>
    <g id="LineCollection_9">
     <path d="M 172.75165 62.399513 
 L 284.420935 62.399513 
-" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+" clip-path="url(#pdd8288407e)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
    </g>
    <g id="LineCollection_10">
     <path d="M 228.84925 67.735612 
 L 228.84925 56.584593 
-" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+" clip-path="url(#pdd8288407e)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
    </g>
    <g id="LineCollection_11">
     <path d="M 231.532765 59.540887 
 L 339.439735 59.540887 
-" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+" clip-path="url(#pdd8288407e)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
    </g>
    <g id="LineCollection_12">
     <path d="M 284.40745 65.067562 
 L 284.40745 53.154243 
-" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+" clip-path="url(#pdd8288407e)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
    </g>
    <g id="patch_7">
     <path d="M 179.92726 35.256178 
@@ -2682,7 +2741,7 @@ z
    </g>
    <g id="line2d_15">
     <defs>
-     <path id="m4f05807270" d="M 0 2.75 
+     <path id="ma5972f6feb" d="M 0 2.75 
 C 0.729309 2.75 1.428845 2.460243 1.944544 1.944544 
 C 2.460243 1.428845 2.75 0.729309 2.75 0 
 C 2.75 -0.729309 2.460243 -1.428845 1.944544 -1.944544 
@@ -2694,13 +2753,13 @@ C -1.428845 2.460243 -0.729309 2.75 0 2.75
 z
 " style="stroke: #d9480f"/>
     </defs>
-    <g clip-path="url(#p5db76a5b34)">
-     <use xlink:href="#m4f05807270" x="100.47205" y="145.96665" style="fill: #d9480f; stroke: #d9480f"/>
+    <g clip-path="url(#pdd8288407e)">
+     <use xlink:href="#ma5972f6feb" x="100.47205" y="145.96665" style="fill: #d9480f; stroke: #d9480f"/>
     </g>
    </g>
    <g id="line2d_16">
     <defs>
-     <path id="m7dad9679e5" d="M 0 2.75 
+     <path id="m5b8655ef07" d="M 0 2.75 
 C 0.729309 2.75 1.428845 2.460243 1.944544 1.944544 
 C 2.460243 1.428845 2.75 0.729309 2.75 0 
 C 2.75 -0.729309 2.460243 -1.428845 1.944544 -1.944544 
@@ -2712,13 +2771,13 @@ C -1.428845 2.460243 -0.729309 2.75 0 2.75
 z
 " style="stroke: #7a808a"/>
     </defs>
-    <g clip-path="url(#p5db76a5b34)">
-     <use xlink:href="#m7dad9679e5" x="264.44965" y="106.32705" style="fill: #ffffff; stroke: #7a808a"/>
+    <g clip-path="url(#pdd8288407e)">
+     <use xlink:href="#m5b8655ef07" x="264.44965" y="106.32705" style="fill: #ffffff; stroke: #7a808a"/>
     </g>
    </g>
    <g id="line2d_17">
     <defs>
-     <path id="m84dc757397" d="M 0 2.75 
+     <path id="mbe582cecc1" d="M 0 2.75 
 C 0.729309 2.75 1.428845 2.460243 1.944544 1.944544 
 C 2.460243 1.428845 2.75 0.729309 2.75 0 
 C 2.75 -0.729309 2.460243 -1.428845 1.944544 -1.944544 
@@ -2730,29 +2789,29 @@ C -1.428845 2.460243 -0.729309 2.75 0 2.75
 z
 " style="stroke: #111a2b"/>
     </defs>
-    <g clip-path="url(#p5db76a5b34)">
-     <use xlink:href="#m84dc757397" x="270.38305" y="66.020438" style="fill: #111a2b; stroke: #111a2b"/>
+    <g clip-path="url(#pdd8288407e)">
+     <use xlink:href="#mbe582cecc1" x="270.38305" y="66.020438" style="fill: #111a2b; stroke: #111a2b"/>
     </g>
    </g>
    <g id="line2d_18">
-    <g clip-path="url(#p5db76a5b34)">
-     <use xlink:href="#m84dc757397" x="203.49745" y="65.734575" style="fill: #111a2b; stroke: #111a2b"/>
+    <g clip-path="url(#pdd8288407e)">
+     <use xlink:href="#mbe582cecc1" x="203.49745" y="65.734575" style="fill: #111a2b; stroke: #111a2b"/>
     </g>
    </g>
    <g id="line2d_19">
-    <g clip-path="url(#p5db76a5b34)">
-     <use xlink:href="#m84dc757397" x="228.84925" y="62.399513" style="fill: #111a2b; stroke: #111a2b"/>
+    <g clip-path="url(#pdd8288407e)">
+     <use xlink:href="#mbe582cecc1" x="228.84925" y="62.399513" style="fill: #111a2b; stroke: #111a2b"/>
     </g>
    </g>
    <g id="line2d_20">
-    <g clip-path="url(#p5db76a5b34)">
-     <use xlink:href="#m84dc757397" x="284.40745" y="59.540887" style="fill: #111a2b; stroke: #111a2b"/>
+    <g clip-path="url(#pdd8288407e)">
+     <use xlink:href="#mbe582cecc1" x="284.40745" y="59.540887" style="fill: #111a2b; stroke: #111a2b"/>
     </g>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p5db76a5b34">
+  <clipPath id="pdd8288407e">
    <rect x="42.75625" y="4.56" width="323.64" height="182.952"/>
   </clipPath>
  </defs>
@@ -2761,11 +2820,9 @@ z
     <div class="cap">All models use the same training, threshold and test data. Bars show 95% confidence intervals.</div></div>
 </div>
 <div class="res-note">
-  <p><b>What we give up.</b> Standard classifiers catch 96.6–97.0% of scams but interrupt
-  3.2–3.5 genuine payments per 1,000. Without the two-stage rule our own score catches
-  94.4% at 3.41. The rule costs us
-  2.2 points of recall. In return there are 19% fewer
-  interruptions, no single signal can stop a payment, and every alert lists the signals behind it.</p>
+  <p><b>What we give up.</b> Even when set to the same alert rate as ours, standard classifiers catch 96.1–96.8%
+  of scams, about 4 points more. 47% of that gap is collect-request scams, which only
+  ever show one stage. Without the two-stage rule our own score catches 94.4%. Slide 10 shows what the rule buys.</p>
   <p class="small">Trained on dataset 7, thresholds set on dataset 21, tested on datasets 101 to 108. Each has 60,000 genuine and
   2,400 scam sessions. Scoring takes about 23 µs per session on our machine.</p>
 </div></div>
@@ -2789,7 +2846,7 @@ z
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-29T07:57:44.510025</dc:date>
+    <dc:date>2026-09-29T13:38:48.196311</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -2826,12 +2883,12 @@ z
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m206ac8cb2b" d="M 0 0 
+       <path id="m9ccdb789af" d="M 0 0 
 L 0 3.5 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m206ac8cb2b" x="46.384673" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m9ccdb789af" x="46.384673" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_1">
@@ -2877,7 +2934,7 @@ z
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m206ac8cb2b" x="75.806491" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m9ccdb789af" x="75.806491" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_2">
@@ -2907,7 +2964,7 @@ z
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m206ac8cb2b" x="105.22831" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m9ccdb789af" x="105.22831" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_3">
@@ -2953,7 +3010,7 @@ z
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#m206ac8cb2b" x="134.650128" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m9ccdb789af" x="134.650128" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_4">
@@ -3017,7 +3074,7 @@ z
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#m206ac8cb2b" x="164.071946" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m9ccdb789af" x="164.071946" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_5">
@@ -3052,7 +3109,7 @@ z
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#m206ac8cb2b" x="193.493764" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m9ccdb789af" x="193.493764" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_6">
@@ -3538,12 +3595,12 @@ z
     <g id="ytick_1">
      <g id="line2d_7">
       <defs>
-       <path id="m5ccb5c4f35" d="M 0 0 
+       <path id="m3f1a51335e" d="M 0 0 
 L -3.5 0 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m5ccb5c4f35" x="39.029219" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m3f1a51335e" x="39.029219" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_8">
@@ -3602,7 +3659,7 @@ z
     <g id="ytick_2">
      <g id="line2d_8">
       <g>
-       <use xlink:href="#m5ccb5c4f35" x="39.029219" y="87.269333" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m3f1a51335e" x="39.029219" y="87.269333" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_9">
@@ -3617,7 +3674,7 @@ z
     <g id="ytick_3">
      <g id="line2d_9">
       <g>
-       <use xlink:href="#m5ccb5c4f35" x="39.029219" y="67.762667" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m3f1a51335e" x="39.029219" y="67.762667" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_10">
@@ -3632,7 +3689,7 @@ z
     <g id="ytick_4">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m5ccb5c4f35" x="39.029219" y="48.256" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m3f1a51335e" x="39.029219" y="48.256" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_11">
@@ -3688,7 +3745,7 @@ z
     <g id="ytick_5">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m5ccb5c4f35" x="39.029219" y="28.749333" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m3f1a51335e" x="39.029219" y="28.749333" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_12">
@@ -3754,7 +3811,7 @@ z
     <g id="ytick_6">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m5ccb5c4f35" x="39.029219" y="9.242667" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m3f1a51335e" x="39.029219" y="9.242667" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_13">
@@ -3815,9 +3872,9 @@ L 105.22831 63.576861
 L 134.650128 76.088559 
 L 164.071946 88.168469 
 L 193.493764 98.262153 
-" clip-path="url(#pf3870ab4b4)" style="fill: none; stroke: #d9480f; stroke-width: 1.6; stroke-linecap: square"/>
+" clip-path="url(#p68eab769b4)" style="fill: none; stroke: #d9480f; stroke-width: 1.6; stroke-linecap: square"/>
     <defs>
-     <path id="m48041f7e26" d="M 0 1.75 
+     <path id="meea0b515a6" d="M 0 1.75 
 C 0.464105 1.75 0.909265 1.565609 1.237437 1.237437 
 C 1.565609 0.909265 1.75 0.464105 1.75 0 
 C 1.75 -0.464105 1.565609 -0.909265 1.237437 -1.237437 
@@ -3829,13 +3886,13 @@ C -0.909265 1.565609 -0.464105 1.75 0 1.75
 z
 " style="stroke: #d9480f"/>
     </defs>
-    <g clip-path="url(#pf3870ab4b4)">
-     <use xlink:href="#m48041f7e26" x="46.384673" y="16.781181" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m48041f7e26" x="75.806491" y="46.376451" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m48041f7e26" x="105.22831" y="63.576861" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m48041f7e26" x="134.650128" y="76.088559" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m48041f7e26" x="164.071946" y="88.168469" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m48041f7e26" x="193.493764" y="98.262153" style="fill: #d9480f; stroke: #d9480f"/>
+    <g clip-path="url(#p68eab769b4)">
+     <use xlink:href="#meea0b515a6" x="46.384673" y="16.781181" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#meea0b515a6" x="75.806491" y="46.376451" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#meea0b515a6" x="105.22831" y="63.576861" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#meea0b515a6" x="134.650128" y="76.088559" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#meea0b515a6" x="164.071946" y="88.168469" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#meea0b515a6" x="193.493764" y="98.262153" style="fill: #d9480f; stroke: #d9480f"/>
     </g>
    </g>
    <g id="patch_3">
@@ -3933,7 +3990,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pf3870ab4b4">
+  <clipPath id="p68eab769b4">
    <rect x="39.029219" y="1.44" width="161.82" height="105.336"/>
   </clipPath>
  </defs>
@@ -3963,7 +4020,14 @@ z
   <div class="pcol leaves">
     <div class="lbl acc">Sent to the bank</div>
     <div class="eqn"><b>9</b> yes/no values, the amount and a hashed payee ID</div>
-    <ol><li>You are on a call with a number not in your contacts while paying</li><li>That call has lasted more than 20 minutes</li><li>A video/VoIP call is active (common in 'digital arrest' scams)</li><li>A message received in the last 24h matches a known scam lure (KYC, parcel, electricity)</li><li>A screen-sharing / remote-control app is running</li><li>An app was installed from outside the Play Store in the last 24h</li><li>A non-system app can read your screen and draw over the payment app</li><li>An OTP was opened while the unknown call was active</li><li>Payee was typed or pasted instead of scanned or picked from contacts</li></ol>
+    <div class="feas"><b>A banking app can read 5 of them</b> under Android and Play rules: call active and its length
+    (phone-state permission), video/VoIP call (audio mode), a known screen-sharing app or accessibility service, an app drawing
+    over our screen, and whether the payee was typed.</div>
+    <div class="feas r"><b>4 need restricted access</b>, so we plan fallbacks: caller not in contacts (call-log access),
+    scam SMS (SMS access), any app sideloaded (all-apps visibility), OTP opened in a call (other apps' notifications). Fallbacks:
+    call length only, the bank's own OTP timing, and a fixed list of known remote-access apps.</div>
+    <div class="feas-num">Retrained with only the 5 readable signals: <b>91.5%</b> recall at
+    2.87 per 1,000 (synthetic), against 92.3% with all 9.</div>
   </div>
   <div class="pcol bank">
     <div class="lbl">Already at the bank</div>
@@ -3988,20 +4052,27 @@ choice, not a legal certification. The phone SDK is not built yet; the server si
 <section class="slide  ">
   <header><span class="sec">9. Comparison and next steps</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.2">
-<h2>How it compares, and our plan for the finale</h2>
+<h2>Why the two-stage rule, and our plan for the finale</h2>
 <div class="diff">
-  <table class="mx"><thead><tr><th></th><th>Uses payment<br>details</th><th>Uses steps<br>before payment</th><th>Gives a<br>reason</th><th>Scaled<br>response</th></tr></thead>
-  <tbody><tr class=''><td>Transaction rules</td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><span class="no">—</span></td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><span class="no">—</span></td></tr><tr class=''><td>Standard ML classifier</td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td>partly</td><td>after the fact</td><td><span class="no">—</span></td></tr><tr class='me'><td>Chakravyuh</td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td></tr></tbody></table>
   <div>
-    <p class="claim">The main difference: we use what happened before the payment, not only the payment.</p>
-    <div class="why"><span class="lbl">Why not just use a standard classifier?</span>
-    <p>On our synthetic data it catches about 4 points more scams (slide 7). But it cannot say why, and one strong signal
-    can stop a genuine payment. Customers, bank agents and the ombudsman all need to know why a payment was held.</p></div>
+    <p class="claim">A plain logistic regression is also explainable and catches more scams. So what does the rule add?</p>
+    <table class="tbl sm why-t"><thead><tr><th>Same alert rate, synthetic test data</th><th class="r">Logistic regression</th><th class="r">Chakravyuh</th></tr></thead><tbody>
+    <tr><td>Scams caught</td><td class="r">96.1%</td><td class="r">92.3%</td></tr>
+    <tr><td>Genuine payments interrupted per 1,000</td><td class="r">2.95</td><td class="r">2.77</td></tr>
+    <tr><td>…of which showed only one stage</td><td class="r">49%</td><td class="r"><b>0%</b></td></tr>
+    </tbody></table>
+  </div>
+  <div class="why">
+    <span class="lbl">A genuine payment the rule spares (from our test data)</span>
+    <p>A shopkeeper pays ₹6,750 on a collect request from a new payee. Nothing else is unusual: no call,
+    no screen-sharing, a normal receiving account. Logistic regression interrupts it. Chakravyuh sees one stage, so it only logs it.</p>
+    <p class="small">The cost: scams that only ever show one stage, mostly collect-request scams. We plan a specific collect-request
+    warning for those (finale step 3).</p>
   </div>
 </div>
 <div class="plan">
   <div class="lbl">What we plan to build and show in the 48-hour finale</div>
-  <div class="phases"><div class='ph'><div class='t'>H+0–8</div><b>Replay harness</b><span>Run saved test sessions through the server and check the records.</span></div><div class='ph'><div class='t'>H+8–20</div><b>Android signal validation</b><span>Read the 9 phone signals on a real Android phone and check them.</span></div><div class='ph'><div class='t'>H+20–32</div><b>Attacker adaptation</b><span>Try to beat our own model with three changed scams, then retrain.</span></div><div class='ph'><div class='t'>H+32–44</div><b>End-to-end replay</b><span>Run 100 sessions through to agent review and release or report.</span></div><div class='ph'><div class='t'>H+44–48</div><b>Security review</b><span>Walk through the records, replay checks, two-person release and known limits.</span></div></div>
+  <div class="phases"><div class='ph'><div class='t'>H+0–8</div><b>Replay harness</b><span>Run saved test sessions through the server and check the records.</span></div><div class='ph'><div class='t'>H+8–20</div><b>Android signals</b><span>Read the 5 allowed phone signals on one test phone and compare with the synthetic values.</span></div><div class='ph'><div class='t'>H+20–32</div><b>Collect-request rule</b><span>Add a warning for collect requests from individuals and re-test; then attack our own model.</span></div><div class='ph'><div class='t'>H+32–44</div><b>End-to-end replay</b><span>Run 100 sessions through to agent review and release or report.</span></div><div class='ph'><div class='t'>H+44–48</div><b>Security review</b><span>Walk through the records, replay checks, two-person release and known limits.</span></div></div>
   <p class="small"><b>Built so far:</b> scoring server, threshold setting, signed records with replay checks, synthetic data
   generator and evaluation, 8 automated tests. <b>Not built yet:</b> Android SDK, payment hold, agent screen.</p>
 </div></div>
@@ -4015,7 +4086,7 @@ choice, not a legal certification. The phone SDK is not built yet; the server si
 <p class="lede">Solid boxes are built. Dashed boxes are simulated with synthetic data. Dotted boxes are planned but not built.</p>
 <div class="arch">
   <div class="plane"><div class="pt">Phone (inside the bank's app)</div><div class="pr">
-    <div class="ab ab-simulated"><div class="abh"><b>Signal readers</b><span class="st st-simulated">simulated</span></div><span>Call state, accessibility, app installs, SMS check on the phone. Synthetic for now.</span></div>
+    <div class="ab ab-simulated"><div class="abh"><b>Signal readers</b><span class="st st-simulated">simulated</span></div><span>Call state, audio mode, accessibility, known remote apps. 5 of 9 allowed; synthetic for now.</span></div>
     <div class="ab ab-proposed"><div class="abh"><b>Request builder</b><span class="st st-proposed">planned</span></div><span>9 yes/no values, amount, payee hash, one-time nonce, timestamp, Play Integrity token.</span></div>
     <div class="ab ab-simulated"><div class="abh"><b>Warning screens</b><span class="st st-simulated">simulated</span></div><span>Scam message, two questions, hold screen. Mock-ups and a web demo.</span></div>
   </div></div>
@@ -4152,7 +4223,7 @@ signals caused it.</p></div>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-29T07:57:44.560864</dc:date>
+    <dc:date>2026-09-29T13:38:48.249646</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -4191,18 +4262,18 @@ L 185.149219 55.406612
 L 185.149219 39.940982 
 L 23.329219 39.940982 
 z
-" clip-path="url(#pd2b581759f)" style="fill: #d9480f; opacity: 0.12"/>
+" clip-path="url(#p2601c47134)" style="fill: #d9480f; opacity: 0.12"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m6f33edf7e5" d="M 0 0 
+       <path id="m7f2742c1c5" d="M 0 0 
 L 0 3.5 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m6f33edf7e5" x="30.684673" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7f2742c1c5" x="30.684673" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_1">
@@ -4265,7 +4336,7 @@ z
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m6f33edf7e5" x="51.700258" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7f2742c1c5" x="51.700258" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_2">
@@ -4313,7 +4384,7 @@ z
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m6f33edf7e5" x="72.715842" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7f2742c1c5" x="72.715842" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_3">
@@ -4379,7 +4450,7 @@ z
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#m6f33edf7e5" x="93.731427" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7f2742c1c5" x="93.731427" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_4">
@@ -4416,7 +4487,7 @@ z
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#m6f33edf7e5" x="114.747011" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7f2742c1c5" x="114.747011" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_5">
@@ -4469,7 +4540,7 @@ z
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#m6f33edf7e5" x="135.762595" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7f2742c1c5" x="135.762595" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_6">
@@ -4525,7 +4596,7 @@ z
     <g id="xtick_7">
      <g id="line2d_7">
       <g>
-       <use xlink:href="#m6f33edf7e5" x="156.77818" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7f2742c1c5" x="156.77818" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_7">
@@ -4554,7 +4625,7 @@ z
     <g id="xtick_8">
      <g id="line2d_8">
       <g>
-       <use xlink:href="#m6f33edf7e5" x="177.793764" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7f2742c1c5" x="177.793764" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_8">
@@ -4905,12 +4976,12 @@ z
     <g id="ytick_1">
      <g id="line2d_9">
       <defs>
-       <path id="m73b28642ec" d="M 0 0 
+       <path id="m6929b12874" d="M 0 0 
 L -3.5 0 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m73b28642ec" x="23.329219" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m6929b12874" x="23.329219" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_10">
@@ -4970,7 +5041,7 @@ z
     <g id="ytick_2">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m73b28642ec" x="23.329219" y="74.856" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m6929b12874" x="23.329219" y="74.856" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_11">
@@ -5026,7 +5097,7 @@ z
     <g id="ytick_3">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m73b28642ec" x="23.329219" y="51.294" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m6929b12874" x="23.329219" y="51.294" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_12">
@@ -5041,7 +5112,7 @@ z
     <g id="ytick_4">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m73b28642ec" x="23.329219" y="27.732" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m6929b12874" x="23.329219" y="27.732" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_13">
@@ -5056,7 +5127,7 @@ z
     <g id="ytick_5">
      <g id="line2d_13">
       <g>
-       <use xlink:href="#m73b28642ec" x="23.329219" y="4.17" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m6929b12874" x="23.329219" y="4.17" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_14">
@@ -5072,11 +5143,11 @@ z
    <g id="line2d_14">
     <path d="M 23.329219 48.103312 
 L 185.149219 48.103312 
-" clip-path="url(#pd2b581759f)" style="fill: none; stroke: #d9480f; stroke-linecap: square"/>
+" clip-path="url(#p2601c47134)" style="fill: none; stroke: #d9480f; stroke-linecap: square"/>
    </g>
    <g id="line2d_15">
     <defs>
-     <path id="m6174cf4927" d="M 0 1.75 
+     <path id="m8818a758f7" d="M 0 1.75 
 C 0.464105 1.75 0.909265 1.565609 1.237437 1.237437 
 C 1.565609 0.909265 1.75 0.464105 1.75 0 
 C 1.75 -0.464105 1.565609 -0.909265 1.237437 -1.237437 
@@ -5088,15 +5159,15 @@ C -0.909265 1.565609 -0.464105 1.75 0 1.75
 z
 " style="stroke: #111a2b"/>
     </defs>
-    <g clip-path="url(#pd2b581759f)">
-     <use xlink:href="#m6174cf4927" x="30.684673" y="47.367" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m6174cf4927" x="51.700258" y="46.876125" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m6174cf4927" x="72.715842" y="60.620625" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m6174cf4927" x="93.731427" y="29.6955" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m6174cf4927" x="114.747011" y="45.4035" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m6174cf4927" x="135.762595" y="63.565875" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m6174cf4927" x="156.77818" y="34.113375" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m6174cf4927" x="177.793764" y="57.1845" style="fill: #111a2b; stroke: #111a2b"/>
+    <g clip-path="url(#p2601c47134)">
+     <use xlink:href="#m8818a758f7" x="30.684673" y="47.367" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m8818a758f7" x="51.700258" y="46.876125" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m8818a758f7" x="72.715842" y="60.620625" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m8818a758f7" x="93.731427" y="29.6955" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m8818a758f7" x="114.747011" y="45.4035" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m8818a758f7" x="135.762595" y="63.565875" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m8818a758f7" x="156.77818" y="34.113375" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m8818a758f7" x="177.793764" y="57.1845" style="fill: #111a2b; stroke: #111a2b"/>
     </g>
    </g>
    <g id="patch_4">
@@ -5112,7 +5183,7 @@ L 185.149219 98.418
   </g>
  </g>
  <defs>
-  <clipPath id="pd2b581759f">
+  <clipPath id="p2601c47134">
    <rect x="23.329219" y="4.17" width="161.82" height="94.248"/>
   </clipPath>
  </defs>
@@ -5123,7 +5194,7 @@ L 185.149219 98.418
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-29T07:57:44.609343</dc:date>
+    <dc:date>2026-09-29T13:38:48.297097</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -5160,12 +5231,12 @@ z
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m23c3a57667" d="M 0 0 
+       <path id="mcc8b03e1df" d="M 0 0 
 L 0 3.5 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m23c3a57667" x="30.244219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#mcc8b03e1df" x="30.244219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_1">
@@ -5226,7 +5297,7 @@ z
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m23c3a57667" x="58.144219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#mcc8b03e1df" x="58.144219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_2">
@@ -5274,7 +5345,7 @@ z
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m23c3a57667" x="86.044219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#mcc8b03e1df" x="86.044219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_3">
@@ -5311,7 +5382,7 @@ z
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#m23c3a57667" x="113.944219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#mcc8b03e1df" x="113.944219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_4">
@@ -5367,7 +5438,7 @@ z
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#m23c3a57667" x="141.844219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#mcc8b03e1df" x="141.844219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_5">
@@ -5433,7 +5504,7 @@ z
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#m23c3a57667" x="169.744219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#mcc8b03e1df" x="169.744219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_6">
@@ -5830,12 +5901,12 @@ z
     <g id="ytick_1">
      <g id="line2d_7">
       <defs>
-       <path id="m623ad8e63f" d="M 0 0 
+       <path id="m9d55205d43" d="M 0 0 
 L -3.5 0 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m623ad8e63f" x="30.244219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m9d55205d43" x="30.244219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_8">
@@ -5850,7 +5921,7 @@ L -3.5 0
     <g id="ytick_2">
      <g id="line2d_8">
       <g>
-       <use xlink:href="#m623ad8e63f" x="30.244219" y="106.1796" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m9d55205d43" x="30.244219" y="106.1796" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_9">
@@ -5865,7 +5936,7 @@ L -3.5 0
     <g id="ytick_3">
      <g id="line2d_9">
       <g>
-       <use xlink:href="#m623ad8e63f" x="30.244219" y="80.6772" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m9d55205d43" x="30.244219" y="80.6772" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_10">
@@ -5880,7 +5951,7 @@ L -3.5 0
     <g id="ytick_4">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m623ad8e63f" x="30.244219" y="55.1748" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m9d55205d43" x="30.244219" y="55.1748" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_11">
@@ -5895,7 +5966,7 @@ L -3.5 0
     <g id="ytick_5">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m623ad8e63f" x="30.244219" y="29.6724" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m9d55205d43" x="30.244219" y="29.6724" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_12">
@@ -5910,7 +5981,7 @@ L -3.5 0
     <g id="ytick_6">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m623ad8e63f" x="30.244219" y="4.17" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m9d55205d43" x="30.244219" y="4.17" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_13">
@@ -6037,7 +6108,7 @@ z
    <g id="line2d_13">
     <path d="M 30.244219 131.682 
 L 169.744219 4.17 
-" clip-path="url(#p3863d5173b)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #cfcac0"/>
+" clip-path="url(#p5f26b7fbd7)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #cfcac0"/>
    </g>
    <g id="line2d_14">
     <path d="M 30.565439 131.379182 
@@ -6050,9 +6121,9 @@ L 118.472037 9.60568
 L 136.183459 10.33 
 L 150.446648 9.774923 
 L 167.716013 4.308855 
-" clip-path="url(#p3863d5173b)" style="fill: none; stroke: #d9480f; stroke-width: 1.3; stroke-linecap: square"/>
+" clip-path="url(#p5f26b7fbd7)" style="fill: none; stroke: #d9480f; stroke-width: 1.3; stroke-linecap: square"/>
     <defs>
-     <path id="m160fb20218" d="M 0 1.5 
+     <path id="m2a27bbaf5f" d="M 0 1.5 
 C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
 C 1.341951 0.77937 1.5 0.397805 1.5 0 
 C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066 
@@ -6064,17 +6135,17 @@ C -0.77937 1.341951 -0.397805 1.5 0 1.5
 z
 " style="stroke: #d9480f"/>
     </defs>
-    <g clip-path="url(#p3863d5173b)">
-     <use xlink:href="#m160fb20218" x="30.565439" y="131.379182" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m160fb20218" x="51.258095" y="102.528313" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m160fb20218" x="63.564515" y="69.346747" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m160fb20218" x="78.898762" y="58.818" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m160fb20218" x="94.256672" y="40.523708" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m160fb20218" x="106.727486" y="20.355734" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m160fb20218" x="118.472037" y="9.60568" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m160fb20218" x="136.183459" y="10.33" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m160fb20218" x="150.446648" y="9.774923" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m160fb20218" x="167.716013" y="4.308855" style="fill: #d9480f; stroke: #d9480f"/>
+    <g clip-path="url(#p5f26b7fbd7)">
+     <use xlink:href="#m2a27bbaf5f" x="30.565439" y="131.379182" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m2a27bbaf5f" x="51.258095" y="102.528313" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m2a27bbaf5f" x="63.564515" y="69.346747" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m2a27bbaf5f" x="78.898762" y="58.818" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m2a27bbaf5f" x="94.256672" y="40.523708" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m2a27bbaf5f" x="106.727486" y="20.355734" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m2a27bbaf5f" x="118.472037" y="9.60568" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m2a27bbaf5f" x="136.183459" y="10.33" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m2a27bbaf5f" x="150.446648" y="9.774923" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m2a27bbaf5f" x="167.716013" y="4.308855" style="fill: #d9480f; stroke: #d9480f"/>
     </g>
    </g>
    <g id="patch_3">
@@ -6090,7 +6161,7 @@ L 169.744219 131.682
   </g>
  </g>
  <defs>
-  <clipPath id="p3863d5173b">
+  <clipPath id="p5f26b7fbd7">
    <rect x="30.244219" y="4.17" width="139.5" height="127.512"/>
   </clipPath>
  </defs>
@@ -6128,21 +6199,20 @@ L 169.744219 131.682
   <div>
     <div class="lbl">Android signal code (sketch, not built yet)</div>
     <pre>class ChakravyuhProbes(ctx: Context, integrity: StandardIntegrityTokenProvider) {
+  // Readable by a banking app (5 signals)
   fun evidence(nonce: String): Evidence {
     val ev = mapOf(
-      "call_unknown_active"   to isUnknownCallActive(),
-      "call_long"             to callDurationSec() >= 20 * 60,
-      "video_call"            to voipAudioModeActive(),
-      "sms_scam_flag"         to onDeviceLureClassifier.hitWithin(24.hours),
-      "remote_access"         to screenShareOrRemoteAppRunning(),
-      "sideload_24h"          to installedOutsideStore(within = 24.hours),
-      "accessibility_overlay" to thirdPartyOverlayAndA11yEnabled(),
-      "otp_read_in_call"      to (isUnknownCallActive() && otpNotificationOpened()),
-      "vpa_typed"             to payeeEnteredManually())       // 9 device signals
-      .filterValues { it }                                    // send only true ones
+      "call_long"   to (callActive() && callSeconds() >= 20 * 60),  // TelephonyCallback, READ_PHONE_STATE
+      "video_call"  to (audio.mode == AudioManager.MODE_IN_COMMUNICATION),
+      "remote_access" to (knownRemoteAppInstalled()              // <queries> list of package names
+                          || a11yServicesEnabledByOthers()),       // AccessibilityManager
+      "accessibility_overlay" to lastTouchWasObscured(),           // FLAG_WINDOW_IS_OBSCURED
+      "vpa_typed"   to payeeEnteredManually())                     // our own payment screen
+      .filterValues { it }
+    // Restricted, not read: caller number (call log), SMS text, all installed apps,
+    // other apps' notifications. Fallback: bank checks if its own OTP was sent during a call.
     val body = canonicalJson(ev, amount, payeeHash, nonce, now())
-    val token = integrity.request(requestHash = sha256(body)) // server verifies
-    return Evidence(body, token)
+    return Evidence(body, integrity.request(requestHash = sha256(body)))
   }
 }</pre>
     <div class="lbl" style="margin-top:12px">Disclosures</div>
