@@ -40,10 +40,10 @@ def render_tier3():
     """Digital-arrest tier-3 cooling-off hold."""
     s = PHONE
     s += status_bar()
-    s += top_pill("TIER 3  ·  HOLD 30 MIN", "#8a1c1c", "#ffffff")
+    s += top_pill("HELD FOR 30 MIN", "#8a1c1c", "#ffffff")
     s += """
   <!-- headline -->
-  <text x="24" y="112" font-size="20" font-weight="800" fill="#0d1420">Wait — this looks</text>
+  <text x="24" y="112" font-size="20" font-weight="800" fill="#0d1420">Wait, this looks</text>
   <text x="24" y="136" font-size="20" font-weight="800" fill="#0d1420">like a scam.</text>
   <text x="24" y="170" font-size="12" fill="#5a6473">Real police, CBI or RBI officials</text>
   <text x="24" y="187" font-size="12" fill="#5a6473">never demand payment on a call.</text>
@@ -77,7 +77,7 @@ def render_tier3():
         font-weight="700" fill="#ffffff">Speak to a bank agent now</text>
   <rect x="20" y="470" width="260" height="42" rx="10" fill="#ffffff" stroke="#e4e7ec"/>
   <text x="150" y="496" text-anchor="middle" font-size="12.5" font-weight="600"
-        fill="#0d1420">I understand — release in 30 min</text>
+        fill="#0d1420">I understand, release in 30 min</text>
 
   <!-- footer receipt id -->
   <text x="24" y="540" font-size="9.5" fill="#8a94a3">Receipt · 8723987bc76393cd</text>
@@ -98,7 +98,7 @@ def render_tier2():
     """Remote-access KYC tier-2 interrupt with 2 safety questions."""
     s = PHONE
     s += status_bar()
-    s += top_pill("TIER 2  ·  INTERRUPT", "#a05a00", "#ffffff")
+    s += top_pill("PLEASE CHECK", "#a05a00", "#ffffff")
     s += """
   <text x="24" y="112" font-size="20" font-weight="800" fill="#0d1420">A remote-access app</text>
   <text x="24" y="136" font-size="20" font-weight="800" fill="#0d1420">is on your phone.</text>
@@ -186,10 +186,10 @@ def render_agent_desk():
     s += f'<rect x="0" y="0" width="{w}" height="{h}" rx="10" fill="#0d1420"/>'
     s += f'<rect x="0" y="0" width="{w}" height="34" fill="#151b23"/>'
     s += '<circle cx="18" cy="17" r="6" fill="#8a1c1c"/>'
-    s += '<text x="34" y="21" font-size="12" fill="#e7ecf2">Agent desk — illustrative mock-up</text>'
+    s += '<text x="34" y="21" font-size="12" fill="#e7ecf2">Agent screen (mock-up)</text>'
     s += '<text x="620" y="21" text-anchor="end" font-size="11" fill="#9aa5b3">agent · sunita.r@bank</text>'
     # header
-    s += '<text x="20" y="66" font-size="14" font-weight="700" fill="#ffffff">Tier-3 hold · 8723987bc76393cd</text>'
+    s += '<text x="20" y="66" font-size="14" font-weight="700" fill="#ffffff">Held payment · 8723987bc76393cd</text>'
     s += '<rect x="410" y="52" width="90" height="22" rx="11" fill="#8a1c1c"/>'
     s += '<text x="455" y="67" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">HOLD 27:14</text>'
     s += '<rect x="510" y="52" width="110" height="22" rx="11" fill="#12805c"/>'

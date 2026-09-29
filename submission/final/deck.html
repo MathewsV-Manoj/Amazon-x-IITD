@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Chakravyuh — RAKSHAM Round 1</title>
+<!doctype html><html><head><meta charset="utf-8"><title>Chakravyuh, RAKSHAM Round 1</title>
 <style>@font-face { font-family: "IBM Plex Sans"; src: url("../fonts/IBMPlexSans-Regular.ttf"); font-weight: 400; }
 @font-face { font-family: "IBM Plex Sans"; src: url("../fonts/IBMPlexSans-Italic.ttf"); font-weight: 400; font-style: italic; }
 @font-face { font-family: "IBM Plex Sans"; src: url("../fonts/IBMPlexSans-Medium.ttf"); font-weight: 500; }
@@ -21,16 +21,15 @@ em { font-style: italic; }
 i { font-style: normal; color: var(--muted); }
 .acc { color: var(--orange) !important; }
 .small { font-size: 10.5px; color: var(--ink2); line-height: 1.45; }
-.lbl { font-size: 9px; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; display: block; margin-bottom: 6px; }
+.lbl { font-family: "IBM Plex Sans", sans-serif; font-size: 11px; font-weight: 600; color: var(--ink2); display: block; margin-bottom: 6px; letter-spacing: 0; }
 
 .slide { width: 297mm; height: 210mm; position: relative; overflow: hidden; page-break-after: always;
   padding: 58px 56px 44px 56px; background: var(--paper); }
 .slide:last-child { page-break-after: auto; }
 .slide > header { position: absolute; top: 22px; left: 56px; right: 56px; display: flex; justify-content: space-between;
-  font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  font-size: 10px; color: var(--muted); }
 .slide > header .sec { color: var(--ink); }
-.slide > header .sec::before { content: ""; display: inline-block; width: 18px; height: 2px; background: var(--orange);
-  vertical-align: middle; margin-right: 10px; }
+
 .slide > footer { position: absolute; bottom: 18px; left: 56px; right: 56px; display: flex; justify-content: space-between;
   font-size: 8.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 7px; }
 .slide > footer .pg { font-family: "IBM Plex Mono", monospace; color: var(--ink); }
@@ -47,7 +46,7 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 
 /* ---------- cover ---------- */
 .cover { padding: 48px 64px; }
-.cv-top { font-size: 9px; letter-spacing: 0.16em; color: var(--navy-muted); }
+.cv-top { font-size: 11px; color: var(--navy-muted); }
 .cv-main { margin-top: 92px; max-width: 700px; }
 .cv-title { font-size: 76px; font-weight: 600; letter-spacing: -0.025em; line-height: 1; }
 .cv-tag { font-size: 30px; font-weight: 400; line-height: 1.2; margin-top: 18px; color: var(--on-navy); }
@@ -55,7 +54,7 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .cv-chain { position: absolute; right: 64px; top: 170px; width: 250px; display: flex; flex-direction: column; }
 .cv-chain .node { display: flex; align-items: center; gap: 14px; font-size: 12px; color: var(--on-navy); }
 .cv-chain .node i { width: 11px; height: 11px; border: 1.5px solid var(--on-navy); border-radius: 50%; display: block; }
-.cv-chain .node span { font-family: "IBM Plex Mono", monospace; letter-spacing: 0.1em; text-transform: uppercase; font-size: 10px; }
+.cv-chain .node span { font-size: 12px; }
 .cv-chain .link { width: 1.5px; height: 30px; background: var(--navy-muted); margin-left: 5px; }
 .cv-chain .link.gate { background: var(--orange); height: 44px; }
 .cv-chain .node.end i { background: var(--orange); border-color: var(--orange); }
@@ -65,7 +64,7 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .cv-foot .team div { font-size: 12px; }
 .cv-foot .team b { margin-right: 10px; }
 .cv-foot .team span { color: var(--navy-muted); }
-.cv-foot .note { font-size: 9px; color: var(--navy-muted); text-align: right; line-height: 1.6; letter-spacing: 0.06em; }
+.cv-foot .note { font-size: 10px; color: var(--navy-muted); text-align: right; line-height: 1.6; }
 
 /* ---------- 02 problem ---------- */
 .prob { display: grid; grid-template-columns: 1.35fr 1fr; gap: 56px; margin-top: 30px; }
@@ -73,7 +72,7 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .seq .who { grid-column: 1; }
 .seq .s1 { grid-row: 2; } .seq .s2 { grid-row: 3; } .seq .s3 { grid-row: 4; } .seq .pay { grid-row: 5; }
 .seq .step { grid-column: 1; }
-.seq .who { font-size: 9px; letter-spacing: 0.14em; color: var(--muted); margin-bottom: 8px; }
+.seq .who { font-size: 11px; font-weight: 600; color: var(--ink2); margin-bottom: 8px; }
 .seq .step { position: relative; border-left: 1.5px solid var(--ink); padding: 4px 0 18px 22px; margin-left: 5px; }
 .seq .step::before { content: ""; position: absolute; left: -6px; top: 8px; width: 9px; height: 9px; border-radius: 50%;
   background: var(--paper); border: 1.5px solid var(--ink); }
@@ -90,7 +89,7 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .stat { border-top: 1px solid var(--rule); padding: 14px 0 16px; }
 .stat .big { font-size: 38px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; }
 .stat .cap { color: var(--ink2); font-size: 12.5px; }
-.stats .src { font-size: 8.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 8px; line-height: 1.5; letter-spacing: 0.02em; }
+.stats .src { font-size: 10px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 8px; line-height: 1.5; }
 .punch { margin-top: 26px; font-size: 16px; line-height: 1.4; border-left: 2px solid var(--orange); padding-left: 14px; }
 
 /* ---------- 03 insight (hero) ---------- */
@@ -105,13 +104,12 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .stages { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 32px; border-top: 1.5px solid var(--on-navy); }
 .stg { padding: 16px 20px 0 0; position: relative; }
 .stg::before { content: ""; position: absolute; top: -6px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--on-navy); }
-.stg:last-child::after { content: "→ decision"; position: absolute; top: -21px; right: 0; font-family: "IBM Plex Mono", monospace;
-  font-size: 9px; letter-spacing: 0.1em; color: var(--orange); text-transform: uppercase; }
-.stg .n { font-size: 9px; color: var(--navy-muted); margin-top: 6px; }
+
+.stg .n { font-size: 11px; color: var(--navy-muted); margin-top: 6px; }
 .stg .name { font-size: 30px; font-weight: 600; letter-spacing: -0.01em; margin: 2px 0 10px; }
 .stg ul { list-style: none; }
 .stg li { font-size: 13.5px; color: var(--on-navy); padding: 7px 0; border-bottom: 1px solid var(--navy-rule); }
-.stg .src { font-size: 8.5px; color: var(--navy-muted); margin-top: 8px; letter-spacing: 0.1em; text-transform: uppercase; }
+.stg .src { font-size: 11px; color: var(--navy-muted); margin-top: 8px; }
 .rule-line { height: 0; margin-top: 30px; }
 .thesis { font-size: 23px; line-height: 1.3; max-width: 1000px; font-weight: 400; }
 .hero .stages { margin-top: 52px; }
@@ -121,14 +119,14 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .thesis-sub { margin-top: 10px; color: var(--navy-muted); font-size: 12.5px; max-width: 760px; }
 
 /* ---------- 04 response ---------- */
-.stair { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 34px; align-items: end; }
+.stair { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 40px; align-items: start; }
 .tier { padding: 0 24px 0 0; position: relative; margin-right: 18px; }
 .tier::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; }
-.tier.t1 { padding-top: 110px; } .tier.t2 { padding-top: 56px; } .tier.t3 { padding-top: 0; }
-.tier.t1::before { top: 110px; background: var(--rule); height: 2px; }
-.tier.t2::before { top: 56px; background: var(--ink); height: 2px; }
+.tier.t1, .tier.t2, .tier.t3 { padding-top: 0; }
+.tier.t1::before { background: var(--rule); height: 3px; }
+.tier.t2::before { background: var(--ink); height: 3px; }
 .tier.t3::before { background: var(--orange); }
-.tier .tk { font-size: 9px; letter-spacing: 0.14em; color: var(--muted); padding-top: 14px; }
+.tier .tk { font-size: 11px; color: var(--muted); padding-top: 14px; }
 .tier .tn { font-size: 22px; font-weight: 600; line-height: 1.15; margin: 4px 0 14px; min-height: 52px; }
 .tier.t3 .tn { color: var(--orange); }
 .tier .tt, .tier .tu { font-size: 12px; color: var(--ink2); margin-bottom: 12px; }
@@ -138,12 +136,12 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .foot-note { margin-top: 26px; font-size: 13px; border-left: 2px solid var(--orange); padding-left: 12px; max-width: 640px; }
 
 /* ---------- 05 story ---------- */
-.tag { font-size: 9px; letter-spacing: 0.14em; color: var(--muted); margin-top: -2px; }
+.tag { font-size: 12px; color: var(--muted); margin-top: -2px; font-style: italic; }
 .story { display: grid; grid-template-columns: 1fr 200px; gap: 40px; margin-top: 22px; }
 .evrow { display: flex; align-items: flex-start; }
 .ev { width: 96px; flex: none; }
 .ev b { display: block; font-size: 12.5px; line-height: 1.25; min-height: 32px; }
-.ev span { font-size: 8.5px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.ev span { font-size: 11px; color: var(--muted); }
 .ev::before { content: ""; display: block; width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--ink); margin-bottom: 8px; background: var(--paper); }
 .ev.last b { color: var(--orange); }
 .ev.last::before { background: var(--orange); border-color: var(--orange); }
@@ -157,7 +155,7 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .side .mono { font-size: 11px; }
 .phone { text-align: center; }
 .phone svg { width: 200px; height: auto; }
-.phone .cap { font-size: 8.5px; color: var(--muted); margin-top: 6px; }
+.phone .cap { font-size: 10px; color: var(--muted); margin-top: 6px; }
 
 /* ---------- 06 model ---------- */
 .pipe { display: flex; align-items: stretch; gap: 10px; margin-top: 24px; }
@@ -180,33 +178,31 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .principles span { color: var(--ink2); }
 
 /* ---------- 07 results ---------- */
-.banner { font-size: 9.5px; letter-spacing: 0.14em; color: var(--orange); border-top: 1px solid var(--orange);
-  border-bottom: 1px solid var(--orange); padding: 5px 0; display: inline-block; }
+.banner { font-size: 12.5px; color: var(--ink2); font-style: italic; border-left: 2px solid var(--orange); padding-left: 10px; }
 .res { display: grid; grid-template-columns: 290px 1fr; gap: 36px; margin-top: 14px; }
 .kpi { border-top: 1px solid var(--rule); padding: 10px 0 12px; }
 .kpi .k { font-size: 40px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; }
 .kpi .kl { font-size: 12px; color: var(--ink); margin-top: 2px; }
-.kpi .kc { font-size: 9.5px; color: var(--muted); margin-top: 3px; }
+.kpi .kc { font-size: 10.5px; color: var(--muted); margin-top: 3px; }
 .chart svg { width: 100%; height: auto; max-height: 300px; }
-.chart .cap { font-size: 8.5px; color: var(--muted); }
+.chart .cap { font-size: 10px; color: var(--muted); }
 .res-note { margin-top: 10px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 36px; border-top: 1px solid var(--rule); padding-top: 10px; }
 .res-note p { font-size: 11.5px; color: var(--ink2); }
-.res-note .small { font-size: 9px; color: var(--muted); letter-spacing: 0.02em; }
+.res-note .small { font-size: 10.5px; color: var(--muted); }
 
 /* ---------- tables ---------- */
 .tbl { border-collapse: collapse; width: 100%; font-size: 11px; }
-.tbl th { text-align: left; font-family: "IBM Plex Mono"; font-weight: 400; font-size: 8.5px; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--ink); padding: 0 12px 6px 0; }
+.tbl th { text-align: left; font-weight: 600; font-size: 10.5px; color: var(--ink2); border-bottom: 1px solid var(--ink); padding: 0 12px 6px 0; }
 .tbl td { vertical-align: top; padding: 9px 12px 9px 0; border-bottom: 1px solid var(--rule); color: var(--ink2); }
 .tbl td.r, .tbl th.r { text-align: right; }
 .tbl td i { font-size: 0.88em; }
 .tbl.sm td { padding: 5px 10px 5px 0; font-size: 10.5px; }
 .tbl.xs td { padding: 3.5px 10px 3.5px 0; font-size: 9.5px; }
-.tbl.xs th { font-size: 7.5px; }
+.tbl.xs th { font-size: 9.5px; }
 .q .mono { font-size: 9px; color: var(--muted); display: block; }
 .q b { display: block; font-size: 13.5px; color: var(--ink); line-height: 1.25; }
 .q span:last-child { font-size: 10.5px; color: var(--muted); }
-.st { font-family: "IBM Plex Mono"; font-size: 8px; letter-spacing: 0.12em; padding: 1px 5px; border: 1px solid; white-space: nowrap; }
+.st { font-size: 9.5px; padding: 0 5px; border: 1px solid; white-space: nowrap; border-radius: 2px; }
 .st-measured, .st-implemented { color: var(--ink); border-color: var(--ink); }
 .st-design, .st-simulated { color: var(--muted); border-color: var(--muted); border-style: dashed; }
 .st-proposed { color: var(--muted); border-color: var(--muted); border-style: dotted; }
@@ -229,7 +225,7 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .boundary { border-left: 1.5px dashed var(--ink); position: relative; }
 .boundary { display: flex; justify-content: center; align-items: center; border-left: none;
   background: linear-gradient(var(--ink) 50%, transparent 50%) center / 1.5px 8px repeat-y; }
-.boundary span { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 8.5px; letter-spacing: 0.16em;
+.boundary span { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 10px;
   color: var(--muted); white-space: nowrap; background: var(--paper); padding: 8px 0; }
 .eqn { font-size: 17px; line-height: 1.3; margin-bottom: 8px; }
 .eqn b { font-size: 26px; color: var(--orange); }
@@ -242,13 +238,12 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .receipt .lbl { grid-row: span 2; }
 .receipt code { font-family: "IBM Plex Mono"; font-size: 11px; color: var(--ink); }
 .receipt p { font-size: 11.5px; color: var(--ink2); }
-.legal { margin-top: 12px; font-size: 8.5px; color: var(--muted); letter-spacing: 0.03em; line-height: 1.5; }
+.legal { margin-top: 12px; font-size: 10px; color: var(--muted); line-height: 1.5; }
 
 /* ---------- 10 diff + plan ---------- */
 .diff { display: grid; grid-template-columns: 1.3fr 1fr; gap: 44px; align-items: center; margin-top: 12px; }
 .mx { border-collapse: collapse; width: 100%; font-size: 13px; }
-.mx th { font-family: "IBM Plex Mono"; font-weight: 400; font-size: 8.5px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--muted); text-align: center; padding: 0 6px 8px; border-bottom: 1px solid var(--ink); line-height: 1.35; }
+.mx th { font-weight: 600; font-size: 10.5px; color: var(--ink2); text-align: center; padding: 0 6px 8px; border-bottom: 1px solid var(--ink); line-height: 1.35; }
 .mx td { padding: 9px 6px; border-bottom: 1px solid var(--rule); text-align: center; color: var(--ink2); font-size: 11px; }
 .mx td:first-child { text-align: left; font-size: 13px; color: var(--ink); }
 .mx tr.me td { color: var(--ink); font-weight: 600; }
@@ -263,7 +258,7 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .phases { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin: 6px 0 12px; }
 .ph { border-left: 1px solid var(--rule); padding: 2px 16px 0 12px; }
 .ph:first-child { border-left: 2px solid var(--orange); }
-.ph .t { font-size: 9.5px; color: var(--orange); letter-spacing: 0.08em; }
+.ph .t { font-size: 11px; color: var(--orange); font-weight: 600; }
 .ph b { display: block; font-size: 13px; margin: 3px 0 4px; }
 .ph span { font-size: 10.5px; color: var(--ink2); line-height: 1.4; display: block; }
 
@@ -271,7 +266,7 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .archp h2 { font-size: 26px; }
 .arch { margin-top: 12px; }
 .plane { border-top: 1.5px solid var(--ink); padding-top: 6px; }
-.plane .pt { font-size: 8.5px; letter-spacing: 0.14em; color: var(--ink); margin-bottom: 6px; }
+.plane .pt { font-size: 11.5px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
 .pr { display: flex; gap: 10px; }
 .ab { flex: 1; padding: 7px 9px; font-size: 10px; color: var(--ink2); line-height: 1.35; background: var(--paper); }
 .ab-implemented { border: 1.5px solid var(--ink); background: #fff; }
@@ -280,16 +275,16 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .abh { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; gap: 6px; }
 .abh b { font-size: 11.5px; color: var(--ink); }
 .ab-proposed .abh b { color: var(--ink2); }
-.flow { font-size: 9px; color: var(--muted); padding: 6px 0 6px 2px; letter-spacing: 0.06em; }
+.flow { font-size: 10px; color: var(--muted); padding: 6px 0 6px 2px; }
 .two { display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; }
-.legend { margin-top: 16px; font-size: 8.5px; color: var(--muted); display: flex; gap: 18px; align-items: center; }
+.legend { margin-top: 16px; font-size: 10px; color: var(--muted); display: flex; gap: 18px; align-items: center; }
 .lg::before { content: ""; display: inline-block; width: 18px; height: 9px; margin-right: 6px; vertical-align: -1px; }
 .lg.impl::before { border: 1.5px solid var(--ink); background: #fff; }
 .lg.sim::before { border: 1.2px dashed var(--muted); }
 .lg.prop::before { border: 1.2px dotted var(--muted); }
 .a2 { display: grid; grid-template-columns: 330px 1fr; gap: 36px; margin-top: 14px; }
 .fs { display: grid; grid-template-columns: 26px 1fr; column-gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--rule); }
-.fs .fn { grid-row: span 2; font-size: 11px; color: var(--orange); }
+.fs .fn { grid-row: span 2; font-size: 12px; font-weight: 600; color: var(--orange); }
 .fs b { font-size: 12.5px; }
 .fs span { font-size: 10.5px; color: var(--ink2); }
 .desk { margin-top: 10px; }
@@ -299,7 +294,7 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .ro { display: grid; grid-template-columns: 150px 1fr; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--rule); font-size: 11px; }
 .ro span { color: var(--ink2); }
 .model { border-left: 1.5px dashed var(--muted); padding-left: 24px; }
-.mtag { font-size: 8.5px; letter-spacing: 0.14em; color: var(--orange); margin-bottom: 10px; }
+.mtag { font-size: 11.5px; font-style: italic; color: var(--orange); margin-bottom: 10px; }
 .calc div { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; border-bottom: 1px solid var(--rule); font-size: 11px; color: var(--ink2); }
 .calc div b { font-family: "IBM Plex Mono"; font-weight: 400; color: var(--ink); white-space: nowrap; }
 .calc .tot { border-bottom: 1.5px solid var(--ink); }
@@ -322,13 +317,13 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
 .xc .small { font-size: 9.5px; }
 </style></head><body>
 <section class="slide dark cover">
-  <div class="cv-top mono">RAKSHAM · AMAZON × IIT DELHI · ROUND 1 &nbsp;/&nbsp; TRACK 02 — AI-DRIVEN SCAM PATTERN RECOGNITION</div>
+  <div class="cv-top">RAKSHAM, Amazon × IIT Delhi · Round 1 · Track 2: AI-driven scam pattern recognition</div>
   <div class="cv-main">
     <h1 class="cv-title">Chakravyuh</h1>
     <p class="cv-tag">Intercept the scam workflow,<br>not the transaction.</p>
-    <p class="cv-lede">A decision engine for UPI and bank payments that reads each payment session as a
-    four-stage scam workflow — contact, control, extraction, cash-out — and escalates only when
-    that workflow forms, with a reason the customer can read and a signed receipt the bank can audit.</p>
+    <p class="cv-lede">Chakravyuh checks a UPI payment for the steps that usually come before a scam payment:
+    a suspicious call, someone controlling the phone, an unusual payment, and a receiving account that looks like a mule.
+    It interrupts only when several of these show up together, tells the customer why, and keeps a signed record for the bank.</p>
   </div>
   <div class="cv-chain">
     <div class="node"><i></i><span>Contact</span></div><div class="link"></div>
@@ -338,100 +333,99 @@ h2 { font-size: 30px; line-height: 1.12; font-weight: 600; letter-spacing: -0.01
     <div class="node end"><i></i><span>Decision</span></div>
   </div>
   <div class="cv-foot">
-    <div class="team"><span class="mono lbl">TEAM</span><div><b>Mathews V Manoj</b><span>B.Tech Electronics & Communication, Muthoot Institute of Technology and Science (KTU)</span></div></div>
-    <div class="note mono">All results in this document come from synthetic data.<br>No real customer, bank or platform data was used.</div>
+    <div class="team"><span class="lbl">Team</span><div><b>Mathews V Manoj</b><span>B.Tech Electronics & Communication, Muthoot Institute of Technology and Science (KTU)</span></div></div>
+    <div class="note">All results here come from synthetic data we generated.<br>No real customer, bank or platform data was used.</div>
   </div>
 </section>
 <section class="slide  ">
-  <header><span class="sec">01 — Problem</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">1. Problem</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.2">
-<h2>The victim presses Pay.</h2>
-<p class="lede">In authorised-payment scams the fraud happens <em>before</em> the transaction.
-When the payment is finally made, the PIN is correct, the device is the customer's own and the customer means to pay.</p>
+<h2>In these scams, the victim makes the payment</h2>
+<p class="lede">Most of the scam happens before any money moves. By the time the victim pays, the PIN is correct,
+the phone is their own and they intend to pay, so a check on the payment alone has little to go on.</p>
 <div class="prob">
   <div class="seq">
-    <div class="who mono">SCAMMER</div>
-    <div class="step s1"><b>Contact</b><span>A “CBI officer” video-calls about a money-laundering case</span></div>
-    <div class="step s2"><b>Control</b><span>A screen-sharing app is installed “for verification”</span></div>
-    <div class="step s3"><b>Money extraction</b><span>A fixed deposit is broken; a new payee is typed in</span></div>
-    <div class="step pay"><b>Victim presses Pay</b><span>₹2,50,000 to a personal UPI ID</span></div>
-    <div class="brk b1"><span>Invisible to a transaction-only view</span></div>
-    <div class="brk b2"><span>The only moment a transaction system scores</span></div>
+    <div class="who">A typical digital-arrest scam</div>
+    <div class="step s1"><b>Contact</b><span>A fake “CBI officer” video-calls about a money-laundering case</span></div>
+    <div class="step s2"><b>Control</b><span>She is told to install a screen-sharing app “for verification”</span></div>
+    <div class="step s3"><b>Money extraction</b><span>She breaks a fixed deposit and types in a new payee</span></div>
+    <div class="step pay"><b>She pays</b><span>₹2,50,000 to a personal UPI ID</span></div>
+    <div class="brk b1"><span>A payment-level check does not see these steps</span></div>
+    <div class="brk b2"><span>This is the only step it checks</span></div>
   </div>
   <div class="stats">
     <div class="stat"><div class="big">₹22,845 cr</div><div class="cap">lost to cyber fraud in India in 2024</div></div>
     <div class="stat"><div class="big">36.37 lakh</div><div class="cap">complaints filed in 2024</div></div>
-    <div class="src mono">Source: Ministry of Home Affairs, reply in Lok Sabha, July 2025 (NCRP and CFCFRMS data).</div>
-    <p class="punch">Traditional fraud systems often see only the final transaction — and every
-    credential in it is genuine.</p>
+    <div class="src">Source: Ministry of Home Affairs, reply in Lok Sabha, July 2025 (NCRP and CFCFRMS data).</div>
+    <p class="punch">Our idea: use the steps before the payment as evidence, not just the payment itself.</p>
   </div>
 </div></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">02 / 16</span></footer>
 </section>
 <section class="slide dark hero">
-  <header><span class="sec">02 — Insight</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">2. Idea</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.1">
-<h2>Score the workflow, not the transaction.</h2>
+<h2>A scam has four stages. We look for all of them.</h2>
 <div class="cmp">
-  <div class="row"><span class="mono lbl">TRANSACTION VIEW</span><span class="box">one payment</span><span class="arr">→</span><span class="out">suspicious / not suspicious</span></div>
-  <div class="row"><span class="mono lbl acc">WORKFLOW VIEW</span><span class="chainline">contact <span class="arr">→</span> control <span class="arr">→</span> extraction <span class="arr">→</span> cash-out</span><span class="arr">→</span><span class="out acc">graduated response</span></div>
+  <div class="row"><span class="lbl">Usual approach</span><span class="box">one payment</span><span class="arr">→</span><span class="out">suspicious or not</span></div>
+  <div class="row"><span class="lbl acc">Chakravyuh</span><span class="chainline">contact <span class="arr">→</span> control <span class="arr">→</span> extraction <span class="arr">→</span> cash-out</span><span class="arr">→</span><span class="out acc">response scaled to the evidence</span></div>
 </div>
-<div class="stages"><div class="stg"><div class="n mono">01</div><div class="name">Contact</div>
-      <ul><li>call with an unknown number</li><li>call longer than 20 min</li><li>scam-lure SMS (classified on-device)</li></ul><div class="src mono">signals from device</div></div><div class="stg"><div class="n mono">02</div><div class="name">Control</div>
-      <ul><li>screen-sharing app running</li><li>app sideloaded in last 24 h</li><li>OTP opened during the call</li></ul><div class="src mono">signals from device</div></div><div class="stg"><div class="n mono">03</div><div class="name">Extraction</div>
-      <ul><li>first-time payee, typed VPA</li><li>&gt; 70% of balance</li><li>fixed deposit broken in last 24 h</li></ul><div class="src mono">signals from bank</div></div><div class="stg"><div class="n mono">04</div><div class="name">Cash-out</div>
-      <ul><li>payee behaves like a mule</li><li>payee account &lt; 30 days old</li><li>payee on a suspect registry</li></ul><div class="src mono">signals from network</div></div></div>
+<div class="stages"><div class="stg"><div class="n">01</div><div class="name">Contact</div>
+      <ul><li>call with an unknown number</li><li>call longer than 20 min</li><li>scam-lure SMS (classified on-device)</li></ul><div class="src">from the device</div></div><div class="stg"><div class="n">02</div><div class="name">Control</div>
+      <ul><li>screen-sharing app running</li><li>app sideloaded in last 24 h</li><li>OTP opened during the call</li></ul><div class="src">from the device</div></div><div class="stg"><div class="n">03</div><div class="name">Extraction</div>
+      <ul><li>first-time payee, typed VPA</li><li>&gt; 70% of balance</li><li>fixed deposit broken in last 24 h</li></ul><div class="src">from the bank</div></div><div class="stg"><div class="n">04</div><div class="name">Cash-out</div>
+      <ul><li>payee behaves like a mule</li><li>payee account &lt; 30 days old</li><li>payee on a suspect registry</li></ul><div class="src">from the network</div></div></div>
 <div class="rule-line"></div>
-<p class="thesis">A single signal should not trigger a severe intervention. <b>The workflow must form.</b></p>
-<p class="thesis-sub">A legitimate payment can look odd in isolation — a new payee on rent day, a long call with a plumber.
-A scam becomes visible through its sequence. Full catalogue of 20 signals: Appendix A.</p></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+<p class="thesis">One odd signal is not enough to stop a payment. <b>We act when several stages show up together.</b></p>
+<p class="thesis-sub">A genuine payment can look odd on its own, like a new payee on rent day or a long call with a plumber.
+A scam is easier to spot from the sequence. All 20 signals are listed in Appendix A.</p></div>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">03 / 16</span></footer>
 </section>
 <section class="slide  ">
-  <header><span class="sec">03 — Response</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">3. Response</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.16">
-<h2>Escalate only as the workflow forms.</h2>
-<p class="lede">Friction grows with evidence. The bank sets an alert budget for each tier; thresholds are
-calibrated to it on held-out data.</p>
+<h2>Three levels of response</h2>
+<p class="lede">The more stages we see, the stronger the response. The bank chooses how many alerts per 1,000 payments it
+will accept at each level, and we set the thresholds to match that on separate test data.</p>
 <div class="stair"><div class="tier t1">
-      <div class="tk mono">TIER 1</div><div class="tn">Observe</div>
-      <div class="tt"><span class="mono lbl">TRIGGER</span>Fused score above τ₁</div>
-      <div class="tu"><span class="mono lbl">CUSTOMER SEES</span>Nothing. The session is logged to the bank's fraud queue.</div>
-      <div class="tr"><span class="num">20.4</span><span>legit sessions per 1,000<br><i>measured, synthetic · budget 20</i></span></div>
+      <div class="tk">Level 1</div><div class="tn">Log it</div>
+      <div class="tt"><span class="lbl">When</span>Score above τ₁</div>
+      <div class="tu"><span class="lbl">Customer sees</span>Nothing. The session goes to the bank's fraud team for later review.</div>
+      <div class="tr"><span class="num">20.4</span><span>genuine sessions per 1,000 reach this level<br><i>measured on synthetic data (target 20)</i></span></div>
     </div><div class="tier t2">
-      <div class="tk mono">TIER 2</div><div class="tn">Explain + verify</div>
-      <div class="tt"><span class="mono lbl">TRIGGER</span>Score above τ₂ <b>and</b> ≥ 2 stages active</div>
-      <div class="tu"><span class="mono lbl">CUSTOMER SEES</span>A warning naming the specific scam pattern, and two questions. The customer can still pay.</div>
-      <div class="tr"><span class="num">2.77</span><span>legit sessions per 1,000<br><i>measured, synthetic · budget 3</i></span></div>
+      <div class="tk">Level 2</div><div class="tn">Warn and ask</div>
+      <div class="tt"><span class="lbl">When</span>Score above τ₂ <b>and</b> ≥ 2 stages active</div>
+      <div class="tu"><span class="lbl">Customer sees</span>A warning that names the likely scam, and two questions. The customer can still pay.</div>
+      <div class="tr"><span class="num">2.77</span><span>genuine sessions per 1,000 reach this level<br><i>measured on synthetic data (target 3)</i></span></div>
     </div><div class="tier t3">
-      <div class="tk mono">TIER 3</div><div class="tn">Cool off + human review</div>
-      <div class="tt"><span class="mono lbl">TRIGGER</span>Score above τ₃ <b>and</b> ≥ 3 stages, or 2 stages + registry hit</div>
-      <div class="tu"><span class="mono lbl">CUSTOMER SEES</span>A 30-minute hold before the PIN screen. A bank agent reviews; release needs two approvers.</div>
-      <div class="tr"><span class="num">0.07</span><span>legit sessions per 1,000<br><i>measured, synthetic · budget 0.5</i></span></div>
+      <div class="tk">Level 3</div><div class="tn">Hold and review</div>
+      <div class="tt"><span class="lbl">When</span>Score above τ₃ <b>and</b> ≥ 3 stages, or 2 stages + registry hit</div>
+      <div class="tu"><span class="lbl">Customer sees</span>The payment is held for up to 30 minutes and a bank agent calls. Two staff must approve a release.</div>
+      <div class="tr"><span class="num">0.07</span><span>genuine sessions per 1,000 reach this level<br><i>measured on synthetic data (target 0.5)</i></span></div>
     </div></div>
-<p class="foot-note">No tier blocks a customer permanently. Every hold is time-boxed and released or confirmed by a person.</p></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+<p class="foot-note">Nothing is blocked permanently. A person decides every hold.</p></div>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">04 / 16</span></footer>
 </section>
 <section class="slide  ">
-  <header><span class="sec">04 — Worked case</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">4. Example</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.2">
-<h2>Mrs R., 68. Five warning signs before one payment.</h2>
-<p class="tag mono">ILLUSTRATIVE COMPOSITE SCENARIO</p>
+<h2>Example: Mrs R., 68</h2>
+<p class="tag">A made-up case based on reported digital-arrest scams.</p>
 <div class="story">
   <div class="left">
-    <div class="evrow"><div class="ev "><b>Fake CBI video call</b><span class="mono">contact</span></div><div class="evl"></div><div class="ev "><b>Remote-access app</b><span class="mono">control</span></div><div class="evl"></div><div class="ev "><b>FD broken</b><span class="mono">extraction</span></div><div class="evl"></div><div class="ev "><b>First-time payee</b><span class="mono">extraction</span></div><div class="evl"></div><div class="ev "><b>Mule-like account</b><span class="mono">cash-out</span></div><div class="evl"></div><div class="ev last"><b>₹2,50,000 payment</b><span class="mono">the transaction</span></div></div>
+    <div class="evrow"><div class="ev "><b>Fake CBI video call</b><span>contact</span></div><div class="evl"></div><div class="ev "><b>Remote-access app</b><span>control</span></div><div class="evl"></div><div class="ev "><b>FD broken</b><span>extraction</span></div><div class="evl"></div><div class="ev "><b>First-time payee</b><span>extraction</span></div><div class="evl"></div><div class="ev "><b>Mule-like account</b><span>cash-out</span></div><div class="evl"></div><div class="ev last"><b>₹2,50,000 payment</b><span>payment</span></div></div>
     <div class="split">
-      <div class="side without"><span class="mono lbl">WITHOUT CHAKRAVYUH</span>
-        <p class="out">The payment proceeds.</p>
-        <p>A “new payee + high amount” rule shows a generic warning. She reads it aloud to the caller and confirms.
-        The money reaches a mule account.</p></div>
-      <div class="side with"><span class="mono lbl acc">WITH CHAKRAVYUH</span>
-        <p class="out">Held before the PIN screen.</p>
-        <p>All four stages are active → Tier 3 → 30-minute hold → bank agent review.
-        The screen names the pattern: real officials never ask for money on a call.</p></div>
+      <div class="side without"><span class="lbl">Today</span>
+        <p class="out">The money is gone.</p>
+        <p>A “new payee and high amount” rule shows a general warning. The caller tells her to ignore it, and she pays.
+        The money goes to a mule account and is moved on within hours.</p></div>
+      <div class="side with"><span class="lbl acc">With Chakravyuh</span>
+        <p class="out">The payment is held.</p>
+        <p>All four stages show up, so it goes to level 3. The screen tells her real officials never ask for money on a call,
+        and a bank agent calls her before anything is released.</p></div>
     </div>
   </div>
   <div class="phone"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 620" font-family="IBM Plex Sans, sans-serif">
@@ -444,9 +438,9 @@ calibrated to it on held-out data.</p>
   <rect x="0" y="0" width="300" height="620" rx="34" ry="34" fill="url(#bezel)"/>
   <rect x="8" y="8" width="284" height="604" rx="28" ry="28" fill="#ffffff"/>
   <rect x="105.0" y="10" width="90" height="18" rx="9" fill="#0b0f16"/>
-<text x="24" y="40" font-size="11" fill="#3b4453" font-weight="600">9:41</text><text x="276" y="40" text-anchor="end" font-size="11" fill="#3b4453">UPI</text><rect x="24" y="54" width="120" height="20" rx="10" fill="#8a1c1c"/><text x="84" y="68" text-anchor="middle" font-size="10.5" fill="#ffffff" font-weight="700">TIER 3  ·  HOLD 30 MIN</text>
+<text x="24" y="40" font-size="11" fill="#3b4453" font-weight="600">9:41</text><text x="276" y="40" text-anchor="end" font-size="11" fill="#3b4453">UPI</text><rect x="24" y="54" width="120" height="20" rx="10" fill="#8a1c1c"/><text x="84" y="68" text-anchor="middle" font-size="10.5" fill="#ffffff" font-weight="700">HELD FOR 30 MIN</text>
   <!-- headline -->
-  <text x="24" y="112" font-size="20" font-weight="800" fill="#0d1420">Wait — this looks</text>
+  <text x="24" y="112" font-size="20" font-weight="800" fill="#0d1420">Wait, this looks</text>
   <text x="24" y="136" font-size="20" font-weight="800" fill="#0d1420">like a scam.</text>
   <text x="24" y="170" font-size="12" fill="#5a6473">Real police, CBI or RBI officials</text>
   <text x="24" y="187" font-size="12" fill="#5a6473">never demand payment on a call.</text>
@@ -468,7 +462,7 @@ calibrated to it on held-out data.</p>
         font-weight="700" fill="#ffffff">Speak to a bank agent now</text>
   <rect x="20" y="470" width="260" height="42" rx="10" fill="#ffffff" stroke="#e4e7ec"/>
   <text x="150" y="496" text-anchor="middle" font-size="12.5" font-weight="600"
-        fill="#0d1420">I understand — release in 30 min</text>
+        fill="#0d1420">I understand, release in 30 min</text>
 
   <!-- footer receipt id -->
   <text x="24" y="540" font-size="9.5" fill="#8a94a3">Receipt · 8723987bc76393cd</text>
@@ -479,62 +473,63 @@ calibrated to it on held-out data.</p>
 
   <!-- home indicator -->
   <rect x="100.0" y="598" width="100" height="4" rx="2" fill="#0b0f16"/>
-</svg><div class="mono cap">Tier-3 screen (illustrative mock-up)</div></div>
+</svg><div class="cap">Level 3 screen (mock-up)</div></div>
 </div></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">05 / 16</span></footer>
 </section>
 <section class="slide  ">
-  <header><span class="sec">05 — Model</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">5. Model</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.2">
-<h2>Four stages. One decision.</h2>
+<h2>How the score works</h2>
 <div class="pipe">
-  <div class="pb"><div class="pn">20</div><div class="pl">binary signals</div><div class="pd">9 device · 7 bank · 4 network</div></div><span class="arr">→</span>
-  <div class="pb"><div class="pn">4</div><div class="pl">capped stage scores</div><div class="pd">sum of non-negative weights, capped per stage</div></div><span class="arr">→</span>
-  <div class="pb"><div class="pn">≥ 2</div><div class="pl">kill-chain gate</div><div class="pd">active stages needed to interrupt</div></div><span class="arr">→</span>
-  <div class="pb acc"><div class="pn">0–3</div><div class="pl">risk tier + reasons</div><div class="pd">top signals, scam playbook, signed receipt</div></div>
+  <div class="pb"><div class="pn">20</div><div class="pl">yes/no signals</div><div class="pd">9 device · 7 bank · 4 network</div></div><span class="arr">→</span>
+  <div class="pb"><div class="pn">4</div><div class="pl">capped stage scores</div><div class="pd">weighted sum per stage, with a cap</div></div><span class="arr">→</span>
+  <div class="pb"><div class="pn">≥ 2</div><div class="pl">stages needed</div><div class="pd">before we interrupt a payment</div></div><span class="arr">→</span>
+  <div class="pb acc"><div class="pn">0–3</div><div class="pl">response level</div><div class="pd">plus the reasons and a signed record</div></div>
 </div>
 <div class="ml">
   <div class="eq">
-    <div class="mono lbl">SCORE</div>
+    <div class="lbl">Score</div>
     <div class="formula">s(x) = b + <span class="big-s">Σ</span><sub>g</sub> min( C<sub>g</sub> , <span class="big-s">Σ</span><sub>k in g</sub> w<sub>k</sub> x<sub>k</sub> )</div>
-    <div class="mono lbl" style="margin-top:14px">DECISION</div>
+    <div class="lbl" style="margin-top:14px">Decision</div>
     <div class="formula sm"><b>Tier 2</b> &nbsp;if&nbsp; s ≥ τ<sub>2</sub> &nbsp;and&nbsp; active stages ≥ 2<br>
     <b>Tier 3</b> &nbsp;if&nbsp; s ≥ τ<sub>3</sub> &nbsp;and&nbsp; ( active stages ≥ 3 &nbsp;or&nbsp; ≥ 2 plus a registry hit )</div>
-    <p class="small">g runs over the four stages; x<sub>k</sub> is 0 or 1; weights w<sub>k</sub> ≥ 0 from L2-regularised logistic regression on labelled
-    sessions, clipped at zero. A stage is active when its capped score ≥ 1.5. Weights, caps and thresholds: Appendix A.</p>
+    <p class="small">g is one of the four stages and x<sub>k</sub> is 1 if signal k is present. The weights w<sub>k</sub> come from a
+    logistic regression (L2) on labelled sessions and are kept at zero or above. A stage counts as active when its capped score
+    is at least 1.5. All values are in Appendix A.</p>
   </div>
   <div class="principles">
-    <div><b>Non-negative weights</b><span>A missing signal never adds or removes suspicion — attackers can always hide one.</span></div>
-    <div><b>Stage caps</b><span>No single stage can carry a decision on its own (C = 5, 5, 6, 6).</span></div>
-    <div><b>Cross-stage gate</b><span>An interruption needs evidence from at least two stages of the workflow.</span></div>
-    <div><b>Prevalence adjustment</b><span>Intercept shifted from 3.8% scams in training to an assumed 1 in 5,000 in deployment.</span></div>
-    <div><b>Calibrated thresholds</b><span>τ set on a separate validation world to the bank's alert budget, then frozen.</span></div>
+    <div><b>Non-negative weights</b><span>A missing signal does not change the score, because a fraudster can always hide one.</span></div>
+    <div><b>Stage caps</b><span>One stage cannot push the score up on its own (C = 5, 5, 6, 6).</span></div>
+    <div><b>Two-stage rule</b><span>We only interrupt when at least two stages are active.</span></div>
+    <div><b>Prevalence adjustment</b><span>Training data is 3.8% scams; we adjust the model to an assumed 1 in 5,000 in real use.</span></div>
+    <div><b>Thresholds</b><span>τ is set on a separate dataset to meet the bank's alert limit, then fixed.</span></div>
   </div>
 </div></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">06 / 16</span></footer>
 </section>
 <section class="slide  ">
-  <header><span class="sec">06 — Evidence</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">6. Results</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.1">
-<h2>What we measured — on synthetic data.</h2>
-<div class="banner mono">SYNTHETIC EVALUATION · 8 INDEPENDENT UNSEEN WORLDS · NOT REAL-BANK VALIDATION</div>
+<h2>Results on synthetic data</h2>
+<p class="banner">These numbers come from 8 synthetic test sets the model never saw. They are not results from a real bank.</p>
 <div class="res">
   <div class="kpis">
-    <div class="kpi"><div class="k acc">92.3%</div><div class="kl">Tier ≥ 2 recall on 8 unseen synthetic worlds</div>
-      <div class="kc mono">95% CI [91.7%, 93.0%]</div></div>
-    <div class="kpi"><div class="k">2.77 / 1k</div><div class="kl">legitimate sessions interrupted — same evaluation</div>
-      <div class="kc mono">95% CI [2.64, 2.92] · budget 3.0</div></div>
-    <div class="kpi"><div class="k">0.980</div><div class="kl">AUPRC of the fused score</div>
-      <div class="kc mono">95% CI [0.978, 0.982]</div></div>
+    <div class="kpi"><div class="k acc">92.3%</div><div class="kl">of scam sessions reach level 2 or 3 (recall)</div>
+      <div class="kc">95% confidence interval [91.7%, 93.0%]</div></div>
+    <div class="kpi"><div class="k">2.77 / 1k</div><div class="kl">genuine sessions interrupted per 1,000</div>
+      <div class="kc">95% CI [2.64, 2.92], target 3.0</div></div>
+    <div class="kpi"><div class="k">0.980</div><div class="kl">area under the precision-recall curve</div>
+      <div class="kc">95% CI [0.978, 0.982]</div></div>
   </div>
-  <div class="chart"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="415.33084pt" height="216.452pt" viewBox="0 0 415.33084 216.452" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <div class="chart"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="402.53459pt" height="216.452pt" viewBox="0 0 402.53459 216.452" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-29T07:39:40.807641</dc:date>
+    <dc:date>2026-09-29T07:57:44.431132</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -550,8 +545,8 @@ calibrated to it on held-out data.</p>
  <g id="figure_1">
   <g id="patch_1">
    <path d="M 0 216.452 
-L 415.33084 216.452 
-L 415.33084 0 
+L 402.53459 216.452 
+L 402.53459 0 
 L 0 0 
 L 0 216.452 
 z
@@ -570,18 +565,18 @@ z
    <g id="line2d_1">
     <path d="M 159.26665 187.512 
 L 159.26665 4.56 
-" clip-path="url(#pa539bc4c51)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #cfcac0"/>
+" clip-path="url(#p5db76a5b34)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #cfcac0"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_2">
       <defs>
-       <path id="mb3af748e56" d="M 0 0 
+       <path id="md8e8e4ed89" d="M 0 0 
 L 0 3.5 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#mb3af748e56" x="55.70185" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#md8e8e4ed89" x="55.70185" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_1">
@@ -681,7 +676,7 @@ z
     <g id="xtick_2">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#mb3af748e56" x="107.48425" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#md8e8e4ed89" x="107.48425" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_2">
@@ -747,7 +742,7 @@ z
     <g id="xtick_3">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#mb3af748e56" x="159.26665" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#md8e8e4ed89" x="159.26665" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_3">
@@ -844,7 +839,7 @@ z
     <g id="xtick_4">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#mb3af748e56" x="211.04905" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#md8e8e4ed89" x="211.04905" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_4">
@@ -859,7 +854,7 @@ z
     <g id="xtick_5">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#mb3af748e56" x="262.83145" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#md8e8e4ed89" x="262.83145" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_5">
@@ -896,7 +891,7 @@ z
     <g id="xtick_6">
      <g id="line2d_7">
       <g>
-       <use xlink:href="#mb3af748e56" x="314.61385" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#md8e8e4ed89" x="314.61385" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_6">
@@ -911,7 +906,7 @@ z
     <g id="xtick_7">
      <g id="line2d_8">
       <g>
-       <use xlink:href="#mb3af748e56" x="366.39625" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#md8e8e4ed89" x="366.39625" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_7">
@@ -1438,12 +1433,12 @@ z
     <g id="ytick_1">
      <g id="line2d_9">
       <defs>
-       <path id="m35b89ef45b" d="M 0 0 
+       <path id="m7d5eeaafc4" d="M 0 0 
 L -3.5 0 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m35b89ef45b" x="42.75625" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7d5eeaafc4" x="42.75625" y="187.512" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_9">
@@ -1542,7 +1537,7 @@ z
     <g id="ytick_2">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m35b89ef45b" x="42.75625" y="150.9216" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7d5eeaafc4" x="42.75625" y="150.9216" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_10">
@@ -1557,7 +1552,7 @@ z
     <g id="ytick_3">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m35b89ef45b" x="42.75625" y="114.3312" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7d5eeaafc4" x="42.75625" y="114.3312" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_11">
@@ -1572,7 +1567,7 @@ z
     <g id="ytick_4">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m35b89ef45b" x="42.75625" y="77.7408" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7d5eeaafc4" x="42.75625" y="77.7408" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_12">
@@ -1587,7 +1582,7 @@ z
     <g id="ytick_5">
      <g id="line2d_13">
       <g>
-       <use xlink:href="#m35b89ef45b" x="42.75625" y="41.1504" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7d5eeaafc4" x="42.75625" y="41.1504" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_13">
@@ -1602,7 +1597,7 @@ z
     <g id="ytick_6">
      <g id="line2d_14">
       <g>
-       <use xlink:href="#m35b89ef45b" x="42.75625" y="4.56" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m7d5eeaafc4" x="42.75625" y="4.56" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_14">
@@ -1801,46 +1796,9 @@ L 366.39625 187.512
 " style="fill: none; stroke: #7a808a; stroke-width: 0.6; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_16">
-    <!-- alert budget 3 / 1,000 -->
+    <!-- alert limit 3 / 1,000 -->
     <g style="fill: #7a808a" transform="translate(153.73297 178.3644) rotate(-90) scale(0.075 -0.075)">
      <defs>
-      <path id="IBMPlexSans-6" d="M 544 4736 
-L 1056 4736 
-L 1056 2765 
-L 1082 2765 
-Q 1210 3078 1456 3228 
-Q 1702 3379 2048 3379 
-Q 2355 3379 2604 3257 
-Q 2854 3136 3030 2912 
-Q 3206 2688 3299 2368 
-Q 3392 2048 3392 1651 
-Q 3392 1254 3299 934 
-Q 3206 614 3030 390 
-Q 2854 166 2604 44 
-Q 2355 -77 2048 -77 
-Q 1376 -77 1082 538 
-L 1056 538 
-L 1056 0 
-L 544 0 
-L 544 4736 
-z
-M 1907 384 
-Q 2342 384 2592 656 
-Q 2842 928 2842 1370 
-L 2842 1933 
-Q 2842 2374 2592 2646 
-Q 2342 2918 1907 2918 
-Q 1734 2918 1577 2870 
-Q 1421 2822 1305 2739 
-Q 1190 2656 1123 2537 
-Q 1056 2419 1056 2285 
-L 1056 1056 
-Q 1056 896 1123 771 
-Q 1190 646 1305 560 
-Q 1421 474 1577 429 
-Q 1734 384 1907 384 
-z
-" transform="scale(0.015625)"/>
       <path id="IBMPlexSans-79" d="M 58 -966 
 L 1728 4736 
 L 2189 4736 
@@ -1855,41 +1813,40 @@ z
      <use xlink:href="#IBMPlexSans-18" transform="translate(135.515625 0)"/>
      <use xlink:href="#IBMPlexSans-1a" transform="translate(172.625 0)"/>
      <use xlink:href="#IBMPlexSans-3" transform="translate(207.71875 0)"/>
-     <use xlink:href="#IBMPlexSans-6" transform="translate(231.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-1b" transform="translate(289.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-8" transform="translate(346.109375 0)"/>
-     <use xlink:href="#IBMPlexSans-b" transform="translate(404.109375 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(456.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-1a" transform="translate(511.21875 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(546.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-40" transform="translate(569.90625 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(629.90625 0)"/>
-     <use xlink:href="#IBMPlexSans-79" transform="translate(653.5 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(691.796875 0)"/>
-     <use xlink:href="#IBMPlexSans-3e" transform="translate(715.390625 0)"/>
-     <use xlink:href="#IBMPlexSans-60" transform="translate(775.390625 0)"/>
-     <use xlink:href="#IBMPlexSans-3b" transform="translate(802.59375 0)"/>
-     <use xlink:href="#IBMPlexSans-3b" transform="translate(862.59375 0)"/>
-     <use xlink:href="#IBMPlexSans-3b" transform="translate(922.59375 0)"/>
+     <use xlink:href="#IBMPlexSans-12" transform="translate(231.3125 0)"/>
+     <use xlink:href="#IBMPlexSans-f" transform="translate(258.515625 0)"/>
+     <use xlink:href="#IBMPlexSans-13" transform="translate(283.515625 0)"/>
+     <use xlink:href="#IBMPlexSans-f" transform="translate(370.8125 0)"/>
+     <use xlink:href="#IBMPlexSans-1a" transform="translate(395.8125 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(430.90625 0)"/>
+     <use xlink:href="#IBMPlexSans-40" transform="translate(454.5 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(514.5 0)"/>
+     <use xlink:href="#IBMPlexSans-79" transform="translate(538.09375 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(576.390625 0)"/>
+     <use xlink:href="#IBMPlexSans-3e" transform="translate(599.984375 0)"/>
+     <use xlink:href="#IBMPlexSans-60" transform="translate(659.984375 0)"/>
+     <use xlink:href="#IBMPlexSans-3b" transform="translate(687.1875 0)"/>
+     <use xlink:href="#IBMPlexSans-3b" transform="translate(747.1875 0)"/>
+     <use xlink:href="#IBMPlexSans-3b" transform="translate(807.1875 0)"/>
     </g>
    </g>
    <g id="LineCollection_1">
     <path d="M 64.87165 145.96665 
 L 138.23005 145.96665 
-" clip-path="url(#pa539bc4c51)" style="fill: none; stroke: #d9480f; stroke-width: 0.9"/>
+" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #d9480f; stroke-width: 0.9"/>
    </g>
    <g id="LineCollection_2">
     <path d="M 100.47205 157.308245 
 L 100.47205 133.29103 
-" clip-path="url(#pa539bc4c51)" style="fill: none; stroke: #d9480f; stroke-width: 0.9"/>
+" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #d9480f; stroke-width: 0.9"/>
    </g>
    <g id="patch_5">
-    <path d="M 102.397888 154.068042 
-Q 101.897151 151.961601 101.396415 149.85516 
+    <path d="M 90.380494 154.069763 
+Q 93.867944 151.269481 97.355395 148.469198 
 " style="fill: none; stroke: #cfcac0; stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="text_17">
-    <!-- Chakravyuh (with gate) -->
+    <!-- Chakravyuh -->
     <g style="fill: #d9480f" transform="translate(60.88009 162.3092) scale(0.08 -0.08)">
      <defs>
       <path id="IBMPlexSans-SmBld-23" d="M 2259 -77 
@@ -2069,213 +2026,6 @@ L 2470 0
 L 2470 557 
 z
 " transform="scale(0.015625)"/>
-      <path id="IBMPlexSans-SmBld-3" transform="scale(0.015625)"/>
-      <path id="IBMPlexSans-SmBld-73" d="M 320 1997 
-Q 320 2458 406 2886 
-Q 493 3315 643 3683 
-Q 794 4051 998 4352 
-Q 1203 4653 1446 4864 
-L 2221 4864 
-Q 1958 4621 1750 4326 
-Q 1542 4032 1395 3696 
-Q 1248 3360 1168 2989 
-Q 1088 2618 1088 2227 
-L 1088 1754 
-Q 1088 1357 1168 982 
-Q 1248 608 1398 272 
-Q 1549 -64 1757 -358 
-Q 1965 -653 2221 -883 
-L 1446 -883 
-Q 1210 -685 1005 -384 
-Q 800 -83 646 291 
-Q 493 666 406 1098 
-Q 320 1530 320 1997 
-z
-" transform="scale(0.015625)"/>
-      <path id="IBMPlexSans-SmBld-1d" d="M 147 3341 
-L 934 3341 
-L 1274 1965 
-L 1536 819 
-L 1562 819 
-L 1869 1965 
-L 2259 3341 
-L 3002 3341 
-L 3405 1965 
-L 3718 819 
-L 3744 819 
-L 4006 1965 
-L 4339 3341 
-L 5101 3341 
-L 4186 0 
-L 3302 0 
-L 2874 1472 
-L 2624 2381 
-L 2605 2381 
-L 2362 1472 
-L 1939 0 
-L 1069 0 
-L 147 3341 
-z
-" transform="scale(0.015625)"/>
-      <path id="IBMPlexSans-SmBld-f" d="M 883 3827 
-Q 627 3827 515 3942 
-Q 403 4058 403 4237 
-L 403 4365 
-Q 403 4544 515 4659 
-Q 627 4774 883 4774 
-Q 1133 4774 1248 4659 
-Q 1363 4544 1363 4365 
-L 1363 4237 
-Q 1363 4058 1248 3942 
-Q 1133 3827 883 3827 
-z
-M 474 3341 
-L 1293 3341 
-L 1293 0 
-L 474 0 
-L 474 3341 
-z
-" transform="scale(0.015625)"/>
-      <path id="IBMPlexSans-SmBld-1a" d="M 1517 0 
-Q 1094 0 873 221 
-Q 653 442 653 851 
-L 653 2688 
-L 160 2688 
-L 160 3341 
-L 416 3341 
-Q 602 3341 669 3427 
-Q 736 3514 736 3686 
-L 736 4256 
-L 1472 4256 
-L 1472 3341 
-L 2157 3341 
-L 2157 2688 
-L 1472 2688 
-L 1472 653 
-L 2106 653 
-L 2106 0 
-L 1517 0 
-z
-" transform="scale(0.015625)"/>
-      <path id="IBMPlexSans-SmBld-b" d="M 3488 -282 
-Q 3488 -544 3395 -745 
-Q 3302 -947 3091 -1081 
-Q 2880 -1216 2547 -1286 
-Q 2214 -1357 1734 -1357 
-Q 1312 -1357 1017 -1302 
-Q 723 -1248 534 -1149 
-Q 346 -1050 262 -902 
-Q 179 -755 179 -570 
-Q 179 -288 336 -131 
-Q 493 26 774 70 
-L 774 141 
-Q 570 192 458 342 
-Q 346 493 346 698 
-Q 346 826 397 925 
-Q 448 1024 534 1094 
-Q 621 1165 729 1213 
-Q 838 1261 960 1286 
-L 960 1312 
-Q 653 1453 502 1702 
-Q 352 1952 352 2285 
-Q 352 2797 704 3107 
-Q 1056 3418 1734 3418 
-Q 1888 3418 2038 3398 
-Q 2189 3379 2317 3334 
-L 2317 3443 
-Q 2317 3930 2790 3930 
-L 3309 3930 
-L 3309 3302 
-L 2598 3302 
-L 2598 3213 
-Q 2861 3066 2989 2829 
-Q 3117 2592 3117 2285 
-Q 3117 1779 2768 1472 
-Q 2419 1165 1734 1165 
-Q 1440 1165 1222 1222 
-Q 1126 1178 1056 1104 
-Q 986 1030 986 922 
-Q 986 672 1421 672 
-L 2317 672 
-Q 2931 672 3209 419 
-Q 3488 166 3488 -282 
-z
-M 2720 -378 
-Q 2720 -218 2592 -128 
-Q 2464 -38 2150 -38 
-L 1011 -38 
-Q 838 -166 838 -384 
-Q 838 -576 998 -685 
-Q 1158 -794 1542 -794 
-L 1952 -794 
-Q 2355 -794 2537 -691 
-Q 2720 -589 2720 -378 
-z
-M 1734 1722 
-Q 2336 1722 2336 2234 
-L 2336 2342 
-Q 2336 2854 1734 2854 
-Q 1133 2854 1133 2342 
-L 1133 2234 
-Q 1133 1722 1734 1722 
-z
-" transform="scale(0.015625)"/>
-      <path id="IBMPlexSans-SmBld-9" d="M 1824 -77 
-Q 1453 -77 1161 48 
-Q 870 173 668 400 
-Q 467 627 358 950 
-Q 250 1274 250 1677 
-Q 250 2074 355 2394 
-Q 461 2714 659 2941 
-Q 858 3168 1146 3293 
-Q 1434 3418 1798 3418 
-Q 2189 3418 2477 3283 
-Q 2765 3149 2950 2918 
-Q 3136 2688 3229 2384 
-Q 3322 2080 3322 1734 
-L 3322 1466 
-L 1101 1466 
-L 1101 1382 
-Q 1101 1018 1305 797 
-Q 1510 576 1914 576 
-Q 2221 576 2416 704 
-Q 2611 832 2765 1030 
-L 3206 538 
-Q 3002 250 2646 86 
-Q 2291 -77 1824 -77 
-z
-M 1811 2803 
-Q 1485 2803 1293 2585 
-Q 1101 2368 1101 2022 
-L 1101 1971 
-L 2470 1971 
-L 2470 2029 
-Q 2470 2374 2300 2588 
-Q 2131 2803 1811 2803 
-z
-" transform="scale(0.015625)"/>
-      <path id="IBMPlexSans-SmBld-74" d="M 1837 1997 
-Q 1837 1530 1750 1098 
-Q 1664 666 1510 291 
-Q 1357 -83 1152 -384 
-Q 947 -685 710 -883 
-L -64 -883 
-Q 192 -653 400 -358 
-Q 608 -64 758 272 
-Q 909 608 989 982 
-Q 1069 1357 1069 1754 
-L 1069 2227 
-Q 1069 2618 989 2989 
-Q 909 3360 761 3696 
-Q 614 4032 406 4326 
-Q 198 4621 -64 4864 
-L 710 4864 
-Q 954 4653 1158 4352 
-Q 1363 4051 1513 3683 
-Q 1664 3315 1750 2886 
-Q 1837 2458 1837 1997 
-z
-" transform="scale(0.015625)"/>
      </defs>
      <use xlink:href="#IBMPlexSans-SmBld-23"/>
      <use xlink:href="#IBMPlexSans-SmBld-e" transform="translate(64.203125 0)"/>
@@ -2287,143 +2037,50 @@ z
      <use xlink:href="#IBMPlexSans-SmBld-1f" transform="translate(380.71875 0)"/>
      <use xlink:href="#IBMPlexSans-SmBld-1b" transform="translate(433.125 0)"/>
      <use xlink:href="#IBMPlexSans-SmBld-e" transform="translate(491.921875 0)"/>
-     <use xlink:href="#IBMPlexSans-SmBld-3" transform="translate(550.71875 0)"/>
-     <use xlink:href="#IBMPlexSans-SmBld-73" transform="translate(574.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-SmBld-1d" transform="translate(608.015625 0)"/>
-     <use xlink:href="#IBMPlexSans-SmBld-f" transform="translate(689.921875 0)"/>
-     <use xlink:href="#IBMPlexSans-SmBld-1a" transform="translate(717.515625 0)"/>
-     <use xlink:href="#IBMPlexSans-SmBld-e" transform="translate(754.921875 0)"/>
-     <use xlink:href="#IBMPlexSans-SmBld-3" transform="translate(813.71875 0)"/>
-     <use xlink:href="#IBMPlexSans-SmBld-b" transform="translate(837.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-SmBld-4" transform="translate(891.609375 0)"/>
-     <use xlink:href="#IBMPlexSans-SmBld-1a" transform="translate(947.109375 0)"/>
-     <use xlink:href="#IBMPlexSans-SmBld-9" transform="translate(984.109375 0)"/>
-     <use xlink:href="#IBMPlexSans-SmBld-74" transform="translate(1039.90625 0)"/>
     </g>
    </g>
    <g id="LineCollection_3">
     <path d="M 235.32205 106.32705 
 L 298.445335 106.32705 
-" clip-path="url(#pa539bc4c51)" style="fill: none; stroke: #7a808a; stroke-width: 0.9"/>
+" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #7a808a; stroke-width: 0.9"/>
    </g>
    <g id="LineCollection_4">
     <path d="M 264.44965 115.0935 
 L 264.44965 96.41715 
-" clip-path="url(#pa539bc4c51)" style="fill: none; stroke: #7a808a; stroke-width: 0.9"/>
+" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #7a808a; stroke-width: 0.9"/>
    </g>
    <g id="patch_6">
-    <path d="M 331.022453 117.478723 
-Q 299.708775 112.233339 268.395096 106.987955 
+    <path d="M 326.86254 117.478723 
+Q 297.62364 112.254439 268.38474 107.030155 
 " style="fill: none; stroke: #cfcac0; stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="text_18">
-    <!-- same score, gate removed -->
+    <!-- without two-stage rule -->
     <g style="fill: #7a808a" transform="translate(319.79209 125.7188) scale(0.08 -0.08)">
      <defs>
-      <path id="IBMPlexSans-1c" d="M 1274 0 
-L 115 3302 
-L 627 3302 
-L 1203 1664 
-L 1562 538 
-L 1594 538 
-L 1952 1664 
-L 2541 3302 
-L 3034 3302 
-L 1869 0 
-L 1274 0 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#IBMPlexSans-19"/>
-     <use xlink:href="#IBMPlexSans-4" transform="translate(48.703125 0)"/>
-     <use xlink:href="#IBMPlexSans-13" transform="translate(102.109375 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(189.40625 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(244.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-19" transform="translate(267.90625 0)"/>
-     <use xlink:href="#IBMPlexSans-7" transform="translate(316.609375 0)"/>
-     <use xlink:href="#IBMPlexSans-15" transform="translate(366.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-18" transform="translate(422.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(458.515625 0)"/>
-     <use xlink:href="#IBMPlexSans-60" transform="translate(511.421875 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(538.625 0)"/>
-     <use xlink:href="#IBMPlexSans-b" transform="translate(562.21875 0)"/>
-     <use xlink:href="#IBMPlexSans-4" transform="translate(614.71875 0)"/>
-     <use xlink:href="#IBMPlexSans-1a" transform="translate(668.125 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(702.8125 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(757.71875 0)"/>
-     <use xlink:href="#IBMPlexSans-18" transform="translate(781.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(817.515625 0)"/>
-     <use xlink:href="#IBMPlexSans-13" transform="translate(872.421875 0)"/>
-     <use xlink:href="#IBMPlexSans-15" transform="translate(959.71875 0)"/>
-     <use xlink:href="#IBMPlexSans-1c" transform="translate(1014.921875 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(1063.328125 0)"/>
-     <use xlink:href="#IBMPlexSans-8" transform="translate(1118.234375 0)"/>
-    </g>
-   </g>
-   <g id="LineCollection_5">
-    <path d="M 232.62505 66.020438 
-L 308.14105 66.020438 
-" clip-path="url(#pa539bc4c51)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
-   </g>
-   <g id="LineCollection_6">
-    <path d="M 270.38305 71.26125 
-L 270.38305 60.303187 
-" clip-path="url(#pa539bc4c51)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
-   </g>
-   <g id="LineCollection_7">
-    <path d="M 155.49085 65.734575 
-L 255.81925 65.734575 
-" clip-path="url(#pa539bc4c51)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
-   </g>
-   <g id="LineCollection_8">
-    <path d="M 203.49745 71.356538 
-L 203.49745 59.82675 
-" clip-path="url(#pa539bc4c51)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
-   </g>
-   <g id="LineCollection_9">
-    <path d="M 172.75165 62.399513 
-L 284.420935 62.399513 
-" clip-path="url(#pa539bc4c51)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
-   </g>
-   <g id="LineCollection_10">
-    <path d="M 228.84925 67.735612 
-L 228.84925 56.584593 
-" clip-path="url(#pa539bc4c51)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
-   </g>
-   <g id="LineCollection_11">
-    <path d="M 231.532765 59.540887 
-L 339.439735 59.540887 
-" clip-path="url(#pa539bc4c51)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
-   </g>
-   <g id="LineCollection_12">
-    <path d="M 284.40745 65.067562 
-L 284.40745 53.154243 
-" clip-path="url(#pa539bc4c51)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
-   </g>
-   <g id="patch_7">
-    <path d="M 182.126619 35.256178 
-Q 212.551326 45.066966 242.976032 54.877754 
-" style="fill: none; stroke: #cfcac0; stroke-width: 0.7; stroke-linecap: round"/>
-   </g>
-   <g id="text_19">
-    <!-- black-box baselines — logistic, gradient boosting, -->
-    <g style="fill: #111a2b" transform="translate(55.70185 19.8952) scale(0.08 -0.08)">
-     <defs>
-      <path id="IBMPlexSans-11" d="M 544 4736 
-L 1056 4736 
-L 1056 1734 
-L 1082 1734 
-L 1587 2298 
-L 2522 3302 
-L 3142 3302 
-L 1920 1997 
-L 3264 0 
-L 2643 0 
-L 1549 1683 
-L 1056 1178 
-L 1056 0 
-L 544 0 
-L 544 4736 
+      <path id="IBMPlexSans-1d" d="M 198 3302 
+L 698 3302 
+L 1050 1875 
+L 1402 429 
+L 1414 429 
+L 1818 1875 
+L 2234 3302 
+L 2688 3302 
+L 3117 1875 
+L 3526 429 
+L 3539 429 
+L 3878 1875 
+L 4237 3302 
+L 4717 3302 
+L 3840 0 
+L 3206 0 
+L 2746 1587 
+L 2458 2592 
+L 2445 2592 
+L 2163 1587 
+L 1702 0 
+L 1082 0 
+L 198 3302 
 z
 " transform="scale(0.015625)"/>
       <path id="IBMPlexSans-55" d="M 442 1670 
@@ -2433,83 +2090,202 @@ L 2112 1670
 L 442 1670 
 z
 " transform="scale(0.015625)"/>
-      <path id="IBMPlexSans-1e" d="M 134 0 
-L 1357 1664 
+     </defs>
+     <use xlink:href="#IBMPlexSans-1d"/>
+     <use xlink:href="#IBMPlexSans-f" transform="translate(76.796875 0)"/>
+     <use xlink:href="#IBMPlexSans-1a" transform="translate(101.796875 0)"/>
+     <use xlink:href="#IBMPlexSans-e" transform="translate(136.890625 0)"/>
+     <use xlink:href="#IBMPlexSans-15" transform="translate(193.6875 0)"/>
+     <use xlink:href="#IBMPlexSans-1b" transform="translate(249.6875 0)"/>
+     <use xlink:href="#IBMPlexSans-1a" transform="translate(306.484375 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(341.578125 0)"/>
+     <use xlink:href="#IBMPlexSans-1a" transform="translate(365.171875 0)"/>
+     <use xlink:href="#IBMPlexSans-1d" transform="translate(400.265625 0)"/>
+     <use xlink:href="#IBMPlexSans-15" transform="translate(476.5625 0)"/>
+     <use xlink:href="#IBMPlexSans-55" transform="translate(533.5625 0)"/>
+     <use xlink:href="#IBMPlexSans-19" transform="translate(573.46875 0)"/>
+     <use xlink:href="#IBMPlexSans-1a" transform="translate(621.46875 0)"/>
+     <use xlink:href="#IBMPlexSans-4" transform="translate(656.5625 0)"/>
+     <use xlink:href="#IBMPlexSans-b" transform="translate(709.96875 0)"/>
+     <use xlink:href="#IBMPlexSans-9" transform="translate(762.171875 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(817.078125 0)"/>
+     <use xlink:href="#IBMPlexSans-18" transform="translate(840.671875 0)"/>
+     <use xlink:href="#IBMPlexSans-1b" transform="translate(877.375 0)"/>
+     <use xlink:href="#IBMPlexSans-12" transform="translate(934.171875 0)"/>
+     <use xlink:href="#IBMPlexSans-9" transform="translate(961.375 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_5">
+    <path d="M 232.62505 66.020438 
+L 308.14105 66.020438 
+" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+   </g>
+   <g id="LineCollection_6">
+    <path d="M 270.38305 71.26125 
+L 270.38305 60.303187 
+" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+   </g>
+   <g id="LineCollection_7">
+    <path d="M 155.49085 65.734575 
+L 255.81925 65.734575 
+" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+   </g>
+   <g id="LineCollection_8">
+    <path d="M 203.49745 71.356538 
+L 203.49745 59.82675 
+" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+   </g>
+   <g id="LineCollection_9">
+    <path d="M 172.75165 62.399513 
+L 284.420935 62.399513 
+" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+   </g>
+   <g id="LineCollection_10">
+    <path d="M 228.84925 67.735612 
+L 228.84925 56.584593 
+" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+   </g>
+   <g id="LineCollection_11">
+    <path d="M 231.532765 59.540887 
+L 339.439735 59.540887 
+" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+   </g>
+   <g id="LineCollection_12">
+    <path d="M 284.40745 65.067562 
+L 284.40745 53.154243 
+" clip-path="url(#p5db76a5b34)" style="fill: none; stroke: #111a2b; stroke-width: 0.9"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 179.92726 35.256178 
+Q 211.448086 45.086055 242.968911 54.915931 
+" style="fill: none; stroke: #cfcac0; stroke-width: 0.7; stroke-linecap: round"/>
+   </g>
+   <g id="text_19">
+    <!-- standard classifiers (logistic, gradient boosting, -->
+    <g style="fill: #111a2b" transform="translate(55.70185 19.8952) scale(0.08 -0.08)">
+     <defs>
+      <path id="IBMPlexSans-c5" d="M 723 2854 
+L 186 2854 
 L 186 3302 
-L 787 3302 
-L 1626 2074 
-L 1645 2074 
-L 2515 3302 
+L 723 3302 
+L 723 3968 
+Q 723 4314 902 4525 
+Q 1082 4736 1446 4736 
+L 1946 4736 
+L 1946 4288 
+L 1235 4288 
+L 1235 3302 
 L 3085 3302 
-L 1920 1702 
-L 3110 0 
-L 2509 0 
-L 1651 1293 
-L 1632 1293 
-L 704 0 
-L 134 0 
+L 3085 0 
+L 2573 0 
+L 2573 2854 
+L 1235 2854 
+L 1235 0 
+L 723 0 
+L 723 2854 
+z
+M 2829 4077 
+Q 2662 4077 2588 4157 
+Q 2515 4237 2515 4365 
+L 2515 4448 
+Q 2515 4576 2588 4656 
+Q 2662 4736 2829 4736 
+Q 2995 4736 3068 4656 
+Q 3142 4576 3142 4448 
+L 3142 4365 
+Q 3142 4237 3068 4157 
+Q 2995 4077 2829 4077 
 z
 " transform="scale(0.015625)"/>
-      <path id="IBMPlexSans-5a" d="M 230 1702 
-L 230 2189 
-L 4762 2189 
-L 4762 1702 
-L 230 1702 
+      <path id="IBMPlexSans-6" d="M 544 4736 
+L 1056 4736 
+L 1056 2765 
+L 1082 2765 
+Q 1210 3078 1456 3228 
+Q 1702 3379 2048 3379 
+Q 2355 3379 2604 3257 
+Q 2854 3136 3030 2912 
+Q 3206 2688 3299 2368 
+Q 3392 2048 3392 1651 
+Q 3392 1254 3299 934 
+Q 3206 614 3030 390 
+Q 2854 166 2604 44 
+Q 2355 -77 2048 -77 
+Q 1376 -77 1082 538 
+L 1056 538 
+L 1056 0 
+L 544 0 
+L 544 4736 
+z
+M 1907 384 
+Q 2342 384 2592 656 
+Q 2842 928 2842 1370 
+L 2842 1933 
+Q 2842 2374 2592 2646 
+Q 2342 2918 1907 2918 
+Q 1734 2918 1577 2870 
+Q 1421 2822 1305 2739 
+Q 1190 2656 1123 2537 
+Q 1056 2419 1056 2285 
+L 1056 1056 
+Q 1056 896 1123 771 
+Q 1190 646 1305 560 
+Q 1421 474 1577 429 
+Q 1734 384 1907 384 
 z
 " transform="scale(0.015625)"/>
      </defs>
-     <use xlink:href="#IBMPlexSans-6"/>
-     <use xlink:href="#IBMPlexSans-12" transform="translate(58 0)"/>
-     <use xlink:href="#IBMPlexSans-4" transform="translate(85.203125 0)"/>
-     <use xlink:href="#IBMPlexSans-7" transform="translate(138.609375 0)"/>
-     <use xlink:href="#IBMPlexSans-11" transform="translate(188.90625 0)"/>
-     <use xlink:href="#IBMPlexSans-55" transform="translate(237.109375 0)"/>
-     <use xlink:href="#IBMPlexSans-6" transform="translate(277.015625 0)"/>
-     <use xlink:href="#IBMPlexSans-15" transform="translate(335.015625 0)"/>
-     <use xlink:href="#IBMPlexSans-1e" transform="translate(389.8125 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(440.515625 0)"/>
-     <use xlink:href="#IBMPlexSans-6" transform="translate(464.109375 0)"/>
-     <use xlink:href="#IBMPlexSans-4" transform="translate(522.109375 0)"/>
-     <use xlink:href="#IBMPlexSans-19" transform="translate(575.515625 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(624.21875 0)"/>
-     <use xlink:href="#IBMPlexSans-12" transform="translate(679.125 0)"/>
-     <use xlink:href="#IBMPlexSans-f" transform="translate(706.328125 0)"/>
-     <use xlink:href="#IBMPlexSans-14" transform="translate(731.328125 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(788.125 0)"/>
-     <use xlink:href="#IBMPlexSans-19" transform="translate(843.03125 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(891.734375 0)"/>
-     <use xlink:href="#IBMPlexSans-5a" transform="translate(915.328125 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(993.328125 0)"/>
-     <use xlink:href="#IBMPlexSans-12" transform="translate(1016.921875 0)"/>
-     <use xlink:href="#IBMPlexSans-15" transform="translate(1044.125 0)"/>
-     <use xlink:href="#IBMPlexSans-b" transform="translate(1100.125 0)"/>
-     <use xlink:href="#IBMPlexSans-f" transform="translate(1152.921875 0)"/>
-     <use xlink:href="#IBMPlexSans-19" transform="translate(1177.921875 0)"/>
-     <use xlink:href="#IBMPlexSans-1a" transform="translate(1225.921875 0)"/>
-     <use xlink:href="#IBMPlexSans-f" transform="translate(1261.015625 0)"/>
-     <use xlink:href="#IBMPlexSans-7" transform="translate(1286.015625 0)"/>
-     <use xlink:href="#IBMPlexSans-60" transform="translate(1336.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(1363.515625 0)"/>
-     <use xlink:href="#IBMPlexSans-b" transform="translate(1387.109375 0)"/>
-     <use xlink:href="#IBMPlexSans-18" transform="translate(1439.90625 0)"/>
-     <use xlink:href="#IBMPlexSans-4" transform="translate(1476.203125 0)"/>
-     <use xlink:href="#IBMPlexSans-8" transform="translate(1529.609375 0)"/>
-     <use xlink:href="#IBMPlexSans-f" transform="translate(1587.609375 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(1612.609375 0)"/>
-     <use xlink:href="#IBMPlexSans-14" transform="translate(1667.515625 0)"/>
-     <use xlink:href="#IBMPlexSans-1a" transform="translate(1724.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(1759.40625 0)"/>
-     <use xlink:href="#IBMPlexSans-6" transform="translate(1783 0)"/>
-     <use xlink:href="#IBMPlexSans-15" transform="translate(1841 0)"/>
-     <use xlink:href="#IBMPlexSans-15" transform="translate(1897 0)"/>
-     <use xlink:href="#IBMPlexSans-19" transform="translate(1953 0)"/>
-     <use xlink:href="#IBMPlexSans-1a" transform="translate(2001 0)"/>
-     <use xlink:href="#IBMPlexSans-f" transform="translate(2036.09375 0)"/>
-     <use xlink:href="#IBMPlexSans-14" transform="translate(2061.09375 0)"/>
-     <use xlink:href="#IBMPlexSans-b" transform="translate(2117.890625 0)"/>
-     <use xlink:href="#IBMPlexSans-60" transform="translate(2171.984375 0)"/>
+     <use xlink:href="#IBMPlexSans-19"/>
+     <use xlink:href="#IBMPlexSans-1a" transform="translate(48 0)"/>
+     <use xlink:href="#IBMPlexSans-4" transform="translate(83.09375 0)"/>
+     <use xlink:href="#IBMPlexSans-14" transform="translate(136.5 0)"/>
+     <use xlink:href="#IBMPlexSans-8" transform="translate(193.296875 0)"/>
+     <use xlink:href="#IBMPlexSans-4" transform="translate(251.296875 0)"/>
+     <use xlink:href="#IBMPlexSans-18" transform="translate(304.703125 0)"/>
+     <use xlink:href="#IBMPlexSans-8" transform="translate(340.8125 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(398.8125 0)"/>
+     <use xlink:href="#IBMPlexSans-7" transform="translate(422.40625 0)"/>
+     <use xlink:href="#IBMPlexSans-12" transform="translate(472.703125 0)"/>
+     <use xlink:href="#IBMPlexSans-4" transform="translate(499.90625 0)"/>
+     <use xlink:href="#IBMPlexSans-19" transform="translate(553.3125 0)"/>
+     <use xlink:href="#IBMPlexSans-19" transform="translate(601.421875 0)"/>
+     <use xlink:href="#IBMPlexSans-f" transform="translate(650.125 0)"/>
+     <use xlink:href="#IBMPlexSans-c5" transform="translate(675.125 0)"/>
+     <use xlink:href="#IBMPlexSans-9" transform="translate(731.828125 0)"/>
+     <use xlink:href="#IBMPlexSans-18" transform="translate(786.734375 0)"/>
+     <use xlink:href="#IBMPlexSans-19" transform="translate(823.4375 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(872.140625 0)"/>
+     <use xlink:href="#IBMPlexSans-73" transform="translate(895.734375 0)"/>
+     <use xlink:href="#IBMPlexSans-12" transform="translate(929.234375 0)"/>
+     <use xlink:href="#IBMPlexSans-15" transform="translate(956.4375 0)"/>
+     <use xlink:href="#IBMPlexSans-b" transform="translate(1012.4375 0)"/>
+     <use xlink:href="#IBMPlexSans-f" transform="translate(1065.234375 0)"/>
+     <use xlink:href="#IBMPlexSans-19" transform="translate(1090.234375 0)"/>
+     <use xlink:href="#IBMPlexSans-1a" transform="translate(1138.234375 0)"/>
+     <use xlink:href="#IBMPlexSans-f" transform="translate(1173.328125 0)"/>
+     <use xlink:href="#IBMPlexSans-7" transform="translate(1198.328125 0)"/>
+     <use xlink:href="#IBMPlexSans-60" transform="translate(1248.625 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(1275.828125 0)"/>
+     <use xlink:href="#IBMPlexSans-b" transform="translate(1299.421875 0)"/>
+     <use xlink:href="#IBMPlexSans-18" transform="translate(1352.21875 0)"/>
+     <use xlink:href="#IBMPlexSans-4" transform="translate(1388.515625 0)"/>
+     <use xlink:href="#IBMPlexSans-8" transform="translate(1441.921875 0)"/>
+     <use xlink:href="#IBMPlexSans-f" transform="translate(1499.921875 0)"/>
+     <use xlink:href="#IBMPlexSans-9" transform="translate(1524.921875 0)"/>
+     <use xlink:href="#IBMPlexSans-14" transform="translate(1579.828125 0)"/>
+     <use xlink:href="#IBMPlexSans-1a" transform="translate(1636.625 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(1671.71875 0)"/>
+     <use xlink:href="#IBMPlexSans-6" transform="translate(1695.3125 0)"/>
+     <use xlink:href="#IBMPlexSans-15" transform="translate(1753.3125 0)"/>
+     <use xlink:href="#IBMPlexSans-15" transform="translate(1809.3125 0)"/>
+     <use xlink:href="#IBMPlexSans-19" transform="translate(1865.3125 0)"/>
+     <use xlink:href="#IBMPlexSans-1a" transform="translate(1913.3125 0)"/>
+     <use xlink:href="#IBMPlexSans-f" transform="translate(1948.40625 0)"/>
+     <use xlink:href="#IBMPlexSans-14" transform="translate(1973.40625 0)"/>
+     <use xlink:href="#IBMPlexSans-b" transform="translate(2030.203125 0)"/>
+     <use xlink:href="#IBMPlexSans-60" transform="translate(2084.296875 0)"/>
     </g>
-    <!-- XGBoost, MLP: 96.6–97.0% recall -->
+    <!-- XGBoost, MLP): 96.6–97.0% recall -->
     <g style="fill: #111a2b" transform="translate(55.70185 30.2952) scale(0.08 -0.08)">
      <defs>
       <path id="IBMPlexSans-38" d="M 3770 0 
@@ -2708,68 +2484,32 @@ z
      <use xlink:href="#IBMPlexSans-2d" transform="translate(440.484375 0)"/>
      <use xlink:href="#IBMPlexSans-2c" transform="translate(521.6875 0)"/>
      <use xlink:href="#IBMPlexSans-30" transform="translate(571.78125 0)"/>
-     <use xlink:href="#IBMPlexSans-5f" transform="translate(632.375 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(661.578125 0)"/>
-     <use xlink:href="#IBMPlexSans-46" transform="translate(685.171875 0)"/>
-     <use xlink:href="#IBMPlexSans-43" transform="translate(745.171875 0)"/>
-     <use xlink:href="#IBMPlexSans-5d" transform="translate(805.171875 0)"/>
-     <use xlink:href="#IBMPlexSans-43" transform="translate(832.375 0)"/>
-     <use xlink:href="#IBMPlexSans-59" transform="translate(892.375 0)"/>
-     <use xlink:href="#IBMPlexSans-46" transform="translate(951.171875 0)"/>
-     <use xlink:href="#IBMPlexSans-44" transform="translate(1011.171875 0)"/>
-     <use xlink:href="#IBMPlexSans-5d" transform="translate(1071.171875 0)"/>
-     <use xlink:href="#IBMPlexSans-3b" transform="translate(1098.375 0)"/>
-     <use xlink:href="#IBMPlexSans-7d" transform="translate(1158.375 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(1251.078125 0)"/>
-     <use xlink:href="#IBMPlexSans-18" transform="translate(1274.671875 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(1310.875 0)"/>
-     <use xlink:href="#IBMPlexSans-7" transform="translate(1365.78125 0)"/>
-     <use xlink:href="#IBMPlexSans-4" transform="translate(1416.078125 0)"/>
-     <use xlink:href="#IBMPlexSans-12" transform="translate(1469.484375 0)"/>
-     <use xlink:href="#IBMPlexSans-12" transform="translate(1496.1875 0)"/>
+     <use xlink:href="#IBMPlexSans-74" transform="translate(632.375 0)"/>
+     <use xlink:href="#IBMPlexSans-5f" transform="translate(665.875 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(695.078125 0)"/>
+     <use xlink:href="#IBMPlexSans-46" transform="translate(718.671875 0)"/>
+     <use xlink:href="#IBMPlexSans-43" transform="translate(778.671875 0)"/>
+     <use xlink:href="#IBMPlexSans-5d" transform="translate(838.671875 0)"/>
+     <use xlink:href="#IBMPlexSans-43" transform="translate(865.875 0)"/>
+     <use xlink:href="#IBMPlexSans-59" transform="translate(925.875 0)"/>
+     <use xlink:href="#IBMPlexSans-46" transform="translate(984.671875 0)"/>
+     <use xlink:href="#IBMPlexSans-44" transform="translate(1044.671875 0)"/>
+     <use xlink:href="#IBMPlexSans-5d" transform="translate(1104.671875 0)"/>
+     <use xlink:href="#IBMPlexSans-3b" transform="translate(1131.875 0)"/>
+     <use xlink:href="#IBMPlexSans-7d" transform="translate(1191.875 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(1284.578125 0)"/>
+     <use xlink:href="#IBMPlexSans-18" transform="translate(1308.171875 0)"/>
+     <use xlink:href="#IBMPlexSans-9" transform="translate(1344.375 0)"/>
+     <use xlink:href="#IBMPlexSans-7" transform="translate(1399.28125 0)"/>
+     <use xlink:href="#IBMPlexSans-4" transform="translate(1449.578125 0)"/>
+     <use xlink:href="#IBMPlexSans-12" transform="translate(1502.984375 0)"/>
+     <use xlink:href="#IBMPlexSans-12" transform="translate(1529.6875 0)"/>
     </g>
    </g>
    <g id="text_20">
-    <!-- off chart →  rule “new payee + high amount”: -->
-    <g style="fill: #7a808a" transform="translate(211.226213 165.8394) scale(0.075 -0.075)">
+    <!-- not shown: “new payee + high amount” rule, -->
+    <g style="fill: #7a808a" transform="translate(212.157854 165.8394) scale(0.075 -0.075)">
      <defs>
-      <path id="IBMPlexSans-a" d="M 723 2854 
-L 186 2854 
-L 186 3302 
-L 723 3302 
-L 723 3968 
-Q 723 4314 902 4525 
-Q 1082 4736 1446 4736 
-L 1946 4736 
-L 1946 4288 
-L 1235 4288 
-L 1235 3302 
-L 1946 3302 
-L 1946 2854 
-L 1235 2854 
-L 1235 0 
-L 723 0 
-L 723 2854 
-z
-" transform="scale(0.015625)"/>
-      <path id="IBMPlexSans-37c" d="M 3571 909 
-L 3258 1216 
-L 3814 1766 
-L 4134 2035 
-L 4128 2054 
-L 3507 2016 
-L 352 2016 
-L 352 2451 
-L 3507 2451 
-L 4128 2413 
-L 4134 2432 
-L 3814 2701 
-L 3258 3251 
-L 3571 3558 
-L 4896 2234 
-L 3571 909 
-z
-" transform="scale(0.015625)"/>
       <path id="IBMPlexSans-67" d="M 845 3136 
 Q 640 3136 547 3241 
 Q 454 3347 454 3514 
@@ -2799,31 +2539,6 @@ Q 2528 3731 2528 3603
 L 2528 3514 
 Q 2528 3347 2435 3241 
 Q 2343 3136 2138 3136 
-z
-" transform="scale(0.015625)"/>
-      <path id="IBMPlexSans-1d" d="M 198 3302 
-L 698 3302 
-L 1050 1875 
-L 1402 429 
-L 1414 429 
-L 1818 1875 
-L 2234 3302 
-L 2688 3302 
-L 3117 1875 
-L 3526 429 
-L 3539 429 
-L 3878 1875 
-L 4237 3302 
-L 4717 3302 
-L 3840 0 
-L 3206 0 
-L 2746 1587 
-L 2458 2592 
-L 2445 2592 
-L 2163 1587 
-L 1702 0 
-L 1082 0 
-L 198 3302 
 z
 " transform="scale(0.015625)"/>
       <path id="IBMPlexSans-1f" d="M 2579 3302 
@@ -2893,50 +2608,48 @@ Q 1984 4800 2188 4800
 z
 " transform="scale(0.015625)"/>
      </defs>
-     <use xlink:href="#IBMPlexSans-15"/>
-     <use xlink:href="#IBMPlexSans-a" transform="translate(55.40625 0)"/>
-     <use xlink:href="#IBMPlexSans-a" transform="translate(87.8125 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(120.21875 0)"/>
-     <use xlink:href="#IBMPlexSans-7" transform="translate(143.8125 0)"/>
-     <use xlink:href="#IBMPlexSans-e" transform="translate(194.109375 0)"/>
-     <use xlink:href="#IBMPlexSans-4" transform="translate(250.90625 0)"/>
-     <use xlink:href="#IBMPlexSans-18" transform="translate(304.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-1a" transform="translate(341.421875 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(376.515625 0)"/>
-     <use xlink:href="#IBMPlexSans-37c" transform="translate(400.109375 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(482.109375 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(505.703125 0)"/>
-     <use xlink:href="#IBMPlexSans-18" transform="translate(529.296875 0)"/>
-     <use xlink:href="#IBMPlexSans-1b" transform="translate(566 0)"/>
-     <use xlink:href="#IBMPlexSans-12" transform="translate(622.796875 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(650 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(704.90625 0)"/>
-     <use xlink:href="#IBMPlexSans-67" transform="translate(728.5 0)"/>
-     <use xlink:href="#IBMPlexSans-14" transform="translate(774 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(830.796875 0)"/>
-     <use xlink:href="#IBMPlexSans-1d" transform="translate(885.203125 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(962 0)"/>
-     <use xlink:href="#IBMPlexSans-16" transform="translate(985.59375 0)"/>
-     <use xlink:href="#IBMPlexSans-4" transform="translate(1043.59375 0)"/>
-     <use xlink:href="#IBMPlexSans-1f" transform="translate(1096.5 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(1145.90625 0)"/>
-     <use xlink:href="#IBMPlexSans-9" transform="translate(1200.8125 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(1255.71875 0)"/>
-     <use xlink:href="#IBMPlexSans-91" transform="translate(1279.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(1339.3125 0)"/>
-     <use xlink:href="#IBMPlexSans-e" transform="translate(1362.90625 0)"/>
-     <use xlink:href="#IBMPlexSans-f" transform="translate(1419.703125 0)"/>
-     <use xlink:href="#IBMPlexSans-b" transform="translate(1444.703125 0)"/>
-     <use xlink:href="#IBMPlexSans-e" transform="translate(1497.5 0)"/>
-     <use xlink:href="#IBMPlexSans-3" transform="translate(1554.296875 0)"/>
-     <use xlink:href="#IBMPlexSans-4" transform="translate(1577.890625 0)"/>
-     <use xlink:href="#IBMPlexSans-13" transform="translate(1631.296875 0)"/>
-     <use xlink:href="#IBMPlexSans-15" transform="translate(1718.59375 0)"/>
-     <use xlink:href="#IBMPlexSans-1b" transform="translate(1774.59375 0)"/>
-     <use xlink:href="#IBMPlexSans-14" transform="translate(1831.390625 0)"/>
-     <use xlink:href="#IBMPlexSans-1a" transform="translate(1888.1875 0)"/>
-     <use xlink:href="#IBMPlexSans-68" transform="translate(1925.28125 0)"/>
-     <use xlink:href="#IBMPlexSans-5f" transform="translate(1970.6875 0)"/>
+     <use xlink:href="#IBMPlexSans-14"/>
+     <use xlink:href="#IBMPlexSans-15" transform="translate(56.796875 0)"/>
+     <use xlink:href="#IBMPlexSans-1a" transform="translate(112.796875 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(147.890625 0)"/>
+     <use xlink:href="#IBMPlexSans-19" transform="translate(171.484375 0)"/>
+     <use xlink:href="#IBMPlexSans-e" transform="translate(220.1875 0)"/>
+     <use xlink:href="#IBMPlexSans-15" transform="translate(276.984375 0)"/>
+     <use xlink:href="#IBMPlexSans-1d" transform="translate(332.484375 0)"/>
+     <use xlink:href="#IBMPlexSans-14" transform="translate(409.28125 0)"/>
+     <use xlink:href="#IBMPlexSans-5f" transform="translate(466.078125 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(495.28125 0)"/>
+     <use xlink:href="#IBMPlexSans-67" transform="translate(518.875 0)"/>
+     <use xlink:href="#IBMPlexSans-14" transform="translate(564.375 0)"/>
+     <use xlink:href="#IBMPlexSans-9" transform="translate(621.171875 0)"/>
+     <use xlink:href="#IBMPlexSans-1d" transform="translate(675.578125 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(752.375 0)"/>
+     <use xlink:href="#IBMPlexSans-16" transform="translate(775.96875 0)"/>
+     <use xlink:href="#IBMPlexSans-4" transform="translate(833.96875 0)"/>
+     <use xlink:href="#IBMPlexSans-1f" transform="translate(886.875 0)"/>
+     <use xlink:href="#IBMPlexSans-9" transform="translate(936.28125 0)"/>
+     <use xlink:href="#IBMPlexSans-9" transform="translate(991.1875 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(1046.09375 0)"/>
+     <use xlink:href="#IBMPlexSans-91" transform="translate(1069.6875 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(1129.6875 0)"/>
+     <use xlink:href="#IBMPlexSans-e" transform="translate(1153.28125 0)"/>
+     <use xlink:href="#IBMPlexSans-f" transform="translate(1210.078125 0)"/>
+     <use xlink:href="#IBMPlexSans-b" transform="translate(1235.078125 0)"/>
+     <use xlink:href="#IBMPlexSans-e" transform="translate(1287.875 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(1344.671875 0)"/>
+     <use xlink:href="#IBMPlexSans-4" transform="translate(1368.265625 0)"/>
+     <use xlink:href="#IBMPlexSans-13" transform="translate(1421.671875 0)"/>
+     <use xlink:href="#IBMPlexSans-15" transform="translate(1508.96875 0)"/>
+     <use xlink:href="#IBMPlexSans-1b" transform="translate(1564.96875 0)"/>
+     <use xlink:href="#IBMPlexSans-14" transform="translate(1621.765625 0)"/>
+     <use xlink:href="#IBMPlexSans-1a" transform="translate(1678.5625 0)"/>
+     <use xlink:href="#IBMPlexSans-68" transform="translate(1715.65625 0)"/>
+     <use xlink:href="#IBMPlexSans-3" transform="translate(1763.0625 0)"/>
+     <use xlink:href="#IBMPlexSans-18" transform="translate(1786.65625 0)"/>
+     <use xlink:href="#IBMPlexSans-1b" transform="translate(1823.359375 0)"/>
+     <use xlink:href="#IBMPlexSans-12" transform="translate(1880.15625 0)"/>
+     <use xlink:href="#IBMPlexSans-9" transform="translate(1907.359375 0)"/>
+     <use xlink:href="#IBMPlexSans-60" transform="translate(1960.265625 0)"/>
     </g>
     <!-- 48% recall at 9.3 / 1,000 -->
     <g style="fill: #7a808a" transform="translate(277.173479 175.5894) scale(0.075 -0.075)">
@@ -2969,7 +2682,7 @@ z
    </g>
    <g id="line2d_15">
     <defs>
-     <path id="m51f5788a9d" d="M 0 2.75 
+     <path id="m4f05807270" d="M 0 2.75 
 C 0.729309 2.75 1.428845 2.460243 1.944544 1.944544 
 C 2.460243 1.428845 2.75 0.729309 2.75 0 
 C 2.75 -0.729309 2.460243 -1.428845 1.944544 -1.944544 
@@ -2981,13 +2694,13 @@ C -1.428845 2.460243 -0.729309 2.75 0 2.75
 z
 " style="stroke: #d9480f"/>
     </defs>
-    <g clip-path="url(#pa539bc4c51)">
-     <use xlink:href="#m51f5788a9d" x="100.47205" y="145.96665" style="fill: #d9480f; stroke: #d9480f"/>
+    <g clip-path="url(#p5db76a5b34)">
+     <use xlink:href="#m4f05807270" x="100.47205" y="145.96665" style="fill: #d9480f; stroke: #d9480f"/>
     </g>
    </g>
    <g id="line2d_16">
     <defs>
-     <path id="m333d87d409" d="M 0 2.75 
+     <path id="m7dad9679e5" d="M 0 2.75 
 C 0.729309 2.75 1.428845 2.460243 1.944544 1.944544 
 C 2.460243 1.428845 2.75 0.729309 2.75 0 
 C 2.75 -0.729309 2.460243 -1.428845 1.944544 -1.944544 
@@ -2999,13 +2712,13 @@ C -1.428845 2.460243 -0.729309 2.75 0 2.75
 z
 " style="stroke: #7a808a"/>
     </defs>
-    <g clip-path="url(#pa539bc4c51)">
-     <use xlink:href="#m333d87d409" x="264.44965" y="106.32705" style="fill: #ffffff; stroke: #7a808a"/>
+    <g clip-path="url(#p5db76a5b34)">
+     <use xlink:href="#m7dad9679e5" x="264.44965" y="106.32705" style="fill: #ffffff; stroke: #7a808a"/>
     </g>
    </g>
    <g id="line2d_17">
     <defs>
-     <path id="m1016560d82" d="M 0 2.75 
+     <path id="m84dc757397" d="M 0 2.75 
 C 0.729309 2.75 1.428845 2.460243 1.944544 1.944544 
 C 2.460243 1.428845 2.75 0.729309 2.75 0 
 C 2.75 -0.729309 2.460243 -1.428845 1.944544 -1.944544 
@@ -3017,66 +2730,66 @@ C -1.428845 2.460243 -0.729309 2.75 0 2.75
 z
 " style="stroke: #111a2b"/>
     </defs>
-    <g clip-path="url(#pa539bc4c51)">
-     <use xlink:href="#m1016560d82" x="270.38305" y="66.020438" style="fill: #111a2b; stroke: #111a2b"/>
+    <g clip-path="url(#p5db76a5b34)">
+     <use xlink:href="#m84dc757397" x="270.38305" y="66.020438" style="fill: #111a2b; stroke: #111a2b"/>
     </g>
    </g>
    <g id="line2d_18">
-    <g clip-path="url(#pa539bc4c51)">
-     <use xlink:href="#m1016560d82" x="203.49745" y="65.734575" style="fill: #111a2b; stroke: #111a2b"/>
+    <g clip-path="url(#p5db76a5b34)">
+     <use xlink:href="#m84dc757397" x="203.49745" y="65.734575" style="fill: #111a2b; stroke: #111a2b"/>
     </g>
    </g>
    <g id="line2d_19">
-    <g clip-path="url(#pa539bc4c51)">
-     <use xlink:href="#m1016560d82" x="228.84925" y="62.399513" style="fill: #111a2b; stroke: #111a2b"/>
+    <g clip-path="url(#p5db76a5b34)">
+     <use xlink:href="#m84dc757397" x="228.84925" y="62.399513" style="fill: #111a2b; stroke: #111a2b"/>
     </g>
    </g>
    <g id="line2d_20">
-    <g clip-path="url(#pa539bc4c51)">
-     <use xlink:href="#m1016560d82" x="284.40745" y="59.540887" style="fill: #111a2b; stroke: #111a2b"/>
+    <g clip-path="url(#p5db76a5b34)">
+     <use xlink:href="#m84dc757397" x="284.40745" y="59.540887" style="fill: #111a2b; stroke: #111a2b"/>
     </g>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pa539bc4c51">
+  <clipPath id="p5db76a5b34">
    <rect x="42.75625" y="4.56" width="323.64" height="182.952"/>
   </clipPath>
  </defs>
 </svg>
 
-    <div class="mono cap">Same training, calibration and test worlds for every system. Bars: 95% bootstrap CI over the 8 worlds.</div></div>
+    <div class="cap">All models use the same training, threshold and test data. Bars show 95% confidence intervals.</div></div>
 </div>
 <div class="res-note">
-  <p><b>The trade-off, stated plainly.</b> Black-box classifiers reach 96.6–97.0% recall at
-  3.2–3.5 interruptions per 1,000. Our own score with the gate removed reaches
-  94.4% at 3.41. The kill-chain gate gives up
-  2.2 points of recall for 19% fewer interruptions,
-  a guarantee that no single signal can interrupt a payment, and a reason that decomposes into named signals.</p>
-  <p class="mono small">Train: world 7 · thresholds: world 21 · test: worlds 101–108 · each world 60,000 legitimate + 2,400 scam sessions.
-  Engine time 23 µs per session (in-process, measured).</p>
+  <p><b>What we give up.</b> Standard classifiers catch 96.6–97.0% of scams but interrupt
+  3.2–3.5 genuine payments per 1,000. Without the two-stage rule our own score catches
+  94.4% at 3.41. The rule costs us
+  2.2 points of recall. In return there are 19% fewer
+  interruptions, no single signal can stop a payment, and every alert lists the signals behind it.</p>
+  <p class="small">Trained on dataset 7, thresholds set on dataset 21, tested on datasets 101 to 108. Each has 60,000 genuine and
+  2,400 scam sessions. Scoring takes about 23 µs per session on our machine.</p>
 </div></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">07 / 16</span></footer>
 </section>
 <section class="slide  ">
-  <header><span class="sec">07 — Adversary</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">7. Robustness</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.16">
-<h2>What survives when the attacker adapts?</h2>
+<h2>What if the fraudster changes tactics?</h2>
 <div class="adv">
-  <table class="tbl"><thead><tr><th>Can the attacker…</th><th>Defence</th><th>Evidence</th><th></th></tr></thead><tbody><tr><td class="q"><span class="mono">01</span><b>… hide the signals they control?</b><span>Hang up before paying, avoid screen-share, lower the amount.</span></td>
-      <td>Independent stages. Extraction and cash-out evidence is observed by the bank, not the caller.</td><td>86.9% recall on the adapted cohort (25% of scam sessions). Worst case — hiding the strongest emitted signal, even ones a fraudster cannot really hide: 62%; two: 44%.</td><td><span class="st st-measured">MEASURED</span></td></tr><tr><td class="q"><span class="mono">02</span><b>… split one payment into several?</b><span>Four payments of ₹25,000 instead of one of ₹1,00,000.</span></td>
-      <td>“Staircase” signal: two or more payments to new payees within 60 minutes.</td><td>Not separately simulated in Round 1.</td><td><span class="st st-design">DESIGN</span></td></tr><tr><td class="q"><span class="mono">03</span><b>… pay into older, rented mule accounts?</b><span>Aged accounts hide the ‘young account’ signal.</span></td>
-      <td>Mule score uses fan-in, first-time-sender share and pass-through — not age alone. Other stages still fire.</td><td>Mule score flags only 24% of aged mules; sessions paying them are still caught at 73.6%.</td><td><span class="st st-measured">MEASURED</span></td></tr><tr><td class="q"><span class="mono">04</span><b>… poison the training data?</b><span>Flood the system with false ‘scam’ or ‘genuine’ reports.</span></td>
-      <td>Retrain only on bank-confirmed outcomes; customer reports never become labels on their own.</td><td>Not evaluated.</td><td><span class="st st-design">DESIGN</span></td></tr></tbody></table>
+  <table class="tbl"><thead><tr><th>Question</th><th>Our answer</th><th>What we found</th><th></th></tr></thead><tbody><tr><td class="q"><b>Can they hide their tracks?</b><span>Ask the victim to hang up before paying, skip screen-sharing, send less.</span></td>
+      <td>The payment and receiving-account signals come from the bank, which the caller cannot hide.</td><td>86.9% recall on scam sessions where the fraudster hides these signals (25% of scams). Worst case, hiding the strongest signal in each session (even ones a fraudster could not really hide): 62%. Two signals: 44%.</td><td><span class="st st-measured">measured</span></td></tr><tr><td class="q"><b>Can they split one payment into several?</b><span>Four payments of ₹25,000 instead of one of ₹1,00,000.</span></td>
+      <td>A signal for two or more payments to new payees within 60 minutes.</td><td>Not separately simulated in Round 1.</td><td><span class="st st-design">design only</span></td></tr><tr><td class="q"><b>Can they use older, rented mule accounts?</b><span>An old account avoids the ‘new account’ signal.</span></td>
+      <td>The mule score also looks at how many new senders an account has and how fast money leaves it. Other stages still count.</td><td>The mule score catches only 24% of old mule accounts, but payments to them are still caught 73.6% of the time.</td><td><span class="st st-measured">measured</span></td></tr><tr><td class="q"><b>Can they poison the training data?</b><span>Send lots of false ‘scam’ or ‘genuine’ reports.</span></td>
+      <td>Retrain only on cases the bank has confirmed. Customer reports alone are never used as labels.</td><td>Not evaluated.</td><td><span class="st st-design">design only</span></td></tr></tbody></table>
   <div class="aside">
-    <div class="mono lbl">RECALL AS THE ATTACKER HIDES MORE</div>
+    <div class="lbl">Recall as more signals are hidden</div>
     <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="202.289219pt" height="133.716pt" viewBox="0 0 202.289219 133.716" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-29T07:39:40.893307</dc:date>
+    <dc:date>2026-09-29T07:57:44.510025</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -3113,12 +2826,12 @@ z
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m3a4eb03990" d="M 0 0 
+       <path id="m206ac8cb2b" d="M 0 0 
 L 0 3.5 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m3a4eb03990" x="46.384673" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m206ac8cb2b" x="46.384673" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_1">
@@ -3164,7 +2877,7 @@ z
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m3a4eb03990" x="75.806491" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m206ac8cb2b" x="75.806491" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_2">
@@ -3194,7 +2907,7 @@ z
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m3a4eb03990" x="105.22831" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m206ac8cb2b" x="105.22831" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_3">
@@ -3240,7 +2953,7 @@ z
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#m3a4eb03990" x="134.650128" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m206ac8cb2b" x="134.650128" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_4">
@@ -3304,7 +3017,7 @@ z
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#m3a4eb03990" x="164.071946" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m206ac8cb2b" x="164.071946" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_5">
@@ -3339,7 +3052,7 @@ z
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#m3a4eb03990" x="193.493764" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m206ac8cb2b" x="193.493764" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_6">
@@ -3825,12 +3538,12 @@ z
     <g id="ytick_1">
      <g id="line2d_7">
       <defs>
-       <path id="m54e61df9a2" d="M 0 0 
+       <path id="m5ccb5c4f35" d="M 0 0 
 L -3.5 0 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m54e61df9a2" x="39.029219" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m5ccb5c4f35" x="39.029219" y="106.776" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_8">
@@ -3889,7 +3602,7 @@ z
     <g id="ytick_2">
      <g id="line2d_8">
       <g>
-       <use xlink:href="#m54e61df9a2" x="39.029219" y="87.269333" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m5ccb5c4f35" x="39.029219" y="87.269333" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_9">
@@ -3904,7 +3617,7 @@ z
     <g id="ytick_3">
      <g id="line2d_9">
       <g>
-       <use xlink:href="#m54e61df9a2" x="39.029219" y="67.762667" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m5ccb5c4f35" x="39.029219" y="67.762667" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_10">
@@ -3919,7 +3632,7 @@ z
     <g id="ytick_4">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m54e61df9a2" x="39.029219" y="48.256" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m5ccb5c4f35" x="39.029219" y="48.256" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_11">
@@ -3975,7 +3688,7 @@ z
     <g id="ytick_5">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m54e61df9a2" x="39.029219" y="28.749333" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m5ccb5c4f35" x="39.029219" y="28.749333" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_12">
@@ -4041,7 +3754,7 @@ z
     <g id="ytick_6">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m54e61df9a2" x="39.029219" y="9.242667" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m5ccb5c4f35" x="39.029219" y="9.242667" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_13">
@@ -4102,9 +3815,9 @@ L 105.22831 63.576861
 L 134.650128 76.088559 
 L 164.071946 88.168469 
 L 193.493764 98.262153 
-" clip-path="url(#p3b9a2f640a)" style="fill: none; stroke: #d9480f; stroke-width: 1.6; stroke-linecap: square"/>
+" clip-path="url(#pf3870ab4b4)" style="fill: none; stroke: #d9480f; stroke-width: 1.6; stroke-linecap: square"/>
     <defs>
-     <path id="m9bcea333e5" d="M 0 1.75 
+     <path id="m48041f7e26" d="M 0 1.75 
 C 0.464105 1.75 0.909265 1.565609 1.237437 1.237437 
 C 1.565609 0.909265 1.75 0.464105 1.75 0 
 C 1.75 -0.464105 1.565609 -0.909265 1.237437 -1.237437 
@@ -4116,13 +3829,13 @@ C -0.909265 1.565609 -0.464105 1.75 0 1.75
 z
 " style="stroke: #d9480f"/>
     </defs>
-    <g clip-path="url(#p3b9a2f640a)">
-     <use xlink:href="#m9bcea333e5" x="46.384673" y="16.781181" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m9bcea333e5" x="75.806491" y="46.376451" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m9bcea333e5" x="105.22831" y="63.576861" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m9bcea333e5" x="134.650128" y="76.088559" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m9bcea333e5" x="164.071946" y="88.168469" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#m9bcea333e5" x="193.493764" y="98.262153" style="fill: #d9480f; stroke: #d9480f"/>
+    <g clip-path="url(#pf3870ab4b4)">
+     <use xlink:href="#m48041f7e26" x="46.384673" y="16.781181" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m48041f7e26" x="75.806491" y="46.376451" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m48041f7e26" x="105.22831" y="63.576861" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m48041f7e26" x="134.650128" y="76.088559" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m48041f7e26" x="164.071946" y="88.168469" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m48041f7e26" x="193.493764" y="98.262153" style="fill: #d9480f; stroke: #d9480f"/>
     </g>
    </g>
    <g id="patch_3">
@@ -4220,227 +3933,226 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p3b9a2f640a">
+  <clipPath id="pf3870ab4b4">
    <rect x="39.029219" y="1.44" width="161.82" height="105.336"/>
   </clipPath>
  </defs>
 </svg>
 
-    <p class="small">Attacker knows the published weights and removes the highest-weight signals present in each scam session.
-    Thresholds are not re-tuned.</p>
-    <div class="mono lbl" style="margin-top:10px">UNSEEN SCAM PLAYBOOK</div>
-    <p class="small">Trained without one playbook, tested on it: 79–93% recall.</p>
-    <div class="mono lbl" style="margin-top:10px">NO STAGE IS DECORATIVE</div>
-    <p class="small">Removing contact, control, extraction or cash-out evidence leaves
-    87%, 92%, 67%, 65% recall.</p>
+    <p class="small">We assume the fraudster has read our weights and removes the strongest signals first. Thresholds are not changed.</p>
+    <div class="lbl" style="margin-top:10px">A scam type it has not seen</div>
+    <p class="small">We trained without one scam type and tested on it: 79–93% recall.</p>
+    <div class="lbl" style="margin-top:10px">Removing one stage</div>
+    <p class="small">Without contact, control, extraction or cash-out signals, recall is
+    87%, 92%, 67%, 65%.</p>
   </div>
 </div></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">08 / 16</span></footer>
 </section>
 <section class="slide  ">
-  <header><span class="sec">08 — Privacy</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">8. Privacy</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.16">
-<h2>What never leaves the phone.</h2>
+<h2>What data we use</h2>
 <div class="priv">
   <div class="pcol never">
-    <div class="mono lbl">NEVER LEAVES THE DEVICE</div>
+    <div class="lbl">Stays on the phone</div>
     <ul><li><span class="x"></span>Call audio</li><li><span class="x"></span>Screen frames</li><li><span class="x"></span>Message text</li><li><span class="x"></span>Contact list</li><li><span class="x"></span>OTP values</li><li><span class="x"></span>App inventory</li></ul>
   </div>
-  <div class="boundary"><span class="mono">DEVICE BOUNDARY</span></div>
+  <div class="boundary"><span>phone</span></div>
   <div class="pcol leaves">
-    <div class="mono lbl acc">LEAVES THE DEVICE</div>
-    <div class="eqn"><b>9</b> derived booleans <span>+</span> amount <span>+</span> hashed payee VPA</div>
+    <div class="lbl acc">Sent to the bank</div>
+    <div class="eqn"><b>9</b> yes/no values, the amount and a hashed payee ID</div>
     <ol><li>You are on a call with a number not in your contacts while paying</li><li>That call has lasted more than 20 minutes</li><li>A video/VoIP call is active (common in 'digital arrest' scams)</li><li>A message received in the last 24h matches a known scam lure (KYC, parcel, electricity)</li><li>A screen-sharing / remote-control app is running</li><li>An app was installed from outside the Play Store in the last 24h</li><li>A non-system app can read your screen and draw over the payment app</li><li>An OTP was opened while the unknown call was active</li><li>Payee was typed or pasted instead of scanned or picked from contacts</li></ol>
   </div>
   <div class="pcol bank">
-    <div class="mono lbl">ALREADY INSIDE THE BANK</div>
-    <p><b>7</b> bank-side signals computed on data the bank already holds — first-time payee, amount against
-    the customer's history, balance drain, fixed-deposit break, recent small credits.</p>
-    <p><b>4</b> network signals looked up in the bank's own feature store — mule score, account age,
-    suspect-registry hit, collect request.</p>
-    <p class="mono small">9 + 7 + 4 = 20 signals.</p>
+    <div class="lbl">Already at the bank</div>
+    <p><b>7</b> signals the bank can work out from data it already has: first-time payee, amount compared with past payments,
+    share of balance, a broken fixed deposit, recent small credits.</p>
+    <p><b>4</b> signals about the receiving account: mule score, account age, a suspect-registry match,
+    and whether it is a collect request.</p>
+    <p class="small">9 + 7 + 4 = 20 signals.</p>
   </div>
 </div>
 <div class="receipt">
-  <div class="mono lbl acc">SIGNED DECISION RECEIPT</div>
+  <div class="lbl acc">Signed decision record</div>
   <code>{ log_id, ts, session, amount, evidence (true only), score, tier, playbook, active_stages, action } + HMAC-SHA256</code>
-  <p>One identifier ties the customer's screen, the agent desk and any complaint to the exact evidence and weights.
-  <b>Implemented:</b> the server accepts only the 20 catalogued keys and rejects replayed nonces and evidence older than 15 seconds.</p>
+  <p>Each decision gets one ID, so the customer, the bank agent and any complaint all point to the same evidence.
+  <b>Already built:</b> the server accepts only the 20 known signal names and rejects repeated or more-than-15-second-old requests.</p>
 </div>
-<p class="legal mono">Designed with the DPDP Act 2023 principles of purpose limitation and data minimisation.
-This is a design alignment, not a legal certification. The on-device SDK is proposed; the server contract is implemented.</p></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+<p class="legal">We followed the DPDP Act 2023 ideas of collecting only what is needed and using it for one purpose. This is a design
+choice, not a legal certification. The phone SDK is not built yet; the server side is.</p></div>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">09 / 16</span></footer>
 </section>
 <section class="slide  ">
-  <header><span class="sec">09 — Position & next</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">9. Comparison and next steps</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.2">
-<h2>Workflow context is the difference.</h2>
+<h2>How it compares, and our plan for the finale</h2>
 <div class="diff">
-  <table class="mx"><thead><tr><th></th><th>Transaction<br>context</th><th>Workflow<br>context</th><th>Explainable<br>reason</th><th>Graduated<br>response</th></tr></thead>
-  <tbody><tr class=''><td>Transaction rules</td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><span class="no">—</span></td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><span class="no">—</span></td></tr><tr class=''><td>Black-box ML classifier</td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td>only if engineered</td><td>post-hoc only</td><td><span class="no">—</span></td></tr><tr class='me'><td>Chakravyuh</td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td></tr></tbody></table>
+  <table class="mx"><thead><tr><th></th><th>Uses payment<br>details</th><th>Uses steps<br>before payment</th><th>Gives a<br>reason</th><th>Scaled<br>response</th></tr></thead>
+  <tbody><tr class=''><td>Transaction rules</td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><span class="no">—</span></td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><span class="no">—</span></td></tr><tr class=''><td>Standard ML classifier</td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td>partly</td><td>after the fact</td><td><span class="no">—</span></td></tr><tr class='me'><td>Chakravyuh</td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td><td><svg class="ok" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5 L5 9.2 L10.2 2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></td></tr></tbody></table>
   <div>
-    <p class="claim">Chakravyuh treats the surrounding scam workflow as first-class evidence.</p>
-    <div class="why"><span class="mono lbl">WHY NOT A GENERIC CLASSIFIER?</span>
-    <p>On the same synthetic worlds a black box catches about 4 points more scams (slide 7), but it cannot say which
-    stage fired, and nothing stops one strong signal from interrupting a genuine payment. A customer, an agent and an
-    ombudsman all need the reason.</p></div>
+    <p class="claim">The main difference: we use what happened before the payment, not only the payment.</p>
+    <div class="why"><span class="lbl">Why not just use a standard classifier?</span>
+    <p>On our synthetic data it catches about 4 points more scams (slide 7). But it cannot say why, and one strong signal
+    can stop a genuine payment. Customers, bank agents and the ombudsman all need to know why a payment was held.</p></div>
   </div>
 </div>
 <div class="plan">
-  <div class="mono lbl">WHAT WE WILL PROVE IN THE 48-HOUR FINALE</div>
-  <div class="phases"><div class='ph'><div class='mono t'>H+0–8</div><b>Replay harness</b><span>Synthetic sessions through /decide with signed receipts and replay checks.</span></div><div class='ph'><div class='mono t'>H+8–20</div><b>Android signal validation</b><span>Measure the 9 device signals on a real handset against ground truth.</span></div><div class='ph'><div class='mono t'>H+20–32</div><b>Attacker adaptation</b><span>Red-team three playbooks against published weights; retrain; compare.</span></div><div class='ph'><div class='mono t'>H+32–44</div><b>End-to-end replay</b><span>100 sessions → tiers → agent-desk review → release or report.</span></div><div class='ph'><div class='mono t'>H+44–48</div><b>Security + audit walkthrough</b><span>Receipts, replay rejection, dual-approver release, limitations.</span></div></div>
-  <p class="small"><b>Built for Round 1:</b> decision engine, threshold calibration, signed receipts with replay checks,
-  synthetic generator and evaluation, 8 automated tests. <b>Not yet built:</b> Android SDK, payment-rail hold, agent desk.</p>
+  <div class="lbl">What we plan to build and show in the 48-hour finale</div>
+  <div class="phases"><div class='ph'><div class='t'>H+0–8</div><b>Replay harness</b><span>Run saved test sessions through the server and check the records.</span></div><div class='ph'><div class='t'>H+8–20</div><b>Android signal validation</b><span>Read the 9 phone signals on a real Android phone and check them.</span></div><div class='ph'><div class='t'>H+20–32</div><b>Attacker adaptation</b><span>Try to beat our own model with three changed scams, then retrain.</span></div><div class='ph'><div class='t'>H+32–44</div><b>End-to-end replay</b><span>Run 100 sessions through to agent review and release or report.</span></div><div class='ph'><div class='t'>H+44–48</div><b>Security review</b><span>Walk through the records, replay checks, two-person release and known limits.</span></div></div>
+  <p class="small"><b>Built so far:</b> scoring server, threshold setting, signed records with replay checks, synthetic data
+  generator and evaluation, 8 automated tests. <b>Not built yet:</b> Android SDK, payment hold, agent screen.</p>
 </div></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">10 / 16</span></footer>
 </section>
 <section class="slide  archp">
-  <header><span class="sec">Architecture 1 / 3</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">Architecture, page 1 of 3</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.12">
 <h2>System architecture</h2>
-<p class="lede">Four planes. Solid outlines are implemented in Round 1; dashed are simulated with synthetic data; dotted are proposed.</p>
+<p class="lede">Solid boxes are built. Dashed boxes are simulated with synthetic data. Dotted boxes are planned but not built.</p>
 <div class="arch">
-  <div class="plane"><div class="pt mono">DEVICE · bank app SDK</div><div class="pr">
-    <div class="ab ab-simulated"><div class="abh"><b>Signal probes</b><span class="st st-simulated">SIMULATED</span></div><span>Call state, accessibility, installer, on-device SMS classifier. Synthetic in Round 1.</span></div>
-    <div class="ab ab-proposed"><div class="abh"><b>Evidence composer</b><span class="st st-proposed">PROPOSED</span></div><span>9 booleans + amount + payee hash + nonce + timestamp + Play Integrity token.</span></div>
-    <div class="ab ab-simulated"><div class="abh"><b>Tier 1–3 screens</b><span class="st st-simulated">SIMULATED</span></div><span>Playbook message, two questions, hold screen. Mock-ups + web demo.</span></div>
+  <div class="plane"><div class="pt">Phone (inside the bank's app)</div><div class="pr">
+    <div class="ab ab-simulated"><div class="abh"><b>Signal readers</b><span class="st st-simulated">simulated</span></div><span>Call state, accessibility, app installs, SMS check on the phone. Synthetic for now.</span></div>
+    <div class="ab ab-proposed"><div class="abh"><b>Request builder</b><span class="st st-proposed">planned</span></div><span>9 yes/no values, amount, payee hash, one-time nonce, timestamp, Play Integrity token.</span></div>
+    <div class="ab ab-simulated"><div class="abh"><b>Warning screens</b><span class="st st-simulated">simulated</span></div><span>Scam message, two questions, hold screen. Mock-ups and a web demo.</span></div>
   </div></div>
-  <div class="flow mono">1 evidence ↓ &nbsp;&nbsp;&nbsp;&nbsp; 5 tier, message and receipt id ↑</div>
-  <div class="plane"><div class="pt mono">BANK FRAUD-OPS VPC</div><div class="pr">
-    <div class="ab ab-implemented"><div class="abh"><b>/decide engine</b><span class="st st-implemented">IMPLEMENTED</span></div><span>FastAPI. Stage scores, gate, tier, playbook, top reasons. Stateless.</span></div>
-    <div class="ab ab-implemented"><div class="abh"><b>Replay + schema guard</b><span class="st st-implemented">IMPLEMENTED</span></div><span>Nonce, 15 s freshness, only the 20 catalogued keys accepted.</span></div>
-    <div class="ab ab-implemented"><div class="abh"><b>Signed receipt log</b><span class="st st-implemented">IMPLEMENTED</span></div><span>HMAC-SHA256 over every decision. Key in a KMS is proposed.</span></div>
-    <div class="ab ab-proposed"><div class="abh"><b>Agent desk</b><span class="st st-proposed">PROPOSED</span></div><span>Tier-3 queue, reasons, dual-approver release.</span></div>
+  <div class="flow">1. signals sent ↓ &nbsp;&nbsp;&nbsp;&nbsp; 5. response level, message and record ID sent back ↑</div>
+  <div class="plane"><div class="pt">Bank fraud team servers</div><div class="pr">
+    <div class="ab ab-implemented"><div class="abh"><b>Scoring server</b><span class="st st-implemented">built</span></div><span>FastAPI /decide endpoint: stage scores, two-stage rule, level, reasons.</span></div>
+    <div class="ab ab-implemented"><div class="abh"><b>Input checks</b><span class="st st-implemented">built</span></div><span>Rejects repeated nonces, requests older than 15 s and unknown signal names.</span></div>
+    <div class="ab ab-implemented"><div class="abh"><b>Signed records</b><span class="st st-implemented">built</span></div><span>HMAC-SHA256 on every decision. Moving the key to a KMS is planned.</span></div>
+    <div class="ab ab-proposed"><div class="abh"><b>Agent screen</b><span class="st st-proposed">planned</span></div><span>Queue of level-3 holds with reasons; two staff to release.</span></div>
   </div></div>
-  <div class="flow mono">2 payee features ↑ &nbsp;&nbsp;&nbsp;&nbsp; 3 score inside /decide &nbsp;&nbsp;&nbsp;&nbsp; 4 tier-3 hold → rail &nbsp;&nbsp;&nbsp;&nbsp; 6 confirmed outcomes ↓</div>
+  <div class="flow">2. payee data looked up ↑ &nbsp;&nbsp;&nbsp;&nbsp; 3. scored &nbsp;&nbsp;&nbsp;&nbsp; 4. level-3 hold sent to payments → &nbsp;&nbsp;&nbsp;&nbsp; 6. confirmed outcomes saved ↓</div>
   <div class="two">
-    <div class="plane"><div class="pt mono">BANK DATA PLATFORM</div><div class="pr">
-      <div class="ab ab-simulated"><div class="abh"><b>Mule-score features</b><span class="st st-simulated">SIMULATED</span></div><span>Fan-in, first-time-sender share, pass-through, age. Synthetic 7-day graph.</span></div>
-      <div class="ab ab-simulated"><div class="abh"><b>Suspect-registry lookup</b><span class="st st-simulated">SIMULATED</span></div><span>Flag only; never shown to customers. Synthetic flag in Round 1.</span></div>
-      <div class="ab ab-proposed"><div class="abh"><b>Weekly retrain</b><span class="st st-proposed">PROPOSED</span></div><span>Bank-confirmed labels only; shadow-mode before rollout.</span></div>
+    <div class="plane"><div class="pt">Bank data systems</div><div class="pr">
+      <div class="ab ab-simulated"><div class="abh"><b>Mule score</b><span class="st st-simulated">simulated</span></div><span>Number of new senders, how fast money leaves, account age. Synthetic 7-day graph.</span></div>
+      <div class="ab ab-simulated"><div class="abh"><b>Suspect list check</b><span class="st st-simulated">simulated</span></div><span>A yes/no flag, never shown to customers. Synthetic for now.</span></div>
+      <div class="ab ab-proposed"><div class="abh"><b>Weekly retraining</b><span class="st st-proposed">planned</span></div><span>Only bank-confirmed cases; tested in shadow mode first.</span></div>
     </div></div>
-    <div class="plane"><div class="pt mono">PAYMENT RAIL / REPORTING</div><div class="pr">
-      <div class="ab ab-proposed"><div class="abh"><b>Payment hold</b><span class="st st-proposed">PROPOSED</span></div><span>Time-boxed hold for Tier 3 via the bank’s payment switch.</span></div>
-      <div class="ab ab-proposed"><div class="abh"><b>Reporting path</b><span class="st st-proposed">PROPOSED</span></div><span>Agent files to I4C CFCFRMS / 1930 when a scam is confirmed.</span></div>
+    <div class="plane"><div class="pt">Payments and reporting</div><div class="pr">
+      <div class="ab ab-proposed"><div class="abh"><b>Payment hold</b><span class="st st-proposed">planned</span></div><span>A time-limited hold through the bank’s payment system.</span></div>
+      <div class="ab ab-proposed"><div class="abh"><b>Reporting</b><span class="st st-proposed">planned</span></div><span>Agent reports confirmed scams to I4C (CFCFRMS / 1930).</span></div>
     </div></div>
   </div>
 </div>
-<div class="legend mono"><span class="lg impl">implemented</span><span class="lg sim">simulated</span><span class="lg prop">proposed</span>
-<span>No Amazon, NPCI, I4C or bank integration exists today; every proposed item is marked as such.</span></div></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+<div class="legend"><span class="lg impl">built</span><span class="lg sim">simulated</span><span class="lg prop">planned</span>
+<span>We have no integration with Amazon, NPCI, I4C or any bank yet.</span></div></div>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">11 / 16</span></footer>
 </section>
 <section class="slide  archp">
-  <header><span class="sec">Architecture 2 / 3</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">Architecture, page 2 of 3</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.12">
-<h2>One payment, traced — and what protects each step</h2>
+<h2>Following one payment through the system</h2>
 <div class="a2">
-  <div class="fl"><div class='fs'><div class='fn mono'>1</div><b>Pay pressed</b><span>SDK composes evidence: only true booleans, amount, payee hash, nonce, timestamp.</span></div><div class='fs'><div class='fn mono'>2</div><b>Guard</b><span>/decide rejects unknown keys, replayed nonces and evidence older than 15 s.</span></div><div class='fs'><div class='fn mono'>3</div><b>Score</b><span>Payee features joined from the feature store; stage scores, gate, tier, playbook, top-5 reasons.</span></div><div class='fs'><div class='fn mono'>4</div><b>Act</b><span>Tier 0 allow · Tier 1 log · Tier 2 warn + two questions · Tier 3 hold before the PIN screen.</span></div><div class='fs'><div class='fn mono'>5</div><b>Review</b><span>Tier 3 reaches a bank agent with the receipt and reasons. Release needs two approvers.</span></div><div class='fs'><div class='fn mono'>6</div><b>Close</b><span>Released, or confirmed and reported. The outcome becomes a bank-confirmed label.</span></div></div>
+  <div class="fl"><div class='fs'><div class='fn'>1</div><b>Customer taps Pay</b><span>The app sends the signals that are true, the amount, a payee hash, a nonce and a timestamp.</span></div><div class='fs'><div class='fn'>2</div><b>Check the request</b><span>The server rejects unknown signals, repeated nonces and anything older than 15 seconds.</span></div><div class='fs'><div class='fn'>3</div><b>Score</b><span>Payee data is added, then stage scores, the two-stage rule, the level and the top five reasons.</span></div><div class='fs'><div class='fn'>4</div><b>Respond</b><span>Level 0 allows, level 1 logs, level 2 warns and asks two questions, level 3 holds the payment.</span></div><div class='fs'><div class='fn'>5</div><b>Review</b><span>Level-3 cases go to a bank agent with the record and reasons. Two staff must approve a release.</span></div><div class='fs'><div class='fn'>6</div><b>Close</b><span>The payment is released, or the scam is confirmed and reported. The result is saved for retraining.</span></div></div>
   <div class="a2r">
-    <div class="mono lbl">SECURITY CONTROLS</div>
-    <table class="tbl sm"><thead><tr><th>Threat</th><th>Control</th><th></th></tr></thead><tbody><tr><td>Replayed or stale evidence</td><td>Nonce + 15 s freshness window at /decide</td><td><span class="st st-implemented">IMPLEMENTED</span></td></tr><tr><td>Injected or unknown fields</td><td>Only the 20 catalogued keys are accepted</td><td><span class="st st-implemented">IMPLEMENTED</span></td></tr><tr><td>Tampered decision record</td><td>HMAC-SHA256 receipt per decision</td><td><span class="st st-implemented">IMPLEMENTED</span></td></tr><tr><td>Modified or fake app</td><td>Play Integrity token bound to a hash of the evidence</td><td><span class="st st-proposed">PROPOSED</span></td></tr><tr><td>Insider releasing holds</td><td>Two approvers; approver ids written into the receipt</td><td><span class="st st-proposed">PROPOSED</span></td></tr><tr><td>Receipt-store breach</td><td>Receipts hold no raw content; identity kept separately</td><td><span class="st st-design">DESIGN</span></td></tr><tr><td>Label poisoning</td><td>Retrain on bank-confirmed outcomes only</td><td><span class="st st-design">DESIGN</span></td></tr></tbody></table>
-    <div class="desk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" font-family="IBM Plex Sans, sans-serif"><rect x="0" y="0" width="640" height="380" rx="10" fill="#0d1420"/><rect x="0" y="0" width="640" height="34" fill="#151b23"/><circle cx="18" cy="17" r="6" fill="#8a1c1c"/><text x="34" y="21" font-size="12" fill="#e7ecf2">Agent desk — illustrative mock-up</text><text x="620" y="21" text-anchor="end" font-size="11" fill="#9aa5b3">agent · sunita.r@bank</text><text x="20" y="66" font-size="14" font-weight="700" fill="#ffffff">Tier-3 hold · 8723987bc76393cd</text><rect x="410" y="52" width="90" height="22" rx="11" fill="#8a1c1c"/><text x="455" y="67" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">HOLD 27:14</text><rect x="510" y="52" width="110" height="22" rx="11" fill="#12805c"/><text x="565" y="67" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">DUAL-AUTH RELEASE</text><rect x="20" y="88" width="290" height="90" rx="8" fill="#151b23"/><text x="34" y="112" font-size="11" fill="#9aa5b3">USER</text><text x="34" y="132" font-size="13" font-weight="700" fill="#ffffff">••• 4082  · KOCHI · sr. citizen</text><text x="34" y="152" font-size="11" fill="#9aa5b3">Amount ₹2,50,000  · FD broken 24 h ago</text><text x="34" y="169" font-size="11" fill="#9aa5b3">Payee arjun.k9214@ybl (opened 8 d ago)</text><text x="330" y="112" font-size="11" fill="#9aa5b3">KILL-CHAIN STAGES</text><rect x="330" y="122" width="65" height="42" rx="6" fill="#d9480f"/><text x="362" y="147" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">CONTACT</text><rect x="405" y="122" width="65" height="42" rx="6" fill="#d9480f"/><text x="437" y="147" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">CONTROL</text><rect x="480" y="122" width="65" height="42" rx="6" fill="#d9480f"/><text x="512" y="147" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">EXTRACTION</text><rect x="555" y="122" width="65" height="42" rx="6" fill="#d9480f"/><text x="587" y="147" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">CASHOUT</text><text x="20" y="204" font-size="11" fill="#9aa5b3">WHY (top signal contributions)</text><rect x="20" y="210" width="600" height="20" rx="5" fill="#151b23"/><text x="34" y="224" font-size="11" fill="#e7ecf2">payee behaves like a mule (many new senders, fast pass-through)</text><text x="500" y="224" font-size="11" fill="#9aa5b3">cash-out</text><text x="608" y="224" text-anchor="end" font-size="11" font-weight="700" fill="#ff7a2b">+5.74</text><rect x="20" y="232" width="600" height="20" rx="5" fill="#151b23"/><text x="34" y="246" font-size="11" fill="#e7ecf2">first-time payee</text><text x="500" y="246" font-size="11" fill="#9aa5b3">extraction</text><text x="608" y="246" text-anchor="end" font-size="11" font-weight="700" fill="#ff7a2b">+2.73</text><rect x="20" y="254" width="600" height="20" rx="5" fill="#151b23"/><text x="34" y="268" font-size="11" fill="#e7ecf2">FD broken in last 24 h</text><text x="500" y="268" font-size="11" fill="#9aa5b3">extraction</text><text x="608" y="268" text-anchor="end" font-size="11" font-weight="700" fill="#ff7a2b">+1.93</text><rect x="20" y="276" width="600" height="20" rx="5" fill="#151b23"/><text x="34" y="290" font-size="11" fill="#e7ecf2">call with unknown number > 20 min</text><text x="500" y="290" font-size="11" fill="#9aa5b3">contact</text><text x="608" y="290" text-anchor="end" font-size="11" font-weight="700" fill="#ff7a2b">+1.52</text><rect x="20" y="298" width="600" height="20" rx="5" fill="#151b23"/><text x="34" y="312" font-size="11" fill="#e7ecf2">screen-sharing app running</text><text x="500" y="312" font-size="11" fill="#9aa5b3">control</text><text x="608" y="312" text-anchor="end" font-size="11" font-weight="700" fill="#ff7a2b">+1.47</text><rect x="20" y="344" width="290" height="24" rx="5" fill="#151b23"/><text x="34" y="360" font-size="11" fill="#9aa5b3">RELEASE REASON</text><text x="130" y="360" font-size="11" fill="#e7ecf2">confirmed victim call · voice ok</text><rect x="330" y="344" width="140" height="24" rx="5" fill="#151b23"/><text x="344" y="360" font-size="11" fill="#9aa5b3">SECOND APPROVER</text><text x="446" y="360" font-size="11" fill="#e7ecf2">rakesh.n</text></svg></div>
+    <div class="lbl">Security checks</div>
+    <table class="tbl sm"><thead><tr><th>Risk</th><th>What we do</th><th></th></tr></thead><tbody><tr><td>Old or repeated requests</td><td>One-time nonce and a 15-second limit</td><td><span class="st st-implemented">built</span></td></tr><tr><td>Extra or fake fields</td><td>Only the 20 known signal names are accepted</td><td><span class="st st-implemented">built</span></td></tr><tr><td>Edited decision records</td><td>Each record is signed with HMAC-SHA256</td><td><span class="st st-implemented">built</span></td></tr><tr><td>Fake or modified app</td><td>Play Integrity token tied to a hash of the request</td><td><span class="st st-proposed">planned</span></td></tr><tr><td>Staff misuse</td><td>Two approvers, both recorded in the signed record</td><td><span class="st st-proposed">planned</span></td></tr><tr><td>Record store leak</td><td>Records hold no raw content; identity is stored apart</td><td><span class="st st-design">design only</span></td></tr><tr><td>Poisoned training labels</td><td>Retrain only on bank-confirmed cases</td><td><span class="st st-design">design only</span></td></tr></tbody></table>
+    <div class="desk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" font-family="IBM Plex Sans, sans-serif"><rect x="0" y="0" width="640" height="380" rx="10" fill="#0d1420"/><rect x="0" y="0" width="640" height="34" fill="#151b23"/><circle cx="18" cy="17" r="6" fill="#8a1c1c"/><text x="34" y="21" font-size="12" fill="#e7ecf2">Agent screen (mock-up)</text><text x="620" y="21" text-anchor="end" font-size="11" fill="#9aa5b3">agent · sunita.r@bank</text><text x="20" y="66" font-size="14" font-weight="700" fill="#ffffff">Held payment · 8723987bc76393cd</text><rect x="410" y="52" width="90" height="22" rx="11" fill="#8a1c1c"/><text x="455" y="67" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">HOLD 27:14</text><rect x="510" y="52" width="110" height="22" rx="11" fill="#12805c"/><text x="565" y="67" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">DUAL-AUTH RELEASE</text><rect x="20" y="88" width="290" height="90" rx="8" fill="#151b23"/><text x="34" y="112" font-size="11" fill="#9aa5b3">USER</text><text x="34" y="132" font-size="13" font-weight="700" fill="#ffffff">••• 4082  · KOCHI · sr. citizen</text><text x="34" y="152" font-size="11" fill="#9aa5b3">Amount ₹2,50,000  · FD broken 24 h ago</text><text x="34" y="169" font-size="11" fill="#9aa5b3">Payee arjun.k9214@ybl (opened 8 d ago)</text><text x="330" y="112" font-size="11" fill="#9aa5b3">KILL-CHAIN STAGES</text><rect x="330" y="122" width="65" height="42" rx="6" fill="#d9480f"/><text x="362" y="147" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">CONTACT</text><rect x="405" y="122" width="65" height="42" rx="6" fill="#d9480f"/><text x="437" y="147" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">CONTROL</text><rect x="480" y="122" width="65" height="42" rx="6" fill="#d9480f"/><text x="512" y="147" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">EXTRACTION</text><rect x="555" y="122" width="65" height="42" rx="6" fill="#d9480f"/><text x="587" y="147" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">CASHOUT</text><text x="20" y="204" font-size="11" fill="#9aa5b3">WHY (top signal contributions)</text><rect x="20" y="210" width="600" height="20" rx="5" fill="#151b23"/><text x="34" y="224" font-size="11" fill="#e7ecf2">payee behaves like a mule (many new senders, fast pass-through)</text><text x="500" y="224" font-size="11" fill="#9aa5b3">cash-out</text><text x="608" y="224" text-anchor="end" font-size="11" font-weight="700" fill="#ff7a2b">+5.74</text><rect x="20" y="232" width="600" height="20" rx="5" fill="#151b23"/><text x="34" y="246" font-size="11" fill="#e7ecf2">first-time payee</text><text x="500" y="246" font-size="11" fill="#9aa5b3">extraction</text><text x="608" y="246" text-anchor="end" font-size="11" font-weight="700" fill="#ff7a2b">+2.73</text><rect x="20" y="254" width="600" height="20" rx="5" fill="#151b23"/><text x="34" y="268" font-size="11" fill="#e7ecf2">FD broken in last 24 h</text><text x="500" y="268" font-size="11" fill="#9aa5b3">extraction</text><text x="608" y="268" text-anchor="end" font-size="11" font-weight="700" fill="#ff7a2b">+1.93</text><rect x="20" y="276" width="600" height="20" rx="5" fill="#151b23"/><text x="34" y="290" font-size="11" fill="#e7ecf2">call with unknown number > 20 min</text><text x="500" y="290" font-size="11" fill="#9aa5b3">contact</text><text x="608" y="290" text-anchor="end" font-size="11" font-weight="700" fill="#ff7a2b">+1.52</text><rect x="20" y="298" width="600" height="20" rx="5" fill="#151b23"/><text x="34" y="312" font-size="11" fill="#e7ecf2">screen-sharing app running</text><text x="500" y="312" font-size="11" fill="#9aa5b3">control</text><text x="608" y="312" text-anchor="end" font-size="11" font-weight="700" fill="#ff7a2b">+1.47</text><rect x="20" y="344" width="290" height="24" rx="5" fill="#151b23"/><text x="34" y="360" font-size="11" fill="#9aa5b3">RELEASE REASON</text><text x="130" y="360" font-size="11" fill="#e7ecf2">confirmed victim call · voice ok</text><rect x="330" y="344" width="140" height="24" rx="5" fill="#151b23"/><text x="344" y="360" font-size="11" fill="#9aa5b3">SECOND APPROVER</text><text x="446" y="360" font-size="11" fill="#e7ecf2">rakesh.n</text></svg></div>
   </div>
 </div>
-<p class="small">Escalation and evidence path: customer screen → receipt id → agent desk → release or report. The same receipt id is what a
-customer quotes in a complaint, so a hold is never an unexplained outcome.</p></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+<p class="small">If a customer complains about a hold, they quote the record ID shown on their screen. The bank can then see exactly which
+signals caused it.</p></div>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">12 / 16</span></footer>
 </section>
 <section class="slide  archp">
-  <header><span class="sec">Architecture 3 / 3</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">Architecture, page 3 of 3</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.18">
-<h2>Rollout, performance and modelled economics</h2>
+<h2>Rollout, speed and cost estimates</h2>
 <div class="a3">
   <div class="a3c">
-    <div class="mono lbl">ROLLOUT — GATED BY MEASUREMENT</div>
-    <div class="ro"><b>Weeks 0–6 · Shadow</b><span>Receipts only, no customer impact. Measure interruptions on real traffic;
-      recalibrate τ to the bank's budget.</span></div>
-    <div class="ro"><b>Weeks 6–10 · Tiers 1–2</b><span>Opted-in segment and high-value person-to-person payments.
-      Proceed only if interruptions ≤ budget.</span></div>
-    <div class="ro"><b>Week 10+ · Tier 3</b><span>Payment hold with agent desk and two-approver release.</span></div>
-    <div class="mono lbl" style="margin-top:16px">PERFORMANCE</div>
-    <p><b>23 µs</b> per session for scoring, measured in-process on the evaluation machine.
-    <b>&lt; 40 ms</b> end-to-end SDK round trip is a design target, not a measurement.</p>
-    <div class="mono lbl" style="margin-top:16px">VALIDATION IN A PILOT</div>
-    <p>Real-traffic interruption rate, confirmed-scam recall from bank case outcomes, complaint rate and
-    agent review time — reported weekly against the synthetic baseline in this document.</p>
+    <div class="lbl">Rollout plan</div>
+    <div class="ro"><b>Weeks 0 to 6: shadow</b><span>Score real payments but show nothing to customers. Measure the alert rate and
+      reset the thresholds.</span></div>
+    <div class="ro"><b>Weeks 6 to 10: levels 1 and 2</b><span>Customers who opt in, and large payments to individuals.
+      Move on only if alerts stay within the limit.</span></div>
+    <div class="ro"><b>From week 10: level 3</b><span>Payment holds, with agent review and two-person release.</span></div>
+    <div class="lbl" style="margin-top:16px">Speed</div>
+    <p>Scoring takes about <b>23 µs</b> per session on our machine. We are aiming for under
+    <b>40 ms</b> for the full round trip from the phone, but have not measured it.</p>
+    <div class="lbl" style="margin-top:16px">What a pilot would measure</div>
+    <p>Alert rate on real payments, how many confirmed scams were caught, complaints, and agent review time,
+    compared each week with the synthetic results here.</p>
   </div>
   <div class="a3c model">
-    <div class="mtag mono">MODELLED / ASSUMPTION — NOT OBSERVED RESULTS</div>
-    <div class="mono lbl">VALUE: AN UPPER BOUND</div>
+    <div class="mtag">Estimates based on assumptions, not measured results</div>
+    <div class="lbl">Possible savings (upper limit)</div>
     <div class="calc">
       <div><span>national reported loss, 2024 (MHA)</span><b>₹22,845 cr</b></div>
-      <div><span>× share borne by one pilot bank's customers <i>(assumed)</i></span><b>2%</b></div>
-      <div><span>× Tier ≥ 2 recall (synthetic)</span><b>92.3%</b></div>
-      <div class="tot"><span>= upper-bound value intercepted per year</span><b>₹422 cr</b></div>
+      <div><span>× share for one pilot bank <i>(our assumption)</i></span><b>2%</b></div>
+      <div><span>× recall on synthetic data</span><b>92.3%</b></div>
+      <div class="tot"><span>= most that could be saved per year</span><b>₹422 cr</b></div>
     </div>
-    <p class="small">Upper bound: assumes every Tier ≥ 2 detection prevents the full loss. Tier-2 customers may still pay,
-    so real prevention will be lower. Scenario projection — not observed loss prevention.</p>
-    <div class="mono lbl" style="margin-top:14px">COST AT 30 M USERS × 250 SESSIONS / YEAR</div>
+    <p class="small">This assumes every level-2 or level-3 alert stops the whole loss. Some customers will pay anyway after a
+    warning, so the real figure would be lower. It is an estimate, not a measured saving.</p>
+    <div class="lbl" style="margin-top:14px">Cost for 30 million users, 250 payments each per year</div>
     <div class="calc">
-      <div><span>engine compute (6 instances, peak ≈ 2,378 req/s)</span><b>₹4.2 lakh / yr</b></div>
-      <div><span>signed receipts (2.6 TB / yr)</span><b>₹0.6 lakh / yr</b></div>
-      <div><span>false Tier-3 holds to review (measured rate × volume)</span><b>≈ 1,370 / day</b></div>
-      <div class="tot"><span>agent time at 5 min per review</span><b>≈ 114 h / day</b></div>
+      <div><span>servers (6 instances, peak about 2,378 requests/s)</span><b>₹4.2 lakh / yr</b></div>
+      <div><span>storing signed records (2.6 TB / yr)</span><b>₹0.6 lakh / yr</b></div>
+      <div><span>genuine payments held at level 3</span><b>≈ 1,370 / day</b></div>
+      <div class="tot"><span>agent time at 5 minutes each</span><b>≈ 114 h / day</b></div>
     </div>
-    <p class="small">Assumptions: peak = 10× average load, 1,000 req/s per instance, doubled for availability,
-    ₹8 per instance-hour, 350-byte receipt, ₹2 per GB-month. Compute is cheap; <b>human review is the real
-    operating cost</b>, which is why the Tier-3 budget is set separately. Excludes engineering and SDK work.</p>
+    <p class="small">Assumptions: peak is 10 times the average load, 1,000 requests/s per server, doubled for backup,
+    ₹8 per server-hour, 350 bytes per record, ₹2 per GB per month. Servers are cheap. <b>Staff time for reviews is the main
+    cost</b>, so the bank should set the level-3 limit carefully. Development cost is not included.</p>
   </div>
 </div></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">13 / 16</span></footer>
 </section>
 <section class="slide  appx">
-  <header><span class="sec">Appendix A</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">Appendix A</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.0">
-<h2>Appendix A — signal catalogue and model specification</h2>
+<h2>Appendix A: signals and model details</h2>
 <div class="xa">
-  <table class="tbl xs"><thead><tr><th>Signal</th><th>Stage</th><th>Source</th><th class="r">Weight</th><th>Meaning (shown to users and agents)</th></tr></thead><tbody><tr><td class='mono'>bait_credit_7d</td><td>contact</td><td>bank</td><td class='r mono'>+3.00</td><td>Small 'profit' credits from unknown senders in the last 7 days</td></tr><tr><td class='mono'>call_long</td><td>contact</td><td>device</td><td class='r mono'>+1.52</td><td>That call has lasted more than 20 minutes</td></tr><tr><td class='mono'>sms_scam_flag</td><td>contact</td><td>device</td><td class='r mono'>+1.50</td><td>A message received in the last 24h matches a known scam lure (KYC, parcel, electricity)</td></tr><tr><td class='mono'>call_unknown_active</td><td>contact</td><td>device</td><td class='r mono'>+1.13</td><td>You are on a call with a number not in your contacts while paying</td></tr><tr><td class='mono'>video_call</td><td>contact</td><td>device</td><td class='r mono'>+0.55</td><td>A video/VoIP call is active (common in 'digital arrest' scams)</td></tr><tr><td class='mono'>sideload_24h</td><td>control</td><td>device</td><td class='r mono'>+2.32</td><td>An app was installed from outside the Play Store in the last 24h</td></tr><tr><td class='mono'>remote_access</td><td>control</td><td>device</td><td class='r mono'>+1.47</td><td>A screen-sharing / remote-control app is running</td></tr><tr><td class='mono'>accessibility_overlay</td><td>control</td><td>device</td><td class='r mono'>+1.34</td><td>A non-system app can read your screen and draw over the payment app</td></tr><tr><td class='mono'>otp_read_in_call</td><td>control</td><td>device</td><td class='r mono'>+1.31</td><td>An OTP was opened while the unknown call was active</td></tr><tr><td class='mono'>collect_from_p2p</td><td>extraction</td><td>network</td><td class='r mono'>+4.66</td><td>This is a 'collect' request from an individual (entering PIN SENDS money)</td></tr><tr><td class='mono'>first_time_payee</td><td>extraction</td><td>bank</td><td class='r mono'>+2.73</td><td>You have never paid this account before</td></tr><tr><td class='mono'>balance_drain</td><td>extraction</td><td>bank</td><td class='r mono'>+2.41</td><td>This payment empties more than 70% of your balance</td></tr><tr><td class='mono'>vpa_typed</td><td>extraction</td><td>device</td><td class='r mono'>+2.08</td><td>Payee was typed or pasted instead of scanned or picked from contacts</td></tr><tr><td class='mono'>fd_broken_24h</td><td>extraction</td><td>bank</td><td class='r mono'>+1.93</td><td>A fixed deposit was broken / loan taken in the last 24h</td></tr><tr><td class='mono'>amount_high</td><td>extraction</td><td>bank</td><td class='r mono'>+1.71</td><td>Amount is far above your usual payments</td></tr><tr><td class='mono'>staircase</td><td>extraction</td><td>bank</td><td class='r mono'>+1.19</td><td>Several payments to new accounts in the last 60 minutes</td></tr><tr><td class='mono'>amount_very_high</td><td>extraction</td><td>bank</td><td class='r mono'>+0.51</td><td>Amount is extremely high for you (top 0.1% of your history)</td></tr><tr><td class='mono'>payee_mule_high</td><td>cash-out</td><td>network</td><td class='r mono'>+5.74</td><td>The receiving account behaves like a mule account (many unrelated senders, money moved out fast)</td></tr><tr><td class='mono'>payee_registry_hit</td><td>cash-out</td><td>network</td><td class='r mono'>+3.43</td><td>The receiving account is on the I4C / bank suspect registry</td></tr><tr><td class='mono'>payee_new_account</td><td>cash-out</td><td>network</td><td class='r mono'>+1.00</td><td>The receiving account was opened less than 30 days ago</td></tr></tbody></table>
+  <table class="tbl xs"><thead><tr><th>Signal</th><th>Stage</th><th>Source</th><th class="r">Weight</th><th>Meaning (as shown to customers and agents)</th></tr></thead><tbody><tr><td class='mono'>bait_credit_7d</td><td>contact</td><td>bank</td><td class='r mono'>+3.00</td><td>Small 'profit' credits from unknown senders in the last 7 days</td></tr><tr><td class='mono'>call_long</td><td>contact</td><td>device</td><td class='r mono'>+1.52</td><td>That call has lasted more than 20 minutes</td></tr><tr><td class='mono'>sms_scam_flag</td><td>contact</td><td>device</td><td class='r mono'>+1.50</td><td>A message received in the last 24h matches a known scam lure (KYC, parcel, electricity)</td></tr><tr><td class='mono'>call_unknown_active</td><td>contact</td><td>device</td><td class='r mono'>+1.13</td><td>You are on a call with a number not in your contacts while paying</td></tr><tr><td class='mono'>video_call</td><td>contact</td><td>device</td><td class='r mono'>+0.55</td><td>A video/VoIP call is active (common in 'digital arrest' scams)</td></tr><tr><td class='mono'>sideload_24h</td><td>control</td><td>device</td><td class='r mono'>+2.32</td><td>An app was installed from outside the Play Store in the last 24h</td></tr><tr><td class='mono'>remote_access</td><td>control</td><td>device</td><td class='r mono'>+1.47</td><td>A screen-sharing / remote-control app is running</td></tr><tr><td class='mono'>accessibility_overlay</td><td>control</td><td>device</td><td class='r mono'>+1.34</td><td>A non-system app can read your screen and draw over the payment app</td></tr><tr><td class='mono'>otp_read_in_call</td><td>control</td><td>device</td><td class='r mono'>+1.31</td><td>An OTP was opened while the unknown call was active</td></tr><tr><td class='mono'>collect_from_p2p</td><td>extraction</td><td>network</td><td class='r mono'>+4.66</td><td>This is a 'collect' request from an individual (entering PIN SENDS money)</td></tr><tr><td class='mono'>first_time_payee</td><td>extraction</td><td>bank</td><td class='r mono'>+2.73</td><td>You have never paid this account before</td></tr><tr><td class='mono'>balance_drain</td><td>extraction</td><td>bank</td><td class='r mono'>+2.41</td><td>This payment empties more than 70% of your balance</td></tr><tr><td class='mono'>vpa_typed</td><td>extraction</td><td>device</td><td class='r mono'>+2.08</td><td>Payee was typed or pasted instead of scanned or picked from contacts</td></tr><tr><td class='mono'>fd_broken_24h</td><td>extraction</td><td>bank</td><td class='r mono'>+1.93</td><td>A fixed deposit was broken / loan taken in the last 24h</td></tr><tr><td class='mono'>amount_high</td><td>extraction</td><td>bank</td><td class='r mono'>+1.71</td><td>Amount is far above your usual payments</td></tr><tr><td class='mono'>staircase</td><td>extraction</td><td>bank</td><td class='r mono'>+1.19</td><td>Several payments to new accounts in the last 60 minutes</td></tr><tr><td class='mono'>amount_very_high</td><td>extraction</td><td>bank</td><td class='r mono'>+0.51</td><td>Amount is extremely high for you (top 0.1% of your history)</td></tr><tr><td class='mono'>payee_mule_high</td><td>cash-out</td><td>network</td><td class='r mono'>+5.74</td><td>The receiving account behaves like a mule account (many unrelated senders, money moved out fast)</td></tr><tr><td class='mono'>payee_registry_hit</td><td>cash-out</td><td>network</td><td class='r mono'>+3.43</td><td>The receiving account is on the I4C / bank suspect registry</td></tr><tr><td class='mono'>payee_new_account</td><td>cash-out</td><td>network</td><td class='r mono'>+1.00</td><td>The receiving account was opened less than 30 days ago</td></tr></tbody></table>
   <div class="spec">
-    <div class="mono lbl">MODEL</div>
+    <div class="lbl">Model</div>
     <p class="formula sm">s(x) = b + Σ<sub>g</sub> min(C<sub>g</sub>, Σ<sub>k in g</sub> w<sub>k</sub>x<sub>k</sub>)</p>
-    <p>Weights: logistic regression, L2, C = 0.3, fitted on world 7 (60,000 legitimate + 2,400 scam sessions), clipped at 0.
-    Absent signals contribute nothing.</p>
-    <p>Intercept b shifted from training prevalence (3.85%) to an assumed deployment prevalence of 1 in 5,000.</p>
-    <p>Caps C: contact 5, control 5, extraction 6, cash-out 6. Stage active when capped score ≥ 1.5.</p>
-    <p>Thresholds (log-odds), calibrated on world 21 to 20 / 3 / 0.5 legitimate alerts per 1,000:
+    <p>Weights: logistic regression with L2 (C = 0.3), trained on dataset 7 (60,000 genuine and 2,400 scam sessions),
+    negative weights set to 0. A missing signal adds nothing.</p>
+    <p>The intercept b is adjusted from the training scam rate (3.85%) to an assumed real rate of 1 in 5,000.</p>
+    <p>Caps C: contact 5, control 5, extraction 6, cash-out 6. A stage is active when its capped score is 1.5 or more.</p>
+    <p>Thresholds (log-odds), set on dataset 21 to give 20, 3 and 0.5 genuine alerts per 1,000:
     τ₁ = -9.11, τ₂ = -8.34, τ₃ = -7.63.</p>
-    <p>Playbook label (digital arrest, remote-access KYC, investment/task, collect request) chosen by overlap with
-    each playbook's signal fingerprint; it selects the customer message, not the tier.</p>
-    <p class="small">Source split: 9 device, 7 bank, 4 network = 20. Weights are published here deliberately;
-    slide 8 measures what an attacker who reads them can achieve.</p>
+    <p>The scam type shown to the customer (digital arrest, remote-access KYC, investment or task scam, collect request)
+    is picked by which signals are present. It changes the message, not the level.</p>
+    <p class="small">Sources: 9 from the phone, 7 from the bank, 4 about the receiving account, 20 in total. We publish the
+    weights on purpose; slide 8 tests a fraudster who has read them.</p>
   </div>
 </div></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">14 / 16</span></footer>
 </section>
 <section class="slide  appx">
-  <header><span class="sec">Appendix B</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">Appendix B</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.0">
-<h2>Appendix B — evaluation methodology and full results</h2>
+<h2>Appendix B: how we tested, and all results</h2>
 <div class="xb">
   <div>
-    <p><b>Data.</b> A seeded generator (chakravyuh/synth.py) produces legitimate sessions with realistic confounders
-    (paying a plumber during his call, rent day, ignored scam SMS) and four scam playbooks. 25% of scam sessions are
-    “adapted”: call, video and screen-share signals hidden and amounts lowered. Payees come from a synthetic 7-day payment
-    graph with 120 mules (25% aged 120+ days). No real data is used anywhere.</p>
-    <p><b>Protocol.</b> Train on world 7; calibrate thresholds on world 21; test on worlds 101–108, each 60,000 legitimate +
-    2,400 scam sessions. Every system uses the same worlds and a 3 / 1,000 budget. CIs: bootstrap over the 8 worlds.</p>
-    <table class="tbl xs"><thead><tr><th>System</th><th class="r">Recall [95% CI]</th><th class="r">Interruptions / 1k</th><th class="r">AUPRC</th></tr></thead><tbody><tr><td>Chakravyuh (tier ≥ 2)</td><td class='r mono'>92.3% <i>[91.7%, 93.0%]</i></td><td class='r mono'>2.77 <i>[2.64, 2.92]</i></td><td class='r mono'>0.980</td></tr><tr><td>Chakravyuh score, gate removed</td><td class='r mono'>94.4% <i>[94.0%, 95.0%]</i></td><td class='r mono'>3.41 <i>[3.29, 3.54]</i></td><td class='r mono'>—</td></tr><tr><td>Logistic regression</td><td class='r mono'>96.6% <i>[96.4%, 97.0%]</i></td><td class='r mono'>3.43 <i>[3.28, 3.58]</i></td><td class='r mono'>0.984</td></tr><tr><td>Gradient boosting</td><td class='r mono'>96.7% <i>[96.3%, 97.0%]</i></td><td class='r mono'>3.17 <i>[2.99, 3.37]</i></td><td class='r mono'>0.985</td></tr><tr><td>XGBoost</td><td class='r mono'>96.8% <i>[96.5%, 97.2%]</i></td><td class='r mono'>3.27 <i>[3.05, 3.48]</i></td><td class='r mono'>0.985</td></tr><tr><td>MLP</td><td class='r mono'>97.0% <i>[96.7%, 97.3%]</i></td><td class='r mono'>3.48 <i>[3.28, 3.70]</i></td><td class='r mono'>0.985</td></tr><tr><td>Rule: new payee + high amount</td><td class='r mono'>48.1% <i>[47.6%, 48.6%]</i></td><td class='r mono'>9.34 <i>[9.10, 9.54]</i></td><td class='r mono'>—</td></tr></tbody></table>
-    <p class="small">The fixed rule cannot be tuned to a budget, so it is reported at its natural operating point.</p>
+    <p><b>Data.</b> Our generator (chakravyuh/synth.py) creates genuine sessions that include confusing cases (paying a plumber
+    while on a call with him, rent day, ignored scam SMS) and four types of scam. In 25% of scam sessions the fraudster hides the
+    call, video and screen-sharing signals and asks for less money. Payees come from a synthetic 7-day payment network with
+    120 mule accounts, a quarter of them over 120 days old. No real data is used.</p>
+    <p><b>Method.</b> Train on dataset 7, set thresholds on dataset 21, test on datasets 101 to 108 (60,000 genuine and 2,400 scam
+    sessions each). Every model uses the same data and a limit of 3 alerts per 1,000. Confidence intervals are bootstrapped over
+    the 8 test sets.</p>
+    <table class="tbl xs"><thead><tr><th>Model</th><th class="r">Recall [95% CI]</th><th class="r">Alerts per 1,000</th><th class="r">AUPRC</th></tr></thead><tbody><tr><td>Chakravyuh (tier ≥ 2)</td><td class='r mono'>92.3% <i>[91.7%, 93.0%]</i></td><td class='r mono'>2.77 <i>[2.64, 2.92]</i></td><td class='r mono'>0.980</td></tr><tr><td>Chakravyuh without two-stage rule</td><td class='r mono'>94.4% <i>[94.0%, 95.0%]</i></td><td class='r mono'>3.41 <i>[3.29, 3.54]</i></td><td class='r mono'>—</td></tr><tr><td>Logistic regression</td><td class='r mono'>96.6% <i>[96.4%, 97.0%]</i></td><td class='r mono'>3.43 <i>[3.28, 3.58]</i></td><td class='r mono'>0.984</td></tr><tr><td>Gradient boosting</td><td class='r mono'>96.7% <i>[96.3%, 97.0%]</i></td><td class='r mono'>3.17 <i>[2.99, 3.37]</i></td><td class='r mono'>0.985</td></tr><tr><td>XGBoost</td><td class='r mono'>96.8% <i>[96.5%, 97.2%]</i></td><td class='r mono'>3.27 <i>[3.05, 3.48]</i></td><td class='r mono'>0.985</td></tr><tr><td>MLP</td><td class='r mono'>97.0% <i>[96.7%, 97.3%]</i></td><td class='r mono'>3.48 <i>[3.28, 3.70]</i></td><td class='r mono'>0.985</td></tr><tr><td>Rule: new payee + high amount</td><td class='r mono'>48.1% <i>[47.6%, 48.6%]</i></td><td class='r mono'>9.34 <i>[9.10, 9.54]</i></td><td class='r mono'>—</td></tr></tbody></table>
+    <p class="small">The fixed rule has no threshold to tune, so it is shown as is.</p>
   </div>
   <div class="xb2">
-    <div class="mini"><div class="mono lbl">RECALL PER TEST WORLD</div><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="186.589219pt" height="125.358pt" viewBox="0 0 186.589219 125.358" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <div class="mini"><div class="lbl">Recall on each test set</div><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="186.589219pt" height="125.358pt" viewBox="0 0 186.589219 125.358" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-29T07:39:40.948556</dc:date>
+    <dc:date>2026-09-29T07:57:44.560864</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -4479,18 +4191,18 @@ L 185.149219 55.406612
 L 185.149219 39.940982 
 L 23.329219 39.940982 
 z
-" clip-path="url(#pa39cd207f6)" style="fill: #d9480f; opacity: 0.12"/>
+" clip-path="url(#pd2b581759f)" style="fill: #d9480f; opacity: 0.12"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m11f6b6ac2f" d="M 0 0 
+       <path id="m6f33edf7e5" d="M 0 0 
 L 0 3.5 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m11f6b6ac2f" x="30.684673" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m6f33edf7e5" x="30.684673" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_1">
@@ -4553,7 +4265,7 @@ z
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m11f6b6ac2f" x="51.700258" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m6f33edf7e5" x="51.700258" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_2">
@@ -4601,7 +4313,7 @@ z
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m11f6b6ac2f" x="72.715842" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m6f33edf7e5" x="72.715842" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_3">
@@ -4667,7 +4379,7 @@ z
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#m11f6b6ac2f" x="93.731427" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m6f33edf7e5" x="93.731427" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_4">
@@ -4704,7 +4416,7 @@ z
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#m11f6b6ac2f" x="114.747011" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m6f33edf7e5" x="114.747011" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_5">
@@ -4757,7 +4469,7 @@ z
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#m11f6b6ac2f" x="135.762595" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m6f33edf7e5" x="135.762595" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_6">
@@ -4813,7 +4525,7 @@ z
     <g id="xtick_7">
      <g id="line2d_7">
       <g>
-       <use xlink:href="#m11f6b6ac2f" x="156.77818" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m6f33edf7e5" x="156.77818" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_7">
@@ -4842,7 +4554,7 @@ z
     <g id="xtick_8">
      <g id="line2d_8">
       <g>
-       <use xlink:href="#m11f6b6ac2f" x="177.793764" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m6f33edf7e5" x="177.793764" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_8">
@@ -5193,12 +4905,12 @@ z
     <g id="ytick_1">
      <g id="line2d_9">
       <defs>
-       <path id="m0a02ea9047" d="M 0 0 
+       <path id="m73b28642ec" d="M 0 0 
 L -3.5 0 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m0a02ea9047" x="23.329219" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m73b28642ec" x="23.329219" y="98.418" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_10">
@@ -5258,7 +4970,7 @@ z
     <g id="ytick_2">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m0a02ea9047" x="23.329219" y="74.856" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m73b28642ec" x="23.329219" y="74.856" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_11">
@@ -5314,7 +5026,7 @@ z
     <g id="ytick_3">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m0a02ea9047" x="23.329219" y="51.294" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m73b28642ec" x="23.329219" y="51.294" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_12">
@@ -5329,7 +5041,7 @@ z
     <g id="ytick_4">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m0a02ea9047" x="23.329219" y="27.732" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m73b28642ec" x="23.329219" y="27.732" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_13">
@@ -5344,7 +5056,7 @@ z
     <g id="ytick_5">
      <g id="line2d_13">
       <g>
-       <use xlink:href="#m0a02ea9047" x="23.329219" y="4.17" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m73b28642ec" x="23.329219" y="4.17" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_14">
@@ -5360,11 +5072,11 @@ z
    <g id="line2d_14">
     <path d="M 23.329219 48.103312 
 L 185.149219 48.103312 
-" clip-path="url(#pa39cd207f6)" style="fill: none; stroke: #d9480f; stroke-linecap: square"/>
+" clip-path="url(#pd2b581759f)" style="fill: none; stroke: #d9480f; stroke-linecap: square"/>
    </g>
    <g id="line2d_15">
     <defs>
-     <path id="m2c3d5725d4" d="M 0 1.75 
+     <path id="m6174cf4927" d="M 0 1.75 
 C 0.464105 1.75 0.909265 1.565609 1.237437 1.237437 
 C 1.565609 0.909265 1.75 0.464105 1.75 0 
 C 1.75 -0.464105 1.565609 -0.909265 1.237437 -1.237437 
@@ -5376,15 +5088,15 @@ C -0.909265 1.565609 -0.464105 1.75 0 1.75
 z
 " style="stroke: #111a2b"/>
     </defs>
-    <g clip-path="url(#pa39cd207f6)">
-     <use xlink:href="#m2c3d5725d4" x="30.684673" y="47.367" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m2c3d5725d4" x="51.700258" y="46.876125" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m2c3d5725d4" x="72.715842" y="60.620625" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m2c3d5725d4" x="93.731427" y="29.6955" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m2c3d5725d4" x="114.747011" y="45.4035" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m2c3d5725d4" x="135.762595" y="63.565875" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m2c3d5725d4" x="156.77818" y="34.113375" style="fill: #111a2b; stroke: #111a2b"/>
-     <use xlink:href="#m2c3d5725d4" x="177.793764" y="57.1845" style="fill: #111a2b; stroke: #111a2b"/>
+    <g clip-path="url(#pd2b581759f)">
+     <use xlink:href="#m6174cf4927" x="30.684673" y="47.367" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m6174cf4927" x="51.700258" y="46.876125" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m6174cf4927" x="72.715842" y="60.620625" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m6174cf4927" x="93.731427" y="29.6955" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m6174cf4927" x="114.747011" y="45.4035" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m6174cf4927" x="135.762595" y="63.565875" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m6174cf4927" x="156.77818" y="34.113375" style="fill: #111a2b; stroke: #111a2b"/>
+     <use xlink:href="#m6174cf4927" x="177.793764" y="57.1845" style="fill: #111a2b; stroke: #111a2b"/>
     </g>
    </g>
    <g id="patch_4">
@@ -5400,18 +5112,18 @@ L 185.149219 98.418
   </g>
  </g>
  <defs>
-  <clipPath id="pa39cd207f6">
+  <clipPath id="pd2b581759f">
    <rect x="23.329219" y="4.17" width="161.82" height="94.248"/>
   </clipPath>
  </defs>
 </svg>
 </div>
-    <div class="mini"><div class="mono lbl">RELIABILITY (PREVALENCE-ADJUSTED)</div><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="176.336328pt" height="158.622pt" viewBox="0 0 176.336328 158.622" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <div class="mini"><div class="lbl">Calibration</div><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="176.336328pt" height="158.622pt" viewBox="0 0 176.336328 158.622" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-29T07:39:41.000501</dc:date>
+    <dc:date>2026-09-29T07:57:44.609343</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -5448,12 +5160,12 @@ z
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m01f425ae66" d="M 0 0 
+       <path id="m23c3a57667" d="M 0 0 
 L 0 3.5 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m01f425ae66" x="30.244219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m23c3a57667" x="30.244219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_1">
@@ -5514,7 +5226,7 @@ z
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m01f425ae66" x="58.144219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m23c3a57667" x="58.144219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_2">
@@ -5562,7 +5274,7 @@ z
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m01f425ae66" x="86.044219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m23c3a57667" x="86.044219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_3">
@@ -5599,7 +5311,7 @@ z
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#m01f425ae66" x="113.944219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m23c3a57667" x="113.944219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_4">
@@ -5655,7 +5367,7 @@ z
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#m01f425ae66" x="141.844219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m23c3a57667" x="141.844219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_5">
@@ -5721,7 +5433,7 @@ z
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#m01f425ae66" x="169.744219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m23c3a57667" x="169.744219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_6">
@@ -6118,12 +5830,12 @@ z
     <g id="ytick_1">
      <g id="line2d_7">
       <defs>
-       <path id="m0eebe1e041" d="M 0 0 
+       <path id="m623ad8e63f" d="M 0 0 
 L -3.5 0 
 " style="stroke: #7a808a; stroke-width: 0.6"/>
       </defs>
       <g>
-       <use xlink:href="#m0eebe1e041" x="30.244219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m623ad8e63f" x="30.244219" y="131.682" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_8">
@@ -6138,7 +5850,7 @@ L -3.5 0
     <g id="ytick_2">
      <g id="line2d_8">
       <g>
-       <use xlink:href="#m0eebe1e041" x="30.244219" y="106.1796" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m623ad8e63f" x="30.244219" y="106.1796" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_9">
@@ -6153,7 +5865,7 @@ L -3.5 0
     <g id="ytick_3">
      <g id="line2d_9">
       <g>
-       <use xlink:href="#m0eebe1e041" x="30.244219" y="80.6772" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m623ad8e63f" x="30.244219" y="80.6772" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_10">
@@ -6168,7 +5880,7 @@ L -3.5 0
     <g id="ytick_4">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m0eebe1e041" x="30.244219" y="55.1748" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m623ad8e63f" x="30.244219" y="55.1748" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_11">
@@ -6183,7 +5895,7 @@ L -3.5 0
     <g id="ytick_5">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m0eebe1e041" x="30.244219" y="29.6724" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m623ad8e63f" x="30.244219" y="29.6724" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_12">
@@ -6198,7 +5910,7 @@ L -3.5 0
     <g id="ytick_6">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m0eebe1e041" x="30.244219" y="4.17" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
+       <use xlink:href="#m623ad8e63f" x="30.244219" y="4.17" style="fill: #7a808a; stroke: #7a808a; stroke-width: 0.6"/>
       </g>
      </g>
      <g id="text_13">
@@ -6325,7 +6037,7 @@ z
    <g id="line2d_13">
     <path d="M 30.244219 131.682 
 L 169.744219 4.17 
-" clip-path="url(#pa71fc37b1e)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #cfcac0"/>
+" clip-path="url(#p3863d5173b)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #cfcac0"/>
    </g>
    <g id="line2d_14">
     <path d="M 30.565439 131.379182 
@@ -6338,9 +6050,9 @@ L 118.472037 9.60568
 L 136.183459 10.33 
 L 150.446648 9.774923 
 L 167.716013 4.308855 
-" clip-path="url(#pa71fc37b1e)" style="fill: none; stroke: #d9480f; stroke-width: 1.3; stroke-linecap: square"/>
+" clip-path="url(#p3863d5173b)" style="fill: none; stroke: #d9480f; stroke-width: 1.3; stroke-linecap: square"/>
     <defs>
-     <path id="mfe6b06ab17" d="M 0 1.5 
+     <path id="m160fb20218" d="M 0 1.5 
 C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
 C 1.341951 0.77937 1.5 0.397805 1.5 0 
 C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066 
@@ -6352,17 +6064,17 @@ C -0.77937 1.341951 -0.397805 1.5 0 1.5
 z
 " style="stroke: #d9480f"/>
     </defs>
-    <g clip-path="url(#pa71fc37b1e)">
-     <use xlink:href="#mfe6b06ab17" x="30.565439" y="131.379182" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#mfe6b06ab17" x="51.258095" y="102.528313" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#mfe6b06ab17" x="63.564515" y="69.346747" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#mfe6b06ab17" x="78.898762" y="58.818" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#mfe6b06ab17" x="94.256672" y="40.523708" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#mfe6b06ab17" x="106.727486" y="20.355734" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#mfe6b06ab17" x="118.472037" y="9.60568" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#mfe6b06ab17" x="136.183459" y="10.33" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#mfe6b06ab17" x="150.446648" y="9.774923" style="fill: #d9480f; stroke: #d9480f"/>
-     <use xlink:href="#mfe6b06ab17" x="167.716013" y="4.308855" style="fill: #d9480f; stroke: #d9480f"/>
+    <g clip-path="url(#p3863d5173b)">
+     <use xlink:href="#m160fb20218" x="30.565439" y="131.379182" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m160fb20218" x="51.258095" y="102.528313" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m160fb20218" x="63.564515" y="69.346747" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m160fb20218" x="78.898762" y="58.818" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m160fb20218" x="94.256672" y="40.523708" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m160fb20218" x="106.727486" y="20.355734" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m160fb20218" x="118.472037" y="9.60568" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m160fb20218" x="136.183459" y="10.33" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m160fb20218" x="150.446648" y="9.774923" style="fill: #d9480f; stroke: #d9480f"/>
+     <use xlink:href="#m160fb20218" x="167.716013" y="4.308855" style="fill: #d9480f; stroke: #d9480f"/>
     </g>
    </g>
    <g id="patch_3">
@@ -6378,42 +6090,43 @@ L 169.744219 131.682
   </g>
  </g>
  <defs>
-  <clipPath id="pa71fc37b1e">
+  <clipPath id="p3863d5173b">
    <rect x="30.244219" y="4.17" width="139.5" height="127.512"/>
   </clipPath>
  </defs>
 </svg>
 </div>
-    <p class="small"><b>Calibration.</b> Scores are shifted to the 1-in-5,000 deployment prior; for this check they are shifted
-    back to the test prevalence (3.85%). Brier 0.0040, ECE 0.0024.</p>
-    <p class="small"><b>Adversary</b> (strongest emitted signals hidden): 0: 92% · 1: 62% · 2: 44% · 3: 31% · 4: 19% · 5: 9%.</p>
-    <p class="small"><b>Stage ablation</b> (retrained without the stage): none: 92% (2.77/1k) · contact: 87% (2.98/1k) · control: 92% (3.50/1k) · extraction: 67% (3.10/1k) · cashout: 65% (2.37/1k).</p>
-    <p class="small"><b>Leave one playbook out:</b> digital arrest: 93% · remote access kyc: 89% · investment task: 81% · collect request: 79%. <b>Per playbook:</b> digital arrest: 93% · remote access kyc: 97% · investment task: 92% · collect request: 83%.</p>
-    <p class="small"><b>Per persona</b> (recall / interruptions per 1k): student: 92% / 2.73 · shopkeeper: 92% / 2.64 · senior: 92% / 2.93 · professional: 93% / 2.79.</p>
-    <p class="small"><b>Stage caps</b> produced no measurable change on these worlds (identical recall and interruptions
-    without caps); they remain as a guarantee against a single extreme stage. Tier-3 recall: 57.9%.</p>
+    <p class="small"><b>Calibration.</b> Scores are set for a 1-in-5,000 scam rate, so for this check we shift them back to the
+    test rate (3.85%). Brier score 0.0040, ECE 0.0024. Mid-range scores are a
+    little under-confident.</p>
+    <p class="small"><b>Hidden signals</b> (strongest first), number hidden and recall: 0: 92% · 1: 62% · 2: 44% · 3: 31% · 4: 19% · 5: 9%.</p>
+    <p class="small"><b>One stage removed</b> (retrained without it): none: 92% (2.77/1k) · contact: 87% (2.98/1k) · control: 92% (3.50/1k) · extraction: 67% (3.10/1k) · cashout: 65% (2.37/1k).</p>
+    <p class="small"><b>Unseen scam type:</b> digital arrest: 93% · remote access kyc: 89% · investment task: 81% · collect request: 79%. <b>By scam type:</b> digital arrest: 93% · remote access kyc: 97% · investment task: 92% · collect request: 83%.</p>
+    <p class="small"><b>By user type</b> (recall / alerts per 1,000): student: 92% / 2.73 · shopkeeper: 92% / 2.64 · senior: 92% / 2.93 · professional: 93% / 2.79.</p>
+    <p class="small"><b>Stage caps</b> made no difference on this data (same results without them). We keep them as a safety
+    limit. Level-3 recall: 57.9%.</p>
   </div>
 </div></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">15 / 16</span></footer>
 </section>
 <section class="slide  appx">
-  <header><span class="sec">Appendix C</span><span class="brand">CHAKRAVYUH</span></header>
+  <header><span class="sec">Appendix C</span><span class="brand">Chakravyuh</span></header>
   <div class="body" style="zoom:1.0">
-<h2>Appendix C — assumptions, design alignment, SDK sketch, sources</h2>
+<h2>Appendix C: assumptions, regulations, code sketch, sources</h2>
 <div class="xc">
   <div>
-    <div class="mono lbl">ASSUMPTIONS</div>
-    <table class="tbl xs"><thead><tr><th>Item</th><th>Value</th><th>Used in</th></tr></thead><tbody><tr><td>Deployment prevalence</td><td>1 scam per 5,000 sessions</td><td>intercept shift only</td></tr><tr><td>Alert budgets</td><td>20 / 3 / 0.5 per 1,000</td><td>bank-chosen, per tier</td></tr><tr><td>Adapted cohort</td><td>25% of scam sessions</td><td>synthetic</td></tr><tr><td>Pilot exposure share</td><td>2% of national reported loss</td><td>value model</td></tr><tr><td>Load</td><td>30 M users × 250 sessions / yr; peak 10× average</td><td>cost model</td></tr><tr><td>Unit costs</td><td>₹8 / instance-hour; ₹2 / GB-month; 5 min / review</td><td>cost model</td></tr></tbody></table>
-    <div class="mono lbl" style="margin-top:12px">REGULATORY DESIGN ALIGNMENT — NOT CERTIFICATION</div>
-    <table class="tbl xs"><tbody><tr><td>DPDP Act 2023</td><td>Purpose limitation, data minimisation: only derived booleans leave the device.</td></tr><tr><td>RBI Master Direction on Digital Payment Security Controls (2021)</td><td>Fraud-risk monitoring: graduated, explainable interruption with human review.</td></tr><tr><td>RBI Integrated Ombudsman Scheme (2021)</td><td>The receipt id gives a complaint a single, verifiable reference.</td></tr><tr><td>PMLA 2002 record-keeping</td><td>Receipts retained for the statutory period, stored apart from identity data.</td></tr><tr><td>I4C CFCFRMS / 1930</td><td>Proposed reporting path for confirmed scams; no integration exists today.</td></tr></tbody></table>
-    <div class="mono lbl" style="margin-top:12px">SOURCES</div>
+    <div class="lbl">Assumptions</div>
+    <table class="tbl xs"><thead><tr><th>Item</th><th>Value</th><th>Used in</th></tr></thead><tbody><tr><td>Real scam rate</td><td>1 in 5,000 sessions</td><td>intercept adjustment</td></tr><tr><td>Alert limits</td><td>20, 3 and 0.5 per 1,000</td><td>set by the bank, per level</td></tr><tr><td>Fraudster hides signals</td><td>25% of scam sessions</td><td>synthetic data</td></tr><tr><td>Pilot bank share</td><td>2% of national reported loss</td><td>savings estimate</td></tr><tr><td>Load</td><td>30 M users × 250 payments/yr; peak 10× average</td><td>cost estimate</td></tr><tr><td>Unit costs</td><td>₹8 per server-hour; ₹2 per GB-month; 5 min per review</td><td>cost estimate</td></tr></tbody></table>
+    <div class="lbl" style="margin-top:12px">Regulations we designed around (not a legal certification)</div>
+    <table class="tbl xs"><tbody><tr><td>DPDP Act 2023</td><td>Collect only what is needed: only yes/no values leave the phone.</td></tr><tr><td>RBI Master Direction on Digital Payment Security Controls (2021)</td><td>Fraud monitoring: step-by-step response with reasons and human review.</td></tr><tr><td>RBI Integrated Ombudsman Scheme (2021)</td><td>The record ID gives each complaint one reference to check.</td></tr><tr><td>PMLA 2002 record-keeping</td><td>Records kept for the required period, stored apart from identity data.</td></tr><tr><td>I4C CFCFRMS / 1930</td><td>Planned route for reporting confirmed scams. Not connected yet.</td></tr></tbody></table>
+    <div class="lbl" style="margin-top:12px">Sources</div>
     <p class="small">Ministry of Home Affairs, reply in Lok Sabha, July 2025: ₹22,845.73 crore lost to cyber fraud in 2024;
     36.37 lakh complaints (NCRP and CFCFRMS). Digital Personal Data Protection Act, 2023. RBI Master Direction on Digital Payment
     Security Controls, 2021. RBI Integrated Ombudsman Scheme, 2021. I4C Suspect Registry, launched September 2024.</p>
   </div>
   <div>
-    <div class="mono lbl">ANDROID SIGNAL PROBES — SKETCH, NOT YET BUILT</div>
+    <div class="lbl">Android signal code (sketch, not built yet)</div>
     <pre>class ChakravyuhProbes(ctx: Context, integrity: StandardIntegrityTokenProvider) {
   fun evidence(nonce: String): Evidence {
     val ev = mapOf(
@@ -6432,13 +6145,13 @@ L 169.744219 131.682
     return Evidence(body, token)
   }
 }</pre>
-    <div class="mono lbl" style="margin-top:12px">DISCLOSURES</div>
-    <p class="small">All data is synthetic. No models are pre-trained; no LLM is used at decision time. Code: Python (FastAPI,
-    scikit-learn, XGBoost, NumPy, NetworkX, Matplotlib). Typeface: IBM Plex (SIL Open Font License). Drafting, code and layout
-    were produced with the help of an AI assistant (Claude Code); every number was computed by the project's evaluation scripts
-    (eval/final_numbers.py) and checked against them. Phone and agent-desk screens are illustrative mock-ups.</p>
+    <div class="lbl" style="margin-top:12px">Disclosures</div>
+    <p class="small">All data is synthetic. We use no pre-trained models and no LLM in the decision. Code: Python (FastAPI,
+    scikit-learn, XGBoost, NumPy, NetworkX, Matplotlib). Font: IBM Plex (SIL Open Font License). We used an AI assistant
+    (Claude Code) to help write the code, text and layout. Every number comes from our evaluation script (eval/final_numbers.py).
+    The phone and agent screens are mock-ups.</p>
   </div>
 </div></div>
-  <footer><span>RAKSHAM · Amazon × IIT Delhi · Round 1 · Track 02 — AI-driven scam pattern recognition</span>
+  <footer><span>RAKSHAM Round 1 · Track 2: AI-driven scam pattern recognition</span>
   <span class="pg">16 / 16</span></footer>
 </section></body></html>

@@ -38,7 +38,7 @@ def operating_points(F) -> str:
     c = F["chakravyuh"]; B = F["baselines"]
     fig, ax = plt.subplots(figsize=(5.8, 3.3))
     ax.axvline(3.0, color=RULE, lw=1, ls=(0, (3, 3)), zorder=0)
-    ax.text(2.985, 0.905, "alert budget 3 / 1,000", color=MUTED, fontsize=7.5, ha="right", va="bottom", rotation=90)
+    ax.text(2.985, 0.905, "alert limit 3 / 1,000", color=MUTED, fontsize=7.5, ha="right", va="bottom", rotation=90)
 
     def pt(x, y, color, filled=True):
         ax.errorbar(x["mean"], y["mean"], xerr=[[x["mean"] - x["lo"]], [x["hi"] - x["mean"]]],
@@ -50,18 +50,18 @@ def operating_points(F) -> str:
                     arrowprops=dict(arrowstyle="-", color=RULE, lw=0.7, shrinkA=0, shrinkB=4))
 
     pt(c["fp"], c["recall"], ORANGE)
-    lab(c["fp"]["mean"], c["recall"]["mean"], "Chakravyuh (with gate)", 2.62, 0.915, ORANGE, "semibold", "left")
+    lab(c["fp"]["mean"], c["recall"]["mean"], "Chakravyuh", 2.62, 0.915, ORANGE, "semibold", "left")
     pt(c["fp_nogate"], c["recall_nogate"], MUTED, filled=False)
-    lab(c["fp_nogate"]["mean"], c["recall_nogate"]["mean"], "same score, gate removed", 3.62, 0.935, MUTED)
+    lab(c["fp_nogate"]["mean"], c["recall_nogate"]["mean"], "without two-stage rule", 3.62, 0.935, MUTED)
     names = ["Logistic regression", "Gradient boosting", "XGBoost", "MLP"]
     for name in names:
         pt(B[name]["fp"], B[name]["recall"], INK)
     cx = sum(B[n]["fp"]["mean"] for n in names) / 4; cy = sum(B[n]["recall"]["mean"] for n in names) / 4
     lo = min(B[n]["recall"]["mean"] for n in names); hi = max(B[n]["recall"]["mean"] for n in names)
-    lab(cx, cy + 0.004, f"black-box baselines — logistic, gradient boosting,\nXGBoost, MLP: {lo * 100:.1f}–{hi * 100:.1f}% recall",
+    lab(cx, cy + 0.004, f"standard classifiers (logistic, gradient boosting,\nXGBoost, MLP): {lo * 100:.1f}–{hi * 100:.1f}% recall",
         2.6, 0.99, INK)
     r = B["Rule: new payee + high amount"]
-    ax.text(3.78, 0.905, f"off chart →  rule “new payee + high amount”:\n{r['recall']['mean'] * 100:.0f}% recall at "
+    ax.text(3.78, 0.905, f"not shown: “new payee + high amount” rule,\n{r['recall']['mean'] * 100:.0f}% recall at "
             f"{r['fp']['mean']:.1f} / 1,000", fontsize=7.5, color=MUTED, ha="right", va="bottom")
     ax.set_xlim(2.55, 3.8); ax.set_ylim(0.90, 1.0)
     ax.set_xlabel("Legitimate sessions interrupted per 1,000", fontsize=8.5)
