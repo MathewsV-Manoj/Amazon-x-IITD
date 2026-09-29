@@ -6,3 +6,4 @@ eval/out/*.svg
 !eval/out/model.json
 /tmp/
 .pytest_cache/
+submission/ppt/node_modules/
