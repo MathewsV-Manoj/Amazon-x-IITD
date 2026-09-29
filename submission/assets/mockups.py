@@ -9,7 +9,7 @@ ASSETS = Path(__file__).resolve().parent
 # Common phone frame ---------------------------------------------------------
 W, H = 300, 620
 PHONE = f"""
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-family="Inter, DejaVuSans, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-family="IBM Plex Sans, sans-serif">
   <defs>
     <linearGradient id="bezel" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#1a1f28"/>
@@ -27,7 +27,7 @@ FOOT = "</svg>"
 def status_bar(y=40):
     return (f'<text x="24" y="{y}" font-size="11" fill="#3b4453" font-weight="600">9:41</text>'
             f'<text x="{W - 24}" y="{y}" text-anchor="end" font-size="11" fill="#3b4453">'
-            f'●●●○ · UPI</text>')
+            f'UPI</text>')
 
 
 def top_pill(text, bg, fg, y=68):
@@ -52,7 +52,7 @@ def render_tier3():
   <rect x="20" y="210" width="260" height="90" rx="12" fill="#f6f7f9" stroke="#e4e7ec"/>
   <text x="34" y="232" font-size="10" fill="#5a6473" letter-spacing="1">TO</text>
   <text x="34" y="252" font-size="14" font-weight="700" fill="#0d1420">arjun.k9214@ybl</text>
-  <text x="34" y="270" font-size="10" fill="#8a1c1c" font-weight="600">● account opened 8 days ago</text>
+  <text x="34" y="270" font-size="10" fill="#8a1c1c" font-weight="600">account opened 8 days ago</text>
   <text x="266" y="252" text-anchor="end" font-size="20" font-weight="800" fill="#0d1420">₹2,50,000</text>
   <text x="266" y="270" text-anchor="end" font-size="10" fill="#8a1c1c">FD broken 24h ago</text>
 
@@ -60,7 +60,7 @@ def render_tier3():
   <text x="24" y="326" font-size="10" fill="#5a6473" letter-spacing="1">WHY WE STOPPED THIS</text>
   """
     # kill-chain 4 boxes
-    labels = [("Video call\n> 60 min", True), ("Screen-share\napp active", False),
+    labels = [("Video call\n> 20 min", True), ("Screen-share\napp active", True),
               ("FD broken +\nfirst-time payee", True), ("Payee\nmule-like", True)]
     for i, (lab, on) in enumerate(labels):
         x = 24 + i * 65
@@ -182,11 +182,11 @@ def render_tier1():
 def render_agent_desk():
     """Agent-desk console mockup — for architecture page 2."""
     w, h = 640, 380
-    s = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" font-family="Inter, DejaVuSans, sans-serif">'
+    s = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" font-family="IBM Plex Sans, sans-serif">'
     s += f'<rect x="0" y="0" width="{w}" height="{h}" rx="10" fill="#0d1420"/>'
     s += f'<rect x="0" y="0" width="{w}" height="34" fill="#151b23"/>'
     s += '<circle cx="18" cy="17" r="6" fill="#8a1c1c"/>'
-    s += '<text x="34" y="21" font-size="12" fill="#e7ecf2">Chakravyuh · Agent desk console</text>'
+    s += '<text x="34" y="21" font-size="12" fill="#e7ecf2">Agent desk — illustrative mock-up</text>'
     s += '<text x="620" y="21" text-anchor="end" font-size="11" fill="#9aa5b3">agent · sunita.r@bank</text>'
     # header
     s += '<text x="20" y="66" font-size="14" font-weight="700" fill="#ffffff">Tier-3 hold · 8723987bc76393cd</text>'
@@ -202,7 +202,7 @@ def render_agent_desk():
     s += '<text x="34" y="169" font-size="11" fill="#9aa5b3">Payee arjun.k9214@ybl (opened 8 d ago)</text>'
     # kill chain
     s += '<text x="330" y="112" font-size="11" fill="#9aa5b3">KILL-CHAIN STAGES</text>'
-    for i, (lab, on) in enumerate([("contact", True), ("control", False),
+    for i, (lab, on) in enumerate([("contact", True), ("control", True),
                                     ("extraction", True), ("cashout", True)]):
         x = 330 + i * 75
         col = "#d9480f" if on else "#2a3341"
@@ -212,11 +212,11 @@ def render_agent_desk():
               f'{lab.upper()}</text>')
     # reasons
     s += '<text x="20" y="204" font-size="11" fill="#9aa5b3">WHY (top signal contributions)</text>'
-    rows = [("payee looks like a mule (fan-in + fast passthrough)", "+5.74", "cashout"),
-            ("payee opened 8 days ago", "+3.43", "cashout"),
+    rows = [("payee behaves like a mule (many new senders, fast pass-through)", "+5.74", "cash-out"),
             ("first-time payee", "+2.73", "extraction"),
             ("FD broken in last 24 h", "+1.93", "extraction"),
-            ("video call > 20 min", "+1.52", "contact")]
+            ("call with unknown number > 20 min", "+1.52", "contact"),
+            ("screen-sharing app running", "+1.47", "control")]
     for i, (r, w_, st) in enumerate(rows):
         y = 224 + i * 22
         s += f'<rect x="20" y="{y - 14}" width="600" height="20" rx="5" fill="#151b23"/>'

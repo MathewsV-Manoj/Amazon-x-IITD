@@ -1,5 +1,5 @@
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 620" font-family="Inter, DejaVuSans, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 620" font-family="IBM Plex Sans, sans-serif">
   <defs>
     <linearGradient id="bezel" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#1a1f28"/>
@@ -9,7 +9,7 @@
   <rect x="0" y="0" width="300" height="620" rx="34" ry="34" fill="url(#bezel)"/>
   <rect x="8" y="8" width="284" height="604" rx="28" ry="28" fill="#ffffff"/>
   <rect x="105.0" y="10" width="90" height="18" rx="9" fill="#0b0f16"/>
-<text x="24" y="40" font-size="11" fill="#3b4453" font-weight="600">9:41</text><text x="276" y="40" text-anchor="end" font-size="11" fill="#3b4453">●●●○ · UPI</text><rect x="24" y="54" width="120" height="20" rx="10" fill="#8a1c1c"/><text x="84" y="68" text-anchor="middle" font-size="10.5" fill="#ffffff" font-weight="700">TIER 3  ·  HOLD 30 MIN</text>
+<text x="24" y="40" font-size="11" fill="#3b4453" font-weight="600">9:41</text><text x="276" y="40" text-anchor="end" font-size="11" fill="#3b4453">UPI</text><rect x="24" y="54" width="120" height="20" rx="10" fill="#8a1c1c"/><text x="84" y="68" text-anchor="middle" font-size="10.5" fill="#ffffff" font-weight="700">TIER 3  ·  HOLD 30 MIN</text>
   <!-- headline -->
   <text x="24" y="112" font-size="20" font-weight="800" fill="#0d1420">Wait — this looks</text>
   <text x="24" y="136" font-size="20" font-weight="800" fill="#0d1420">like a scam.</text>
@@ -20,13 +20,13 @@
   <rect x="20" y="210" width="260" height="90" rx="12" fill="#f6f7f9" stroke="#e4e7ec"/>
   <text x="34" y="232" font-size="10" fill="#5a6473" letter-spacing="1">TO</text>
   <text x="34" y="252" font-size="14" font-weight="700" fill="#0d1420">arjun.k9214@ybl</text>
-  <text x="34" y="270" font-size="10" fill="#8a1c1c" font-weight="600">● account opened 8 days ago</text>
+  <text x="34" y="270" font-size="10" fill="#8a1c1c" font-weight="600">account opened 8 days ago</text>
   <text x="266" y="252" text-anchor="end" font-size="20" font-weight="800" fill="#0d1420">₹2,50,000</text>
   <text x="266" y="270" text-anchor="end" font-size="10" fill="#8a1c1c">FD broken 24h ago</text>
 
   <!-- kill-chain strip -->
   <text x="24" y="326" font-size="10" fill="#5a6473" letter-spacing="1">WHY WE STOPPED THIS</text>
-  <rect x="24" y="336" width="55" height="60" rx="8" fill="#fbe9de"/><text x="51" y="362" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">Video call</text><text x="51" y="374" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">> 60 min</text><rect x="89" y="336" width="55" height="60" rx="8" fill="#eef1f5"/><text x="116" y="362" text-anchor="middle" font-size="9" font-weight="700" fill="#8a94a3">Screen-share</text><text x="116" y="374" text-anchor="middle" font-size="9" font-weight="700" fill="#8a94a3">app active</text><rect x="154" y="336" width="55" height="60" rx="8" fill="#fbe9de"/><text x="181" y="362" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">FD broken +</text><text x="181" y="374" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">first-time payee</text><rect x="219" y="336" width="55" height="60" rx="8" fill="#fbe9de"/><text x="246" y="362" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">Payee</text><text x="246" y="374" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">mule-like</text>
+  <rect x="24" y="336" width="55" height="60" rx="8" fill="#fbe9de"/><text x="51" y="362" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">Video call</text><text x="51" y="374" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">> 20 min</text><rect x="89" y="336" width="55" height="60" rx="8" fill="#fbe9de"/><text x="116" y="362" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">Screen-share</text><text x="116" y="374" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">app active</text><rect x="154" y="336" width="55" height="60" rx="8" fill="#fbe9de"/><text x="181" y="362" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">FD broken +</text><text x="181" y="374" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">first-time payee</text><rect x="219" y="336" width="55" height="60" rx="8" fill="#fbe9de"/><text x="246" y="362" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">Payee</text><text x="246" y="374" text-anchor="middle" font-size="9" font-weight="700" fill="#d9480f">mule-like</text>
   <!-- CTA row -->
   <rect x="20" y="416" width="260" height="46" rx="10" fill="#d9480f"/>
   <text x="150" y="444" text-anchor="middle" font-size="14"
