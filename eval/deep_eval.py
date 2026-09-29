@@ -300,7 +300,8 @@ def charts(deep):
     for i, v in enumerate(vals):
         ax.text(i, v + 0.02, f"{v * 100:.0f}%", ha="center", fontsize=9, color=INK)
     ax.set_xticks(range(len(labels)))
-    ax.set_xticklabels(labels, fontsize=8.5, rotation=0)
+    short = [l.replace("without ", "no ").replace("all four stages", "all 4") for l in labels]
+    ax.set_xticklabels(short, fontsize=8.5, rotation=0)
     ax.set_ylim(0, 1.1)
     ax.set_ylabel("Recall @ budget")
     ax.set_title("Stage ablation — each stage carries independent evidence",
