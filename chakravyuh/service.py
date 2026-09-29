@@ -53,6 +53,10 @@ class Evidence(BaseModel):
     amount: float = Field(..., ge=0)
     payee_kind: str | None = None
     evidence: dict[str, bool]
+    # Replay protection: SDK sends a one-time nonce and its clock reading.
+    # Optional so the demo UI and older clients still work.
+    nonce: str | None = Field(default=None, min_length=16, max_length=64)
+    client_ts_ms: int | None = None
 
 
 class DecisionOut(BaseModel):
@@ -67,6 +71,21 @@ class DecisionOut(BaseModel):
     probability: float
     log_id: str
     receipt_sig: str
+
+
+FRESHNESS_MS = 15_000
+_seen_nonces: dict[str, int] = {}   # nonce -> ts; in production a Redis set with TTL
+
+
+def _check_replay(nonce: str | None, client_ts_ms: int | None, now_ms: int) -> None:
+    if client_ts_ms is not None and abs(now_ms - client_ts_ms) > FRESHNESS_MS:
+        raise HTTPException(409, "stale evidence (older than 15 s)")
+    if nonce is not None:
+        for k in [k for k, t in _seen_nonces.items() if now_ms - t > FRESHNESS_MS]:
+            del _seen_nonces[k]
+        if nonce in _seen_nonces:
+            raise HTTPException(409, "replayed nonce")
+        _seen_nonces[nonce] = now_ms
 
 
 app = FastAPI(title="Chakravyuh scam kill-chain interceptor",
@@ -104,6 +123,7 @@ def signals():
 def decide(req: Evidence, x_api_key: str | None = Header(default=None)):
     # In production an authenticated bank API gateway sits in front; in dev we
     # keep the surface intentionally small.
+    _check_replay(req.nonce, req.client_ts_ms, int(time.time() * 1000))
     m = get_model()
     unknown = set(req.evidence) - set(SIGNAL_KEYS)
     if unknown:

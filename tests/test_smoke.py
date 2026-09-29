@@ -93,3 +93,17 @@ def test_generate_shapes():
     assert len(S) == 1100
     assert len({s["label"] for s in S}) == 2
     assert any(p.kind == "mule" for p in P.values())
+
+
+def test_replay_and_stale_evidence_rejected():
+    import time
+    from fastapi.testclient import TestClient
+    from chakravyuh import service as svc
+    client = TestClient(svc.app)
+    now = int(time.time() * 1000)
+    body = {"session_id": "replay-test", "amount": 100, "evidence": {},
+            "nonce": "n" * 20, "client_ts_ms": now}
+    assert client.post("/decide", json=body).status_code == 200
+    assert client.post("/decide", json=body).status_code == 409      # same nonce
+    stale = dict(body, nonce="m" * 20, client_ts_ms=now - 60_000)
+    assert client.post("/decide", json=stale).status_code == 409     # too old

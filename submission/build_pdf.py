@@ -164,9 +164,9 @@ def cover(c, size, R, D):
 
     # headline metrics on the cover
     c.setFillColor(HexColor("#151b23")); c.roundRect(50, 120, w - 100, 110, 10, fill=1, stroke=0)
-    metrics = [("95%", "scam sessions caught", HexColor("#ff7a2b")),
-               ("3.1 / 1k", "interruptions to legit users", HexColor("#78b3ff")),
-               ("₹5,982 cr", "projected saving / year @ 30M users", HexColor("#4dd6a4")),
+    metrics = [("94.4%", "scam recall (8-world mean)", HexColor("#ff7a2b")),
+               ("3.4 / 1k", "interruptions to legit users", HexColor("#78b3ff")),
+               ("₹5,982 cr", "upper-bound saving / yr @ 30M users", HexColor("#4dd6a4")),
                ("25 µs", "engine latency per session", HexColor("#f1c3a4"))]
     mw = (w - 100) / 4
     for i, (a, b, col) in enumerate(metrics):
@@ -460,7 +460,7 @@ def slide_signals(c, size, R, D):
     # honest privacy contract
     c.setFillColor(DARK_BG); c.roundRect(30, 40, w - 60, 96, 8, fill=1, stroke=0)
     c.setFillColor(HexColor("#f1c3a4")); c.setFont(BOLD, 11)
-    c.drawString(50, 112, "Privacy contract  ·  DPDP Act 2023  ·  RBI DPSC Master Direction, 2021 (control set 5.3)")
+    c.drawString(50, 112, "Privacy contract  ·  DPDP Act 2023  ·  RBI Master Direction on Digital Payment Security Controls (2021)")
     c.setFillColor(HexColor("#c6ced8")); c.setFont(BODY, 9.5)
     wrap(c, "From the device only 9 booleans + amount + hashed payee VPA leave: call/video state buckets, "
             "screen-share/overlay/sideload booleans, on-device SMS scam classifier outcome (regex + logistic model, no LLM). "
@@ -566,9 +566,9 @@ def slide_safety(c, size, R, D):
          f"Coverage: adversarial curve shows {adv3['recall'] * 100:.0f}% recall even when the top-3 signals are suppressed. "
          "Cash-out signals (mule score, registry hit) come from bank-side data the fraudster does not control."),
         ("REPLAY / ATTESTATION",
-         "SDK evidence signed with Play Integrity + hardware key.",
-         "Receipt HMAC is bank-side, rotated per quarter and per key-management-service policy. "
-         "A 15-second freshness window on ts_ms is enforced at /decide."),
+         "Evidence bound to a Play Integrity token + nonce.",
+         "The SDK sends a nonce + client timestamp; /decide rejects replays and anything older than 15 s "
+         "(implemented in chakravyuh/service.py). Receipt HMAC key lives bank-side in a KMS, rotated quarterly."),
         ("INSIDER THREAT",
          "Dual-auth for tier-3 release AND for suspect-list writes.",
          "Every agent action carries a signed second-approver id inside the receipt. Anomalous release-rate per agent "
@@ -576,13 +576,13 @@ def slide_safety(c, size, R, D):
         ("FALSE POSITIVE — user harm",
          f"Tier 2 friction, never a block. Recall CI [{G.get('multi_seed', {}).get('recall_ci_lo', 0.94) * 100:.0f}%, "
          f"{G.get('multi_seed', {}).get('recall_ci_hi', 0.95) * 100:.0f}%].",
-         "Tier-3 hold releasable within 30 min. RBI Grievance SLA: 24 h resolution via the bank's ombudsman channel; "
+         "Tier-3 hold releasable within 30 min. Complaints go through the bank's grievance channel / RBI Integrated Ombudsman; "
          "the receipt id is the single reference customers quote."),
     ]
     # 2x2 grid of cards
     y0 = h - 108
     cw = (w - 60) / 2
-    ch = 140
+    ch = 124
     for i, (q, headline, sub) in enumerate(rows):
         col = i % 2; row = i // 2
         x = 30 + col * cw
@@ -607,7 +607,7 @@ def slide_safety(c, size, R, D):
         "· Android accessibility + package-installer access needs a Play policy review; we design for the SDK to run in the bank's "
         "existing security-context, not a new one.",
         "· Mule graph shown is a 4k-node validation graph. Production uses the bank's own payment graph — same features, same code.",
-        "· Weights are public and rotated quarterly. A one-signal attack drops recall by 18 pp; a 3-signal one by 62 pp (arch p3).",
+        "· On unseen worlds FP is 3.4 / 1k — slightly over the 3 / 1k target. Shadow mode recalibrates before any user sees an alert.",
     ]:
         y = wrap(c, t, 46, y, w - 92, 9.5, color=INK, leading=12) - 1
 
@@ -674,10 +674,10 @@ def slide_adoption(c, size, R, D):
     y_mid -= 16
     diff = [
         ("NPCI's own fraud-monitoring", "pattern rules at the rail level; no session-context, no user-facing reason"),
-        ("Bureau / Signzy / HyperVerge", "device-intelligence & KYC; not session-scoped kill-chain fusion"),
+        ("Device-intel / KYC vendors", "identity & device risk at onboarding; not a per-payment scam-workflow view"),
         ("Bank's card-fraud rules", "designed for card-not-present, misses authorised push payments"),
         ("A pure ML classifier", "black-box; cannot show a customer or an RBI Ombudsman WHY"),
-        ("Chakravyuh", "the only one combining a stage-gated kill chain + a signed decision receipt"),
+        ("Chakravyuh", "per-payment kill-chain fusion + a user-readable reason + a signed decision receipt"),
     ]
     ch_row = 15
     for i, (name, note) in enumerate(diff):
@@ -774,7 +774,7 @@ def slide_plan_48h(c, size, R, D):
         "eval/        — 3 seeded synthetic worlds · threshold calibration to alert budget · deep evaluation suite",
         "submission/  — deck + architecture PDF · all figures regenerated from JSON",
         "web/         — interactive scoring dashboard · scenario chips · signed receipt viewer",
-        "tests/       — 7 pytest smoke tests (incl. 'no single signal can breach tier 2')",
+        "tests/       — 8 pytest smoke tests (incl. 'no single signal can breach tier 2')",
     ]:
         c.setFillColor(HexColor("#c6ced8")); c.setFont(BODY, 9.5); c.drawString(50, y, "· " + t); y -= 15
 
@@ -785,7 +785,7 @@ def slide_plan_48h(c, size, R, D):
 def arch_page1(c, size, R, D):
     page_frame(c, size, "System architecture — end-to-end",
                "One diagram, four planes: device, bank fraud-ops VPC, UPI rail, data platform.",
-               12, 14)
+               11, 14)
     w, h = size
     _draw_arch_diagram(c, 20, h - 100, w - 40, h - 470)
     y = 300
@@ -910,7 +910,7 @@ def _draw_arch_diagram(c, x, y_top, w, y_bot):
 def arch_page2(c, size, R, D):
     page_frame(c, size, "Decision flow, receipts, and the agent desk",
                "One session traced through the engine. The same receipt shows up in every downstream tool.",
-               13, 14)
+               12, 14)
     w, h = size
     y = h - 105
     steps = [
@@ -960,7 +960,7 @@ def arch_page2(c, size, R, D):
 def arch_page3(c, size, R, D):
     page_frame(c, size, "Adversarial risks, validation, and privacy",
                "The rules of the game — and how we prove we are winning.",
-               14, 14)
+               13, 14)
     w, h = size
     ours = D["baselines"][0]
     adv2 = next(a for a in D["adversarial"] if a["suppressed"] == 2)
@@ -1009,7 +1009,7 @@ def _appendix(c, size, R, D):
     G = _G.get("rigor", {})
     page_frame(c, size, "Appendix — assumptions, statistics, regulatory map, code",
                "Every claim, its number, its file, its citation.",
-               15, 15, kicker="CHAKRAVYUH APPENDIX")
+               14, 14, kicker="CHAKRAVYUH APPENDIX")
     w, h = size
     x1 = 30; x2 = w / 2 + 15; col_w = w / 2 - 45
     ms = G.get("multi_seed", {})
@@ -1059,11 +1059,11 @@ def _appendix(c, size, R, D):
     y -= 14
     for t in [
         "DPDP Act 2023, §7 (purpose limitation): SDK ships only booleans derived on-device; raw signals never leave.",
-        "RBI DPSC Master Direction 2021, §5.3 (fraud-risk mgmt): stage-gated interruption + agent dual-auth.",
-        "RBI Master Direction on Digital Lending 2022, §7: no automated blocking; tier-3 is a hold, not a block.",
+        "RBI Master Direction on Digital Payment Security Controls (2021) — fraud-risk monitoring: stage-gated interruption + dual-auth agent review.",
+        "Design choice (not a legal claim): no automated permanent blocking — tier 3 is a time-boxed hold a human releases.",
         "NPCI CFCFRMS webhook: confirmed mule + confirmed FP flow back to the fraud queue (opt-in per bank).",
-        "RBI Grievance Redress 2024: receipt id is the single reference; 24-h SLA via bank ombudsman.",
-        "PMLA 2002 audit: HMAC-signed receipts retained 7 yr; independent from PII, joinable only under warrant.",
+        "RBI Integrated Ombudsman Scheme (2021): the receipt id is the single reference a customer quotes in a complaint.",
+        "PMLA 2002 record-keeping: signed receipts retained for the statutory period, stored apart from PII.",
     ]:
         y = wrap(c, "· " + t, x2, y, col_w, 9.5, color=MUTED, leading=12) - 2
 
@@ -1082,7 +1082,7 @@ def _appendix(c, size, R, D):
     c.setFillColor(INK); c.setFont(BOLD, 11); c.drawString(x2, y, "Android SDK signal-probe sketch (Kotlin)")
     y -= 12
     code = [
-        "class ChakravyuhProbes(ctx: Context, playIntegrity: PlayIntegrityClient) {",
+        "class ChakravyuhProbes(ctx: Context, integrity: StandardIntegrityTokenProvider) {",
         "  fun evidence(): SignedEvidence {",
         "    val ev = mapOf(",
         "      \"call_unknown_active\"   to isUnknownCallActive(),",
@@ -1096,7 +1096,8 @@ def _appendix(c, size, R, D):
         "      /* … 3 more device booleans, 11 device-side signals total */)",
         "    val nonce = SecureRandom.uuid()",
         "    val payload = json { put(\"ev\", ev); put(\"nonce\", nonce); put(\"ts\", now) }",
-        "    return SignedEvidence(payload, playIntegrity.sign(payload))  // hardware-attested",
+        "    val token = integrity.request(requestHash = sha256(payload))  // Play Integrity",
+        "    return SignedEvidence(payload, token)  // server verifies verdict + hash",
         "  }",
         "}",
     ]
